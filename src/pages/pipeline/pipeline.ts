@@ -1,22 +1,42 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, Modal, NavParams, ModalController } from 'ionic-angular';
 import  { GetService } from '../../services/getService';
+import { ViewChild, style, state, animate, transition, trigger } from '@angular/core';
 
 @Component({
   selector: 'page-pipeline',
   templateUrl: 'pipeline.html',
-  providers: [GetService]
+  providers: [GetService],
+  animations: [
+  trigger('fadeInOut', [
+    transition(':enter', [   // :enter is alias to 'void => *'
+      style({opacity:0}),
+      animate(200, style({opacity:1})) 
+    ]),
+    transition(':leave', [   // :leave is alias to '* => void'
+      animate(200, style({opacity:0})) 
+    ])
+  ])
+]
 })
 export class PipelinePage implements OnInit {
-  constructor(public navCtrl: NavController, private getService: GetService) {
+  constructor(public modal: ModalController, private getService: GetService) {}
 
-  }
-
+  public dotCheck = false;
   public title;
   public slides;
   public slidesFilter;
   public prospects;
   public allProspects;
+
+
+  dotColor = (prosp) => {
+    if(prosp[0]) {
+      return "lightgreen";
+    } else {
+      return "grey";
+    }
+  }
 
   leadsPipe = () => {
     this.slidesFilter = [];
@@ -66,12 +86,9 @@ export class PipelinePage implements OnInit {
     this.title = 'Retention';
   }
 
-
-  data;
   getProspects = () => {
     this.getService.getProspects().subscribe(res => {
-      this.allProspects = res.allProspects;
-      console.log(this.allProspects);    
+      this.allProspects = res.allProspects; 
       this.leadsPipe();
     });
   }
