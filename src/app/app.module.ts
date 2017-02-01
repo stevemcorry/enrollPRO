@@ -7,6 +7,7 @@ import { ActionsPage } from '../pages/actions/actions';
 import { TabsPage } from '../pages/tabs/tabs';
 import { MarketingPage } from '../pages/marketing/marketing';
 import { MorePage } from '../pages/more/more';
+import { FilterPipe } from './filter';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MorePage } from '../pages/more/more';
     ActionsPage,
     MarketingPage,
     MorePage,
-    TabsPage
+    TabsPage,
+    FilterPipe
   ],
   imports: [
     IonicModule.forRoot(MyApp)

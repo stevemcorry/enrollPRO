@@ -5,7 +5,7 @@
         <ion-icon name="menu"></ion-icon>
       </button>
     </ion-buttons>
-    <ion-title>Pipeline</ion-title>
+    <ion-title (click)="pipelineSelect = !pipelineSelect">Pipeline</ion-title>
     <ion-buttons end>
       <button>
         <ion-icon name="help"></ion-icon>
@@ -15,15 +15,26 @@
 </ion-header>
 
 <ion-content>
+  <div *ngIf="pipelineSelect">
+     <div (click)="leadsPipe()">
+       Leads
+     </div>
+     <div (click)="enrollmentsPipe()">
+       Enrollments
+     </div>
+     <div (click)="retentionPipe()">
+       Retention
+     </div>
+  </div>
   <ion-slides>
-    <ion-slide>
-      <h1>1</h1>
-    </ion-slide>
-    <ion-slide>
-      <h1>2</h1>
-    </ion-slide>
-    <ion-slide>
-      <h1>3</h1>
+    <ion-slide *ngFor="let slide of slides">
+      <div>{{slide.position}}</div>
+      <div *ngFor="let prospect of prospects | filter: slide">
+      <div>{{prospect.name}}</div>
+      <div>{{prospect.phone}}</div>
+      <div>{{prospect.tasks}}</div>
+      <div>{{prospect.position}}</div>
+      </div>
     </ion-slide>
   </ion-slides>
 </ion-content>
