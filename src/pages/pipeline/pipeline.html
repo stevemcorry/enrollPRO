@@ -28,11 +28,10 @@
   </div>
   <ion-slides>
     <ion-slide *ngFor="let slide of slides">
-      <h1>{{slide.position}}</h1>
+      <div class="arrow"><div class="position">{{slide}}</div><div class="rightArrow"></div></div>
       <div *ngFor="let prospect of prospects | filter: slide">
-      <div>{{prospect.name}}</div>
-      <div>{{prospect.phone}}</div>
-      <div>{{prospect.tasks}}</div>
+      <div class="prospect">{{prospect.name}} <div class="smallCircle"></div></div>
+      <div class="line"></div>
       </div>
     </ion-slide>
   </ion-slides>

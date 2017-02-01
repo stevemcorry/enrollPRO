@@ -9,11 +9,9 @@ import { TabsPage } from '../pages/tabs/tabs';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  hideStyle = false;
+  hideStyle = true;
 
   login = () => {
-    console.log('working');
-    
     if(this.hideStyle) {
       return "none";
     } else {

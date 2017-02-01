@@ -10,7 +10,7 @@ export class FilterPipe implements PipeTransform {
         if(term === undefined) return values;
 
         return values.filter(value => {
-            return (value.position === term.position)
+            return (value.position === term)
         })
     }
 
