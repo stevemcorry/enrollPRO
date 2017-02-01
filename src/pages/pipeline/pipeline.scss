@@ -1,3 +1,17 @@
 page-pipeline {
-    
+    h1{
+        top: 0%;
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        background: lightgreen;
+        margin-top: 5px;
+    }
+    .choosePipe{
+        position: fixed;
+        z-index: 2;
+        width: 100%;
+        background: white;
+    }
 }

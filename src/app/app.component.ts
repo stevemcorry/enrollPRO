@@ -9,8 +9,21 @@ import { TabsPage } from '../pages/tabs/tabs';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage = TabsPage;
+  hideStyle = false;
 
+  login = () => {
+    console.log('working');
+    
+    if(this.hideStyle) {
+      return "none";
+    } else {
+      return "";
+    }
+  }
+
+
+
+  rootPage = TabsPage;
   constructor(platform: Platform) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.

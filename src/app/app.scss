@@ -1,5 +1,18 @@
 // http://ionicframework.com/docs/v2/theming/
+.toolbar-background {
+    background-color: #5F4275;
+}
 
+.loginModal {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    background: white;
+    height: 100%;
+    width: 100%;
+}
 
 // App Global Sass
 // --------------------------------------------------

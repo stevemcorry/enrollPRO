@@ -6,6 +6,7 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'pipeline.html',
 })
 export class PipelinePage implements OnInit {
+  public title;
   public slides;
   public prospects;
   public allProspects= [
@@ -148,8 +149,9 @@ export class PipelinePage implements OnInit {
       return (x.position === 'Acquaintance' || x.position === 'Future Prospect')
     })
     this.slides = this.allProspects.filter((x)=>{
-      return (x.position === 'Acquaintance' || x.position === 'Future Prospect')
-    })
+      return (x.position === 'Acquaintance' || x.position === 'Future Prospect') 
+    })    
+    this.title = 'Leads';
   }
 
   enrollmentsPipe = () => {
@@ -159,6 +161,7 @@ export class PipelinePage implements OnInit {
     this.slides = this.allProspects.filter((x)=>{
       return (x.position === 'Exposed to essential Oils' || x.position === 'Future Prospect' || x.position === 'Commited to a Meeting' || x.position === 'Attended a Meeting' || x.position === 'Enrolled')
     })
+    this.title = 'Enrollments';
   }
 
   retentionPipe = () => {
@@ -168,6 +171,7 @@ export class PipelinePage implements OnInit {
     this.slides = this.allProspects.filter((x)=>{
       return (x.position === 'Enrolled' || x.position === 'Lifestyle & Buisness Overview' || x.position === '1st Menor Session' || x.position === 'Launched' || x.position === 'Recognized & Promoted this week' || x.position === 'Retained 90 Days')
     })
+    this.title = 'Retention';
   }
 
   constructor(public navCtrl: NavController) {
