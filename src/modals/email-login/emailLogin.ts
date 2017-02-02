@@ -28,13 +28,9 @@ export class EmailLoginModal implements OnInit{
     "password": "111111",
     "scope": ""
     }
-    public newUser;
-    toURL(){
-        this.newUser = encodeURIComponent(JSON.stringify(this.user))
-    }
+    
     send(){
-        console.log(this.newUser);
-        this.postService.requestOAuth(this.newUser).subscribe(res=>{
+        this.postService.requestOAuth(this.user).subscribe(res=>{
             console.log(res);
         })
     }
@@ -48,7 +44,6 @@ export class EmailLoginModal implements OnInit{
 
 
     ngOnInit(){
-        this.toURL()
     }
 
 }
