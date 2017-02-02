@@ -14,6 +14,16 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+  <div *ngFor="let task of tasks" class="task">
+    <ion-icon name="{{task.task}}" class="taskTask"></ion-icon>
+    <div class="spacing">
+      <div>
+        <div class="taskProspect">{{task.task}} {{task.name}}</div>
+        <div class="taskNotes">{{task.notes}}</div>
+      </div>
+      <div class="statusCircle" [style.background-color]="statusCheck(task.status)" (click)="task.status = !task.status"></div>
+    </div>
+  </div>
   <ion-icon name='add-circle' class="actionsAdd"></ion-icon>
 </ion-content>

@@ -18,4 +18,10 @@ export class GetService{
                 return res.json();
             })
     }
+    getTasks(){
+        return this.http.get('/assets/tasks.json')
+        .map( res => {
+            return res.json();
+        })
+    }
 }

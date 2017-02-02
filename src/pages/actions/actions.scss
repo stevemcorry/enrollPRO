@@ -5,5 +5,35 @@ page-actions {
         bottom: 12%;
         font-size: 50px;
     }
-
+    .task{
+        display: flex;
+        margin: 10px 0 10px 0;
+    }
+    .taskProspect{
+        font-size: 30px;
+    }
+    .taskNotes{
+        color: grey;
+    }
+    .taskTask{
+        height: 100%;
+        width: 50px;
+        font-size: 36px;
+        align-self: center;
+        text-align: center;
+    }
+    .statusCircle{
+        border-radius: 50%;
+        border: 2px solid black;
+        height: 30px;
+        width: 30px;
+        align-self: center;
+    }
+    .spacing{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding-right: 5px;
+        padding-left: 5px;
+    }
 }
