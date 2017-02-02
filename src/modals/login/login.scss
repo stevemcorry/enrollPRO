@@ -1,0 +1,16 @@
+page-login{
+    .flex{
+        display: flex;
+        justify-content: center;
+    }
+    .line{
+        height: 2px;
+        background: grey;
+        width: 30%;
+    }
+    .or{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
