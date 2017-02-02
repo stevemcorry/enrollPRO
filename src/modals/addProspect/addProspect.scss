@@ -1,6 +1,12 @@
 page-add-Prospect {
+    .contactHeader {
+        text-align: center;
+    }
     .topSpecific{
         display: flex;
-        justify-content: space-around;
+        width: 100%;
+    }
+    .top {
+        width: 50%;
     }
 }
