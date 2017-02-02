@@ -8,6 +8,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { MarketingPage } from '../pages/marketing/marketing';
 import { MorePage } from '../pages/more/more';
 import { FilterPipe } from './filter';
+import { AddProspect } from '../modals/addProspect/addProspect';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FilterPipe } from './filter';
     MarketingPage,
     MorePage,
     TabsPage,
-    FilterPipe
+    FilterPipe,
+    AddProspect
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -31,7 +33,8 @@ import { FilterPipe } from './filter';
     ActionsPage,
     MarketingPage,
     MorePage,
-    TabsPage
+    TabsPage,
+    AddProspect
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

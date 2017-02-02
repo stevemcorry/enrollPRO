@@ -28,8 +28,11 @@
   </div>
   <ion-slides [options]="{pager:true}">
     <ion-slide *ngFor="let slide of slides">
-      <div class="arrow"><div class="position">{{slide}}</div><div class="rightArrow"></div></div>
-      <div *ngFor="let prospect of prospects | filter: slide">
+      <div class="arrow">
+        <div class="position">{{slide}}</div>
+        <div class="rightArrow"></div>
+      </div>
+      <div *ngFor="let prospect of prospects | filter: slide" (click)="openModal(prospect)">
       <div class="prospect">{{prospect.name}} <div class="smallCircle" [style.background-color]="dotColor(prospect.task)"></div></div>
       <div class="line"></div>
       </div>

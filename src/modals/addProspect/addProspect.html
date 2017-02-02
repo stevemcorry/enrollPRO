@@ -1,11 +1,45 @@
-<ion-navbar *navbar>
-  <ion-buttons start>
-    <button (click)="dismiss()">
-      Cancel
-    </button>
-  </ion-buttons>
-  <ion-title>Sample Modal</ion-title>
-</ion-navbar>
-<ion-content padding class="sample-modal-page">
-  my sample modal page
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <button>
+        <ion-icon name="close" (click)="dismiss()"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>{{prospect.name}}</ion-title>
+    <ion-buttons end>
+      <button>
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="addProspect">
+  <h1>Contact Info</h1>
+  <div class="topSpecific">
+    <div>
+      <div>
+        info:
+      </div>
+      <div>
+        {{prospect.phone}}
+      </div>
+    </div>
+    <div>
+      <div>
+        Group:
+      </div>
+      <div>
+        {{prospect.position}}
+      </div>
+    </div>
+  </div>
+  <div>
+    Pipeline Position:
+  </div>
+  <div>
+    {{prospect.position}}
+  </div>
+  <div>{{prospect.phone}}</div>
+  <div>{{prospect.task}}</div>
 </ion-content>

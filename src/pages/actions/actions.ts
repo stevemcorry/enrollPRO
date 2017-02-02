@@ -16,20 +16,16 @@ export class ActionsPage implements OnInit{
 
   getTasks(){
     this.getService.getTasks().subscribe( res => {
-      console.log(res);
       this.tasks = res;
     })
   }
   statusCheck(stat){
-    console.log(stat);
     if(stat){
       return "green"
     } else {
       return "white"
     }
   }
-
-
   ngOnInit(){
     this.getTasks();
   }
