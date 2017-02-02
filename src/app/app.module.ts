@@ -16,6 +16,9 @@ import { FilterPipe } from './filter';
 //Modals
 import { AddProspect } from '../modals/addProspect/addProspect';
 import { LoginModal } from '../modals/login/login';
+import { EmailLoginModal } from '../modals/email-login/emailLogin';
+import { FBLoginModal } from '../modals/fb-login/fbLogin';
+import { GoogleLoginModal } from '../modals/google-login/googleLogin';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,11 @@ import { LoginModal } from '../modals/login/login';
 
     //Modals
     AddProspect,
-    LoginModal
+    LoginModal,
+    EmailLoginModal,
+    FBLoginModal,
+    GoogleLoginModal
+
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -53,7 +60,11 @@ import { LoginModal } from '../modals/login/login';
 
     //Modals
     AddProspect,
-    LoginModal
+    LoginModal,
+    EmailLoginModal,
+    FBLoginModal,
+    GoogleLoginModal
+
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
