@@ -12,20 +12,22 @@ import { TabsPage } from '../../pages/tabs/tabs';
 export class EmailLoginModal implements OnInit{
     constructor(public viewCtrl: ViewController, public navCtrl: NavController, public platform: Platform, public params: NavParams, public postService: PostService, public gettService: GetService){
     }
-
-    login() {
-        this.navCtrl.setRoot(TabsPage);
-    }
     dismiss() {
         this.viewCtrl.dismiss();
+    }
+
+    login() {
+        //this.navCtrl.setRoot(TabsPage);
+        console.log(this.user);
+        
     }
 
     public user = {
     "grant_type": "password",
     "client_id": "2",
     "client_secret": "FxeeeKA65iEFExJWm0l08O6MJua8MTOoxiWz2sPZ",
-    "username": "bob@gmail.com",
-    "password": "111111",
+    "username": "",
+    "password": "",
     "scope": ""
     }
     
