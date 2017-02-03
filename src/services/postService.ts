@@ -18,22 +18,9 @@ export class PostService{
 
 
     store(user){
-        this.storage.set('name', user.username).then(() => {
-            console.log('Name has been set');
-        });
-        this.storage.set('password', user.password).then(() => {
-            console.log('Password has been set');
+        this.storage.set('token', user.access_token).then(() => {
+            console.log('Token has been set', user.access_token);
         });
     }
-    gett(){
-        this.storage.get('name').then((name) => {
-            console.log('Name: ' + name);
-        });
-        this.storage.get('password').then((name) => {
-            console.log('password: ' + name);
-        });
-    }
-
 
 }
-    

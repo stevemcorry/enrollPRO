@@ -18,7 +18,7 @@ export class EmailLoginModal implements OnInit{
     }
     login() {
         if(this.user.username && this.user.password && this.fullname) {
-            this.store();
+            this.token();
             this.navCtrl.setRoot(TabsPage);
         }
         else {
@@ -33,13 +33,14 @@ export class EmailLoginModal implements OnInit{
     "password": "",
     "scope": ""
     }
-    send(){
+    token(){
         this.postService.requestOAuth(this.user).subscribe(res=>{
             console.log(res);
+            this.store(res)
         })
     }
-    store(){
-        this.postService.store(this.user);
+    store(key){
+        this.postService.store(key);
     }
     ngOnInit(){
     }

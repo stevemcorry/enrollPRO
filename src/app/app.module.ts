@@ -10,6 +10,7 @@ import { ActionsPage } from '../pages/actions/actions';
 import { TabsPage } from '../pages/tabs/tabs';
 import { MarketingPage } from '../pages/marketing/marketing';
 import { MorePage } from '../pages/more/more';
+import { LoadingPage } from '../pages/loading/loading';
 
 //Filters
 import { FilterPipe } from './filter';
@@ -32,6 +33,7 @@ import { GoogleLoginModal } from '../modals/google-login/googleLogin';
     MarketingPage,
     MorePage,
     TabsPage,
+    LoadingPage,
 
     //Filters
     FilterPipe,
@@ -58,6 +60,7 @@ import { GoogleLoginModal } from '../modals/google-login/googleLogin';
     MarketingPage,
     MorePage,
     TabsPage,
+    LoadingPage,
 
     //Modals
     AddProspect,

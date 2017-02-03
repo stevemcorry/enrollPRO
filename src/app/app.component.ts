@@ -4,6 +4,7 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginModal } from '../modals/login/login';
+import { LoadingPage } from '../pages/loading/loading'
 
 
 @Component({
@@ -11,7 +12,7 @@ import { LoginModal } from '../modals/login/login';
   providers: []
 })
 export class MyApp implements OnInit{
-rootPage = LoginModal;
+rootPage = LoadingPage;
 
   constructor(public platform: Platform, public modalCtrl: ModalController) {
     platform.ready().then(() => {

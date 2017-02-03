@@ -13,12 +13,9 @@ import { GoogleLoginModal } from '../google-login/googleLogin';
   providers: [ GetService ]
 })
 export class LoginModal implements OnInit{
-    constructor(public viewCtrl: ViewController, public modalCtrl: ModalController, public navCtrl: NavController, public platform: Platform, public params: NavParams,){
+    constructor(public viewCtrl: ViewController, public modalCtrl: ModalController, public navCtrl: NavController, public platform: Platform, public params: NavParams, public getService: GetService){
     }
-
-    prospect;
-
-
+    token;
     emailLogin() {
        let modal = this.modalCtrl.create(EmailLoginModal);
     modal.present();
@@ -31,6 +28,7 @@ export class LoginModal implements OnInit{
        let modal = this.modalCtrl.create(GoogleLoginModal);
     modal.present();
     }
+    
 
     ngOnInit(){
     }

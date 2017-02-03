@@ -85,10 +85,13 @@ export class PipelinePage implements OnInit {
     this.title = 'Retention';
   }
   getProspects = () => {
-    this.getService.getProspects().subscribe(res => {
-      this.allProspects = res.allProspects; 
-      this.leadsPipe();
+    this.getService.getStorage().then(key => {
+    this.getService.getContacts(key).subscribe(res => {
+      console.log('pipe',res);
+      // this.allProspects = res.allProspects; 
+      // this.leadsPipe();
     });
+    })
   }
   openModal(prospect) {
     let modal = this.modalCtrl.create(AddProspect, {prospect: prospect});
