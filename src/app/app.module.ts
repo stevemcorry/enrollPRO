@@ -1,6 +1,7 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+import { Storage } from '@ionic/storage';
 
 //Pages
 import { GoalsPage } from '../pages/goals/goals';
@@ -66,6 +67,9 @@ import { GoogleLoginModal } from '../modals/google-login/googleLogin';
     GoogleLoginModal
 
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    Storage
+    ]
 })
 export class AppModule {}

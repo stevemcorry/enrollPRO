@@ -39,9 +39,10 @@ export class EmailLoginModal implements OnInit{
     
 
     get(){
-        this.gettService.getContacts().subscribe(res => {
-            console.log(res);
-        })
+        this.postService.gett();
+    }
+    set(){
+        this.postService.store(this.user);
     }
 
 
