@@ -10,18 +10,21 @@ import { TabsPage } from '../../pages/tabs/tabs';
   providers: [ PostService, GetService]
 })
 export class EmailLoginModal implements OnInit{
+    fullname;
     constructor(public viewCtrl: ViewController, public navCtrl: NavController, public platform: Platform, public params: NavParams, public postService: PostService, public gettService: GetService){
     }
     dismiss() {
         this.viewCtrl.dismiss();
     }
-
     login() {
-        //this.navCtrl.setRoot(TabsPage);
-        console.log(this.user);
-        
+        if(this.user.username && this.user.password && this.fullname) {
+            this.store();
+            this.navCtrl.setRoot(TabsPage);
+        }
+        else {
+            alert('Please Fill out all the information')
+        }
     }
-
     public user = {
     "grant_type": "password",
     "client_id": "2",
@@ -30,23 +33,14 @@ export class EmailLoginModal implements OnInit{
     "password": "",
     "scope": ""
     }
-    
     send(){
         this.postService.requestOAuth(this.user).subscribe(res=>{
             console.log(res);
         })
     }
-    
-
-    get(){
-        this.postService.gett();
-    }
-    set(){
+    store(){
         this.postService.store(this.user);
     }
-
-
     ngOnInit(){
     }
-
 }
