@@ -10,10 +10,12 @@ import 'rxjs/add/operator/catch';
 export class GetService implements OnInit{
 
     constructor(private http: Http, private storage: Storage) {}
-    getProspects(){
-        return this.http.get('../assets/prospects.json')
-        .map( res => {
-                return res.json();
+    getSpecificContact(key, id){
+        let authHeader = new Headers();
+            authHeader.append('Authorization', 'Bearer '+ key);
+            return this.http.get('http://enrollpro.coopertechnology.com/api/contacts/' + id, {headers: authHeader})
+            .map(data=>{
+                return data.json();
             })
     }
     getTasks(){

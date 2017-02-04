@@ -9,14 +9,23 @@ import { ModalController, Platform, NavParams, ViewController} from 'ionic-angul
 
 })
 export class SpecificProspect implements OnInit{
-    constructor(public viewCtrl: ViewController, public platform: Platform, public params: NavParams,){
+    constructor(public viewCtrl: ViewController, public platform: Platform, public params: NavParams, public getService: GetService){
     this.prospect = params.get('prospect');
     }
-
     prospect;
+    contact = {
+        phone: "",
+        pipeline_position: {name: ""},
 
-    log(){
-        console.log(this.prospect);
+    };
+
+    getSpecificContact(){
+        this.getService.getStorage().then(key => {
+      this.getService.getSpecificContact(key, this.prospect.id).subscribe(res => {
+          this.contact = res;
+          console.log(this.contact);
+      });
+    })
     }
 
     dismiss() {
@@ -24,7 +33,7 @@ export class SpecificProspect implements OnInit{
     }
 
     ngOnInit(){
-        this.log();
+        this.getSpecificContact();
     }
     
 }

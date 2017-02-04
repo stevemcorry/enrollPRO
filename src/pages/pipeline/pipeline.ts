@@ -3,6 +3,7 @@ import { NavController, Modal, NavParams, ModalController } from 'ionic-angular'
 import  { GetService } from '../../services/getService';
 import { ViewChild, style, state, animate, transition, trigger } from '@angular/core';
 import { SpecificProspect } from '../../modals/specific-prospect/specific-prospect';
+import { AddContact } from '../../modals/add-contact/add-contact';
 
 @Component({
   selector: 'page-pipeline',
@@ -77,10 +78,15 @@ export class PipelinePage implements OnInit {
     let modal = this.modalCtrl.create(SpecificProspect, {prospect: prospect});
     modal.present();
   }
+  openAddModal() {
+    let modal = this.modalCtrl.create(AddContact);
+    modal.present();
+  }
   getPipelinePositions = () => {
     this.getService.getStorage().then(key => {
       this.getService.getPipelinePositions(key).subscribe(res => {
-        this. pipelineSteps = res
+        this.pipelineSteps = res;
+        console.log('pipeline', this.pipelineSteps);
         this.leadsPipe();
       });
     })
@@ -92,7 +98,7 @@ export class PipelinePage implements OnInit {
           if (this.prospects[0]){
             for(var x = 0; x < this.prospects.length; x++){
               if(this.prospects[x] !== res.contacts[i]){
-                console.log(this.prospects[x], res.contacts[i]);
+                //console.log(this.prospects[x], res.contacts[i]);
                 this.prospects.push(res.contacts[i])
               } 
             }

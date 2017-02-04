@@ -17,6 +17,7 @@ import { FilterPipe } from './filter';
 
 //Modals
 import { SpecificProspect } from '../modals/specific-prospect/specific-prospect';
+import { AddContact } from '../modals/add-contact/add-contact';
 import { LoginModal } from '../modals/login/login';
 import { EmailLoginModal } from '../modals/email-login/emailLogin';
 import { FBLoginModal } from '../modals/fb-login/fbLogin';
@@ -43,7 +44,8 @@ import { GoogleLoginModal } from '../modals/google-login/googleLogin';
     LoginModal,
     EmailLoginModal,
     FBLoginModal,
-    GoogleLoginModal
+    GoogleLoginModal,
+    AddContact
 
   ],
   imports: [
@@ -67,7 +69,8 @@ import { GoogleLoginModal } from '../modals/google-login/googleLogin';
     LoginModal,
     EmailLoginModal,
     FBLoginModal,
-    GoogleLoginModal
+    GoogleLoginModal,
+    AddContact
 
   ],
   providers: [
