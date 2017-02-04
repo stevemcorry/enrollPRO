@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavController, Modal, NavParams, ModalController } from 'ionic-angular';
 import  { GetService } from '../../services/getService';
 import { ViewChild, style, state, animate, transition, trigger } from '@angular/core';
-import { AddProspect } from '../../modals/addProspect/addProspect';
+import { SpecificProspect } from '../../modals/specific-prospect/specific-prospect';
 
 @Component({
   selector: 'page-pipeline',
@@ -24,81 +24,95 @@ export class PipelinePage implements OnInit {
   constructor(public nav: NavController, public modalCtrl: ModalController, private getService: GetService) {}
 
   public dotCheck = false;
-  public pipelineSteps = [
-    "Acquaintance", "Future Prospect", 'Exposed to essential Oils', 'Commited to a Meeting', 'Attended a Meeting','Enrolled', 'Lifestyle & Buisness Overview', '1st Menor Session', 'Launched', 'Recognized & Promoted this week', 'Retained 90 Days'
-  ]
+  public pipelineSteps;
   public title;
   public slides;
-  public slidesFilter;
-  public prospects;
+  public something;
+  public prospects = [];
   public allProspects;
-  dotColor = (prosp) => {
-    if(prosp[0]) {
+  dotColor(prosp){
+    if(prosp) {
       return "lightgreen";
     } else {
       return "grey";
     }
   }
-  leadsPipe = () => {
-    this.slidesFilter = [];
-    this.prospects = this.allProspects.filter((x)=>{
-      return (x.position === 'Acquaintance' || x.position === 'Future Prospect')
-    })
-    this.pipelineSteps.filter((x)=>{
-      if (this.slidesFilter.indexOf(x) === -1) {
-        if (x === 'Acquaintance' || x === 'Future Prospect') {
-          this.slidesFilter.push(x)
+  leadsPipe(){
+    this.slides = [];
+    this.slides = this.pipelineSteps.filter((x)=>{
+        if(this.slides.indexOf(x) === -1) {
+        if (x.name === 'Lead' || x.name === 'Future Prospect') {
+          this.getContactPosition(x.id);
+          return x;
         }
       }
     })
-    this.slides = this.slidesFilter;
     this.title = 'Leads';
   }
   enrollmentsPipe = () => {
-    this.slidesFilter = [];
-    this.prospects = this.allProspects.filter((x)=>{
-      return (x.position === 'Exposed to essential Oils' || x.position === 'Future Prospect' || x.position === 'Commited to a Meeting' || x.position === 'Attended a Meeting' || x.position === 'Enrolled')
-    })
-    this.pipelineSteps.filter((x)=>{
-      if(this.slidesFilter.indexOf(x) === -1){
-        if(x === 'Exposed to essential Oils' || x === 'Future Prospect' || x === 'Commited to a Meeting' || x === 'Attended a Meeting' || x === 'Enrolled') {
-          this.slidesFilter.push(x)
+    this.slides = [];
+    this.slides = this.pipelineSteps.filter((x)=>{
+      if(this.slides.indexOf(x) === -1){
+        if(x.name === 'Exposed to Essential Oils' || x.name === 'Future Prospect' || x.name === 'Commited to Meeting' || x.name === 'Attended Meeting' || x.name === 'Enrolled') {
+          this.getContactPosition(x.id);
+          return x
         }
       }
     })
-    this.slides = this.slidesFilter;
     this.title = 'Enrollments';
   }
   retentionPipe = () => {
-    this.slidesFilter = [];
-    this.prospects = this.allProspects.filter((x)=>{
-      return (x.position === 'Enrolled' || x.position === 'Lifestyle & Buisness Overview' || x.position === '1st Menor Session' || x.position === 'Launched' || x.position === 'Recognized & Promoted this week' || x.position === 'Retained 90 Days')
-    })
-    this.pipelineSteps.filter((x)=>{
-      if(this.slidesFilter.indexOf(x) === -1){
-        if(x === 'Enrolled' || x === 'Lifestyle & Buisness Overview' || x === '1st Menor Session' || x === 'Launched' || x === 'Recognized & Promoted this week' || x === 'Retained 90 Days') {
-          this.slidesFilter.push(x)
+    this.slides = [];
+    this.slides = this.pipelineSteps.filter((x)=>{
+      if(this.slides.indexOf(x) === -1){
+        if(x.name === 'Enrolled' || x.name === 'Lifestyle/Buisness Overview' || x.name === 'Had First Menor Session' || x.name === 'Launched' || x.name === 'Recognized/Promoted' || x.name === 'Retained 90 Days') {
+          this.getContactPosition(x.id);
+          return x
         }
       }
     })
-    this.slides = this.slidesFilter;
     this.title = 'Retention';
+  }
+  openModal(prospect) {
+    let modal = this.modalCtrl.create(SpecificProspect, {prospect: prospect});
+    modal.present();
+  }
+  getPipelinePositions = () => {
+    this.getService.getStorage().then(key => {
+      this.getService.getPipelinePositions(key).subscribe(res => {
+        this. pipelineSteps = res
+        this.leadsPipe();
+      });
+    })
+  }
+  getContactPosition(id){
+    this.getService.getStorage().then(key => {
+      this.getService.getContactPosition(key, id).subscribe(res => {
+        for(var i = 0; i < res.contacts.length; i++){
+          if (this.prospects[0]){
+            for(var x = 0; x < this.prospects.length; x++){
+              if(this.prospects[x] !== res.contacts[i]){
+                console.log(this.prospects[x], res.contacts[i]);
+                this.prospects.push(res.contacts[i])
+              } 
+            }
+          } else {
+            this.prospects.push(res.contacts[i])
+          }
+        }
+      });
+    })
   }
   getProspects = () => {
     this.getService.getStorage().then(key => {
-    this.getService.getContacts(key).subscribe(res => {
-      console.log('pipe',res);
-      // this.allProspects = res.allProspects; 
-      // this.leadsPipe();
-    });
+      this.getService.getContacts(key).subscribe(res => {
+
+      });
     })
-  }
-  openModal(prospect) {
-    let modal = this.modalCtrl.create(AddProspect, {prospect: prospect});
-    modal.present();
   }
 
   ngOnInit() {
+    this.getPipelinePositions();
     this.getProspects();
   }
 

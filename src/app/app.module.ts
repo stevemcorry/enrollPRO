@@ -16,7 +16,7 @@ import { LoadingPage } from '../pages/loading/loading';
 import { FilterPipe } from './filter';
 
 //Modals
-import { AddProspect } from '../modals/addProspect/addProspect';
+import { SpecificProspect } from '../modals/specific-prospect/specific-prospect';
 import { LoginModal } from '../modals/login/login';
 import { EmailLoginModal } from '../modals/email-login/emailLogin';
 import { FBLoginModal } from '../modals/fb-login/fbLogin';
@@ -39,7 +39,7 @@ import { GoogleLoginModal } from '../modals/google-login/googleLogin';
     FilterPipe,
 
     //Modals
-    AddProspect,
+    SpecificProspect,
     LoginModal,
     EmailLoginModal,
     FBLoginModal,
@@ -63,7 +63,7 @@ import { GoogleLoginModal } from '../modals/google-login/googleLogin';
     LoadingPage,
 
     //Modals
-    AddProspect,
+    SpecificProspect,
     LoginModal,
     EmailLoginModal,
     FBLoginModal,

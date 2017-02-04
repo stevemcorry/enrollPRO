@@ -22,11 +22,23 @@ export class GetService implements OnInit{
             return res.json();
         })
     }
-    getPipelinePositions(){
-        return this.http.get('')
+    getContactPosition(key, id){
+        let authHeader = new Headers();
+            authHeader.append('Authorization', 'Bearer '+ key);
+            return this.http.get('http://enrollpro.coopertechnology.com/api/pipelines/' + id, {headers: authHeader})
+            .map(data=>{
+                return data.json();
+            })
+    }
+    getPipelinePositions(key){
+            let authHeader = new Headers();
+            authHeader.append('Authorization', 'Bearer '+ key);
+            return this.http.get('http://enrollpro.coopertechnology.com/api/pipelines', {headers: authHeader})
+            .map(data=>{
+                return data.json();
+            })
     }
     getContacts(key){
-        console.log('service', key);
             let authHeader = new Headers();
             authHeader.append('Authorization', 'Bearer '+ key);
             return this.http.get('http://enrollpro.coopertechnology.com/api/contacts', {headers: authHeader})
@@ -34,7 +46,6 @@ export class GetService implements OnInit{
                 return data.json();
             })
     }
-    
     getStorage(){
             return (this.storage.get('token').then((name) => {
             return name;
