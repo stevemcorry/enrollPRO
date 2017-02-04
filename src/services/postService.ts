@@ -14,13 +14,20 @@ export class PostService{
         let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
         return this.http.post('http://enrollpro.coopertechnology.com/oauth/token', user, headers).map((res: Response) => res.json());
     }
-
-
-
     store(user){
         this.storage.set('token', user.access_token).then(() => {
             console.log('Token has been set', user.access_token);
         });
+    }
+    addContact(key, contact){
+        console.log('go');
+        let authHeader = new Headers();
+            authHeader.append('Authorization', 'Bearer '+ key);
+        return this.http.post('http://enrollpro.coopertechnology.com/api/contacts', contact, { headers: authHeader})
+            .map((res)=>{
+                console.log('good Job', res)
+                res.json();
+            })
     }
 
 }

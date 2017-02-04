@@ -16,4 +16,10 @@
 
 <ion-content>
     <h1>add contact</h1>
+    <input type="text" placeholder="First Name" [(ngModel)]="contact.first_name">
+    <input type="text" placeholder="Last Name" [(ngModel)]="contact.last_name">
+    <input type="text" placeholder="Phone Number" [(ngModel)]="contact.phone">
+    <input type="text" placeholder="Email" [(ngModel)]="contact.email">
+    <button (click)="addContact(contacts)">Add</button>
+    <button (click)="getContacts(contacts)">Get</button>
 </ion-content>
