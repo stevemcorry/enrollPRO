@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { GetService } from '../../services/getService';
 import { PostService } from '../../services/postService';
-import { ModalController, Platform, NavParams, ViewController} from 'ionic-angular';
+import { PipelinePage } from '../../pages/pipeline/pipeline';
+import { ModalController, Platform, NavParams, ViewController, Events} from 'ionic-angular';
 
 @Component({
   selector: 'page-add-contact',
@@ -10,7 +11,7 @@ import { ModalController, Platform, NavParams, ViewController} from 'ionic-angul
 
 })
 export class AddContact implements OnInit{
-    constructor(public viewCtrl: ViewController, public platform: Platform, public params: NavParams, public getService: GetService, public postService: PostService){}
+    constructor(public viewCtrl: ViewController, public platform: Platform, public params: NavParams, public getService: GetService, public postService: PostService, public events: Events){}
     contact = {
         first_name: '',
         last_name: '',
@@ -22,9 +23,17 @@ export class AddContact implements OnInit{
     }
     addContact(contact){
         this.getService.getStorage().then(key => {
-            this.postService.addContact(key, this.contact).subscribe(res => {
-                console.log('contacts', res)
-            })
+            this.postService.addContact(key, this.contact).subscribe(() => {
+                this.getContacts();
+                this.contact = {
+                    first_name: '',
+                    last_name: '',
+                    phone: '',
+                    email: ''
+                };
+                this.events.publish('tabSelected');
+                this.dismiss();
+            });
         })
     }
     getContacts = () => {

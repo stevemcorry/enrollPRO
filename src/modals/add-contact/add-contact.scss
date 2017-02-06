@@ -6,6 +6,9 @@ page-add-contact{
         padding: 10px;
         background: #EAEAEA;
     }
+    .save, .cancel{
+        width: 100px;
+    }
     .title{
         text-align: center;
     }
@@ -14,5 +17,9 @@ page-add-contact{
         flex-direction: column;
         margin: 25px 15px 15px 15px;
         font-size: 25px;
+    }
+    .buttons{
+        display: flex;
+        justify-content: space-around;
     }
 }

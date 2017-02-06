@@ -9,6 +9,13 @@ page-pipeline {
         font-size: 25px;
         color: white;
     }
+    .slides{
+        height: 100%;
+        overflow: auto;
+    }
+    .prospects{
+        margin-top: 40px;
+    }
     .choosePipe{
         position: fixed;
         display: flex;
@@ -24,14 +31,16 @@ page-pipeline {
         display: flex;
         width: 100%;
         position: fixed;
-        top: 1%;
-        height: 35px;
+        top: 0%;
+        height: 40px;
+        align-items: center;
+        background: white;
     }
     .rightArrow{
         font-size: 0px; line-height: 0%; width: 0px;
-        border-top: 18px solid white;
+        border-top: 16px solid white;
         border-left: 50px solid #ACD373;
-        border-bottom: 18px solid white;
+        border-bottom: 15px solid white;
     }
     .line{
         height: 1px;

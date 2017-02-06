@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, Modal, NavParams, ModalController } from 'ionic-angular';
+import { NavController, Modal, NavParams, ModalController, Events } from 'ionic-angular';
 import  { GetService } from '../../services/getService';
 import { ViewChild, style, state, animate, transition, trigger } from '@angular/core';
 import { SpecificProspect } from '../../modals/specific-prospect/specific-prospect';
@@ -22,7 +22,11 @@ import { AddContact } from '../../modals/add-contact/add-contact';
 ]
 })
 export class PipelinePage implements OnInit {
-  constructor(public nav: NavController, public modalCtrl: ModalController, private getService: GetService) {}
+  constructor(public nav: NavController, public modalCtrl: ModalController, private getService: GetService, public events: Events) {
+    this.events.subscribe('tabSelected', () => {
+    this.leadsPipe();
+  })
+  }
 
   public dotCheck = false;
   public pipelineSteps;
@@ -41,6 +45,7 @@ export class PipelinePage implements OnInit {
     }
   }
   leadsPipe(){
+    console.log('ran leads')
     this.slides = [];
     this.slides = this.pipelineSteps.filter((x)=>{
         if(this.slides.indexOf(x) === -1) {
@@ -77,6 +82,7 @@ export class PipelinePage implements OnInit {
     this.title = 'Retention';
   }
   openModal(prospect) {
+    console.log(prospect, 'pros');
     let modal = this.modalCtrl.create(SpecificProspect, {prospect: prospect});
     modal.present();
   }
@@ -107,7 +113,6 @@ export class PipelinePage implements OnInit {
             if(this.pipelineFilter.indexOf(this.obj) === -1){
               this.pipelineFilter.push(this.obj);
               this.prospects.push(this.obj);
-              console.log(this.pipelineFilter, 'filter')
             }
           }
         }
@@ -120,6 +125,7 @@ export class PipelinePage implements OnInit {
       });
     })
   }
+  
 
   ngOnInit() {
     this.getPipelinePositions();

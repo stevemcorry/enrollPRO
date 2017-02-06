@@ -1,15 +1,15 @@
 <ion-header>
   <ion-navbar>
     <ion-buttons left>
-      <button>
-        <div (click)="dismiss()">CANCEL</div>
-      </button>
+      <div (click)="dismiss()">
+        <div>CANCEL</div>
+      </div>
     </ion-buttons>
     <ion-title (click)="dismiss()">new contact<ion-icon name="arrow-down"></ion-icon></ion-title>
     <ion-buttons end>
-      <button>
-        <div (click)="addContact(contacts)">Save</div>
-      </button>
+      <div (click)="addContact(contacts)">
+        <div>Save</div>
+      </div>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
@@ -22,5 +22,8 @@
       <input type="text" placeholder="Email" [(ngModel)]="contact.email">
       <input type="text" placeholder="Custom Group" [(ngModel)]="contact.custom_group">
     </div>
-    <button (click)="getContacts(contacts)">Get</button>
+    <div class="buttons">
+      <button class="cancel" ion-button (click)="dismiss()">CANCEL</button>
+      <button class="save" ion-button (click)="addContact(contacts)">SAVE</button>
+    </div>
 </ion-content>

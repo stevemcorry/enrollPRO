@@ -1,14 +1,14 @@
 <ion-header>
   <ion-navbar>
     <ion-buttons left>
-      <button>
-        <ion-icon name="close" (click)="dismiss()"></ion-icon>
+      <button (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
       </button>
     </ion-buttons>
-    <ion-title>{{prospect.name}}</ion-title>
+    <ion-title>{{prospect.first_name}}</ion-title>
     <ion-buttons end>
-      <button>
-        <ion-icon name="add"></ion-icon>
+      <button (click)="dismiss()">
+        <div>EDIT</div>
       </button>
     </ion-buttons>
   </ion-navbar>
