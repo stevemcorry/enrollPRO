@@ -10,6 +10,7 @@ export class FilterPipe implements PipeTransform {
         if(term === undefined) return values;
 
         return values.filter(value => {
+            console.log('val',value,'term',term);
             return (value.id === term.id)
         })
     }

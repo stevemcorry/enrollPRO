@@ -31,6 +31,8 @@ export class PipelinePage implements OnInit {
   public something;
   public prospects = [];
   public allProspects;
+  public pipelineFilter = [];
+  public obj;
   dotColor(prosp){
     if(prosp) {
       return "lightgreen";
@@ -43,7 +45,7 @@ export class PipelinePage implements OnInit {
     this.slides = this.pipelineSteps.filter((x)=>{
         if(this.slides.indexOf(x) === -1) {
         if (x.name === 'Lead' || x.name === 'Future Prospect') {
-          this.getContactPosition(x.id);
+          this.getContactPosition();
           return x;
         }
       }
@@ -55,7 +57,7 @@ export class PipelinePage implements OnInit {
     this.slides = this.pipelineSteps.filter((x)=>{
       if(this.slides.indexOf(x) === -1){
         if(x.name === 'Exposed to Essential Oils' || x.name === 'Future Prospect' || x.name === 'Commited to Meeting' || x.name === 'Attended Meeting' || x.name === 'Enrolled') {
-          this.getContactPosition(x.id);
+          this.getContactPosition();
           return x
         }
       }
@@ -67,7 +69,7 @@ export class PipelinePage implements OnInit {
     this.slides = this.pipelineSteps.filter((x)=>{
       if(this.slides.indexOf(x) === -1){
         if(x.name === 'Enrolled' || x.name === 'Lifestyle/Buisness Overview' || x.name === 'Had First Menor Session' || x.name === 'Launched' || x.name === 'Recognized/Promoted' || x.name === 'Retained 90 Days') {
-          this.getContactPosition(x.id);
+          this.getContactPosition();
           return x
         }
       }
@@ -90,19 +92,23 @@ export class PipelinePage implements OnInit {
       });
     })
   }
-  getContactPosition(id){
+  getContactPosition(){
     this.getService.getStorage().then(key => {
-      this.getService.getContactPosition(key, id).subscribe(res => {
-        for(var i = 0; i < res.contacts.length; i++){
-          if (this.prospects[0]){
-            for(var x = 0; x < this.prospects.length; x++){
-              if(this.prospects[x] !== res.contacts[i]){
-                //console.log(this.prospects[x], res.contacts[i]);
-                this.prospects.push(res.contacts[i])
-              } 
+      this.getService.getContactPosition(key).subscribe(res => {
+      this.pipelineFilter = [];
+      this.prospects = [];
+        for(var i = 0; i < res.length; i++){
+          for(var x = 0 ; x < res[i].contacts.length; x++){
+            let id = res[i].id;
+            this.obj = {
+              id: id,
+              contact: res[i].contacts[x]
             }
-          } else {
-            this.prospects.push(res.contacts[i])
+            if(this.pipelineFilter.indexOf(this.obj) === -1){
+              this.pipelineFilter.push(this.obj);
+              this.prospects.push(this.obj);
+              console.log(this.pipelineFilter, 'filter')
+            }
           }
         }
       });

@@ -2,24 +2,25 @@
   <ion-navbar>
     <ion-buttons left>
       <button>
-        <ion-icon name="menu"></ion-icon>
+        <div (click)="dismiss()">CANCEL</div>
       </button>
     </ion-buttons>
-    <ion-title (click)="dismiss()">Add Contact <ion-icon name="arrow-down"></ion-icon></ion-title>
+    <ion-title (click)="dismiss()">new contact<ion-icon name="arrow-down"></ion-icon></ion-title>
     <ion-buttons end>
       <button>
-        <ion-icon name="add"></ion-icon>
+        <div (click)="addContact(contacts)">Save</div>
       </button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-    <h1>add contact</h1>
-    <input type="text" placeholder="First Name" [(ngModel)]="contact.first_name">
-    <input type="text" placeholder="Last Name" [(ngModel)]="contact.last_name">
-    <input type="text" placeholder="Phone Number" [(ngModel)]="contact.phone">
-    <input type="text" placeholder="Email" [(ngModel)]="contact.email">
-    <button (click)="addContact(contacts)">Add</button>
+    <div class="inputs">
+      <input type="text" placeholder="First Name" [(ngModel)]="contact.first_name">
+      <input type="text" placeholder="Last Name" [(ngModel)]="contact.last_name">
+      <input type="text" placeholder="Phone Number" [(ngModel)]="contact.phone">
+      <input type="text" placeholder="Email" [(ngModel)]="contact.email">
+      <input type="text" placeholder="Custom Group" [(ngModel)]="contact.custom_group">
+    </div>
     <button (click)="getContacts(contacts)">Get</button>
 </ion-content>

@@ -24,10 +24,10 @@ export class GetService implements OnInit{
             return res.json();
         })
     }
-    getContactPosition(key, id){
+    getContactPosition(key){
         let authHeader = new Headers();
             authHeader.append('Authorization', 'Bearer '+ key);
-            return this.http.get('http://enrollpro.coopertechnology.com/api/pipelines/' + id, {headers: authHeader})
+            return this.http.get('http://enrollpro.coopertechnology.com/api/pipelines', {headers: authHeader})
             .map(data=>{
                 return data.json();
             })

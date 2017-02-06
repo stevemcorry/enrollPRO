@@ -32,8 +32,8 @@
         <div class="position">{{slide.name}}</div>
         <div class="rightArrow"></div>
       </div>
-      <div *ngFor="let prospect of prospects" (click)="openModal(prospect)">
-      <div class="prospect">{{prospect.first_name}} <div class="smallCircle" [style.background-color]="dotColor(prospect.task)"></div></div>
+      <div *ngFor="let prospect of prospects | filter: slide" (click)="openModal(prospect)">
+      <div class="prospect">{{prospect.contact.first_name}} <div class="smallCircle" [style.background-color]="dotColor(prospect.task)"></div></div>
       <div class="line"></div>
       </div>
     </ion-slide>
