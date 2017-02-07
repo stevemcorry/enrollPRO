@@ -23,12 +23,14 @@ import { AddContact } from '../../modals/add-contact/add-contact';
 })
 export class PipelinePage implements OnInit {
   constructor(public nav: NavController, public modalCtrl: ModalController, private getService: GetService, public events: Events) {
-    this.events.subscribe('tabSelected', () => {
-    this.leadsPipe();
-  })
+    this.events.subscribe('contactAdded', () => {
+      this.leadsPipe();
+    })
+    this.events.subscribe('pipeAdvance', () => {
+      this.leadsPipe();
+    })
   }
 
-  public dotCheck = false;
   public pipelineSteps;
   public title;
   public slides;
@@ -38,14 +40,15 @@ export class PipelinePage implements OnInit {
   public pipelineFilter = [];
   public obj;
   dotColor(prosp){
-    if(prosp) {
+    if(prosp == 0) {
       return "lightgreen";
-    } else {
+    } else if(prosp == 1) {
       return "grey";
+    } else {
+      return "red"
     }
   }
   leadsPipe(){
-    console.log('ran leads')
     this.slides = [];
     this.slides = this.pipelineSteps.filter((x)=>{
         if(this.slides.indexOf(x) === -1) {

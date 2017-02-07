@@ -14,7 +14,9 @@ page-pipeline {
         overflow: auto;
     }
     .prospects{
-        margin-top: 130px;
+        position: absolute;
+        top: 6%;
+        width: 100%;
     }
     .choosePipe{
         position: fixed;
@@ -35,6 +37,7 @@ page-pipeline {
         height: 40px;
         align-items: center;
         background: white;
+        z-index: 2;
     }
     .rightArrow{
         font-size: 0px; line-height: 0%; width: 0px;

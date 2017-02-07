@@ -31,7 +31,7 @@ export class AddContact implements OnInit{
                     phone: '',
                     email: ''
                 };
-                this.events.publish('tabSelected');
+                this.events.publish('contactAdded');
                 this.dismiss();
             });
         })

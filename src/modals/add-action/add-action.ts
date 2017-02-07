@@ -39,7 +39,6 @@ export class AddAction implements OnInit{
     }
 
     ngOnInit(){
-    console.log(this.contact);
     }
     
 }

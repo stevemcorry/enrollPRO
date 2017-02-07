@@ -34,12 +34,18 @@
       </div>
     </div>
   </div>
-  <div class="position">
-    <div>
-      <strong>PIPELINE POSITION:</strong>
+  <div class="swiper" (swipe)="swipeEvent($event)">
+    <div [style.width]="widthCheck()" class="position">
+      <div>
+        <strong>PIPELINE POSITION:</strong>
+      </div>
+      <div>
+        {{contact.pipeline_position.name}}
+      </div>
     </div>
-    <div>
-      {{contact.pipeline_position.name}}
+    <div class="swipeBoxes" [style.display]="displayCheck()">
+      <div class="swipeBox leftSwipe" (click)="swipeEvent($event)"></div>
+      <div class="swipeBox rightSwipe" (click)="advancePipe(contact)"></div>
     </div>
   </div>
   <div class="box">
