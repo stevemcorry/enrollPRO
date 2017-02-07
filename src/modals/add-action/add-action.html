@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <button (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>ADD ACTION</ion-title>
+    <ion-buttons end>
+      <button (click)="dismiss()">
+        <div>EDIT</div>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="addProspect">
+    <input type="text" [(ngModel)]="newAction.notes"placeholder="Notes">
+    <ion-item>
+        <ion-label>DUE DATE:</ion-label>
+        <ion-datetime displayFormat="MM/DD/YYYY" pickerFormat="MMM DD YYYY" [(ngModel)]="newAction.due_date"></ion-datetime>
+    </ion-item>
+    <div>
+        <div (click)="newAction.action_type = 1">Email</div>
+        <div (click)="newAction.action_type = 2">Text</div>
+        <div (click)="newAction.action_type = 3">Call</div>
+    </div>
+    {{newAction.action_type}}<br>
+    {{newAction.contact}}<br>
+    {{newAction.due_date}}<br>
+    {{newAction.notes}}<br>
+    <button ion-button (click)="addAction()">ADD ACTION</button>
+</ion-content>

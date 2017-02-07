@@ -22,6 +22,7 @@ import { LoginModal } from '../modals/login/login';
 import { EmailLoginModal } from '../modals/email-login/emailLogin';
 import { FBLoginModal } from '../modals/fb-login/fbLogin';
 import { GoogleLoginModal } from '../modals/google-login/googleLogin';
+import { AddAction } from '../modals/add-action/add-action';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { GoogleLoginModal } from '../modals/google-login/googleLogin';
     EmailLoginModal,
     FBLoginModal,
     GoogleLoginModal,
-    AddContact
+    AddContact,
+    AddAction
 
   ],
   imports: [
@@ -70,7 +72,8 @@ import { GoogleLoginModal } from '../modals/google-login/googleLogin';
     EmailLoginModal,
     FBLoginModal,
     GoogleLoginModal,
-    AddContact
+    AddContact,
+    AddAction
 
   ],
   providers: [

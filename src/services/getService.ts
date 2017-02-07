@@ -48,6 +48,14 @@ export class GetService implements OnInit{
                 return data.json();
             })
     }
+    getSpecificActions(key, id){
+        let authHeader = new Headers();
+            authHeader.append('Authorization', 'Bearer '+ key);
+            return this.http.get('http://enrollpro.coopertechnology.com/api/actions/' + id, {headers: authHeader})
+            .map(data=>{
+                return data.json();
+            })
+    }
     getStorage(){
             return (this.storage.get('token').then((name) => {
             return name;

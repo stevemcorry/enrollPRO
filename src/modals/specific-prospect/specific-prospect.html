@@ -15,11 +15,11 @@
 </ion-header>
 
 <ion-content class="addProspect">
-  <h1 class="contactHeader">Contact Info</h1>
+  <div class="contactHeader"><strong>CONTACT INFO</strong></div>
   <div class="topSpecific">
     <div class="top info">
       <div>
-        info:
+        <strong>info:</strong>
       </div>
       <div>
         {{contact.phone}}
@@ -27,17 +27,51 @@
     </div>
     <div class="top group">
       <div>
-        Group:
+        <strong>Group:</strong>
       </div>
       <div>
         {{contact.pipeline_position.name}}
       </div>
     </div>
   </div>
-  <div>
-    Pipeline Position:
+  <div class="position">
+    <div>
+      <strong>PIPELINE POSITION:</strong>
+    </div>
+    <div>
+      {{contact.pipeline_position.name}}
+    </div>
   </div>
-  <div>
-    {{contact.pipeline_position.name}}
+  <div class="box">
+    <div class="topBox">
+      <div class="smallBox left">ACTIONS</div>
+      <div class="smallBox right">HISTORY</div>
+    </div>
+    <div class="bottomBox">
+      <div *ngFor="let action of actions" class="action">
+        <ion-icon name="{{action.action_type.name}}" class="actionIcon"></ion-icon>
+        <div class="spacing">
+          <div>
+            <div class="taskProspect">
+              {{action.action_type.name}} {{prospect.first_name}}: 
+                <div class="dueDate">
+                  {{action.due_date}}
+                </div>
+              </div>
+            <div class="taskNotes">{{action.notes}}</div>
+          </div>
+          <div class="statusCircle"></div>
+        </div>
+      </div>
+        <!--{{action.action_type.name}}<br>
+        {{action.action_type.id}}<br>
+        {{action.complete}}<br>
+        {{action.created_at}}<br>
+        {{action.due_date}}<br>
+        {{action.id}}<br>
+        {{action.notes}}<br>
+        {{action.updated_at}}<br>-->
+      <button (click)="addAction()">ADD ACTION</button>
+    </div>
   </div>
 </ion-content>

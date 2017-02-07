@@ -24,5 +24,11 @@ export class PostService{
             authHeader.append('Authorization', 'Bearer '+ key);
         return this.http.post('http://enrollpro.coopertechnology.com/api/contacts', contact, { headers: authHeader});
     }
+    addAction(key, action){
+        console.log('action');
+        let authHeader = new Headers();
+            authHeader.append('Authorization', 'Bearer '+ key);
+        return this.http.post('http://enrollpro.coopertechnology.com/api/actions', JSON.stringify(action), { headers: authHeader});
+    }
 
 }
