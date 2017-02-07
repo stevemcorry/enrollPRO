@@ -5,6 +5,7 @@ import { GoalsPage } from '../goals/goals';
 import { PipelinePage } from '../pipeline/pipeline';
 import { MarketingPage } from '../marketing/marketing';
 import { MorePage } from '../more/more';
+//import { SpecificProspect } from '../../modals/specific-prospect/specific-prospect'
 
 @Component({
   templateUrl: 'tabs.html'
@@ -17,6 +18,7 @@ export class TabsPage {
   tab3Root: any = PipelinePage;
   tab4Root: any = MarketingPage;
   tab5Root: any = MorePage;
+  //tab6Root: any = SpecificProspect;
 
   constructor() {
 

@@ -8,8 +8,8 @@ import { NavController } from 'ionic-angular';
 })
 export class MarketingPage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController) {}
 
-  }
+  markets= ["Ice Breakers","Meeting Invites","Meeting Reminders","Lifestyle Overview","Recognition","Custom"]
 
 }

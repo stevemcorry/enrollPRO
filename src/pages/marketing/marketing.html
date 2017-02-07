@@ -2,18 +2,26 @@
   <ion-navbar>
     <ion-buttons left>
       <button>
-        <ion-icon name="menu"></ion-icon>
+        <ion-icon name="chatbubbles"></ion-icon>
       </button>
     </ion-buttons>
     <ion-title>Marketing</ion-title>
     <ion-buttons end>
       <button>
-        <ion-icon name="help"></ion-icon>
+        <ion-icon name="search"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-    
+  <div class="marketOptions" *ngFor="let market of markets">
+    <div class="box">
+      <div class="marketTitle">
+        <div class="vertical-text">title</div>
+      </div>
+      <div class="marketBody"></div>
+    </div>
+    <div class="description">{{market}}</div>
+  </div>
 </ion-content>

@@ -1,3 +1,37 @@
 page-marketing{
-    
+    .scroll-content{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 85px !important;
+        margin-bottom: 60px !important;
+    }
+    .marketOptions{
+        height: 26%;
+        width: 45%;
+    }
+    .box{
+        height: 100%;
+        background: white;
+        margin: 5px;
+        border-radius: 10px;
+        display: flex;
+        box-shadow: 5px 5px 5px #888888;
+    }
+    .marketTitle{
+        background: lightgrey;
+        height: 100%;
+        width: 25px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+    .vertical-text {
+	    transform: rotate(-90deg);
+	    transform-origin: 55px 51px;
+        width: 114px;
+    }
+    .description{
+        text-align: center;
+        margin: 0 3px 0 3px;
+    }
 }
