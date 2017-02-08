@@ -22,7 +22,7 @@
         <div class="taskProspect">{{action.action_type.name}} {{action.contact.first_name}}</div>
         <div class="taskNotes">{{action.due_date}}</div>
       </div>
-      <div class="statusCircle" [style.background-color]="statusCheck(action.complete)" (click)="getActions()"></div>
+      <div class="statusCircle" [style.background-color]="statusCheck(action.complete)" (click)="completeAction(action.id)"></div>
     </div>
   </div>
   <ion-fab bottom right>
