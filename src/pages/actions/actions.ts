@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { GetService } from '../../services/getService';
-import { NavController } from 'ionic-angular';
+import { NavController, ModalController } from 'ionic-angular';
 import { PutService } from '../../services/putService';
+import { AddContact } from '../../modals/add-contact/add-contact';
 
 @Component({
   selector: 'page-actions',
@@ -10,7 +11,7 @@ import { PutService } from '../../services/putService';
 
 })
 export class ActionsPage implements OnInit{
-  constructor(public navCtrl: NavController, private getService: GetService, public putService: PutService) {}
+  constructor(public navCtrl: NavController, private getService: GetService, public putService: PutService, public modalCtrl: ModalController) {}
 
   public actions;
   public action = {
@@ -40,6 +41,10 @@ export class ActionsPage implements OnInit{
         this.getActions();
       })
     })
+  }
+  addContact(){
+    let modal = this.modalCtrl.create(AddContact);
+    modal.present();
   }
   statusCheck(stat){
     if(stat){
