@@ -16,12 +16,12 @@
 
 <ion-content>
   <div class="marketOptions" *ngFor="let market of markets">
-    <div class="box">
+    <div class="box" (click)="openModal(market)">
       <div class="marketTitle">
         <div class="vertical-text">title</div>
       </div>
       <div class="marketBody"></div>
     </div>
-    <div class="description">{{market}}</div>
+    <div class="description">{{market.name}}</div>
   </div>
 </ion-content>

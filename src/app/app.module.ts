@@ -23,6 +23,11 @@ import { EmailLoginModal } from '../modals/email-login/emailLogin';
 import { FBLoginModal } from '../modals/fb-login/fbLogin';
 import { GoogleLoginModal } from '../modals/google-login/googleLogin';
 import { AddAction } from '../modals/add-action/add-action';
+import { MarketOptions } from '../modals/market-options/market-options';
+import { MarketEmail } from '../modals/market-email/market-email';
+import { MarketSocial } from '../modals/market-social/market-social';
+import { MarketText } from '../modals/market-text/market-text';
+import { MarketDrip } from '../modals/market-drip/market-drip';
 
 @NgModule({
   declarations: [
@@ -47,7 +52,13 @@ import { AddAction } from '../modals/add-action/add-action';
     FBLoginModal,
     GoogleLoginModal,
     AddContact,
-    AddAction
+    AddAction,
+    MarketOptions,
+    MarketEmail,
+    MarketSocial,
+    MarketText,
+    MarketDrip,
+
 
   ],
   imports: [
@@ -73,7 +84,13 @@ import { AddAction } from '../modals/add-action/add-action';
     FBLoginModal,
     GoogleLoginModal,
     AddContact,
-    AddAction
+    AddAction,
+    MarketOptions,
+    MarketEmail,
+    MarketSocial,
+    MarketText,
+    MarketDrip,
+
 
   ],
   providers: [
