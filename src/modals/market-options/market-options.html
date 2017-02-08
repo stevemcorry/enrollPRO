@@ -2,7 +2,7 @@
   <ion-navbar>
     <ion-buttons left>
       <button (click)="dismiss()">
-        <ion-icon name="close"></ion-icon>
+        <ion-icon name="arrow-back"></ion-icon>
       </button>
     </ion-buttons>
     <ion-title>{{market.name}}</ion-title>
@@ -16,12 +16,12 @@
 
 <ion-content>
   <div class="method" *ngFor="let option of market.options">
-      <div class="box" (click)="openModal()">
-          <div></div>
+      <div class="box" (click)="openModal(option)">
+          <div class="boxTitle"><div class="vertical-text">{{option.method}}</div></div>
           <div></div>
       </div>
       <div>
-          {{option}}
+          {{option.title}}
       </div>
   </div>
 </ion-content>

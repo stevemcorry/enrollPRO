@@ -5,7 +5,7 @@
         <ion-icon name="close"></ion-icon>
       </button>
     </ion-buttons>
-    <ion-title>market text</ion-title>
+    <ion-title>{{option.title}}</ion-title>
     <ion-buttons end>
       <button>
         <ion-icon name="search"></ion-icon>
@@ -15,5 +15,5 @@
 </ion-header>
 
 <ion-content>
-  market-text
+  <input type="text" [(ngModel)]="option.body">
 </ion-content>

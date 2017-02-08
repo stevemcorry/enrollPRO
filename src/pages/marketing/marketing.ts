@@ -14,37 +14,121 @@ export class MarketingPage {
     {
       name: "Ice Breakers",
       options: [
-        1,2,3
+        {
+          method: "drip",
+          title: "Natural Solutions",
+          body: "ALL NATURAL"
+        },
+        {
+          method: "email",
+          title: "Frankincense Pip",
+          body: "This is good stuff"
+        },
+        {
+          method: "text",
+          title: "Daily Routine",
+          body: "scrubadub dub"
+        }
       ]
     },
     {
       name: "Meeting Invites",
       options: [
-        1,2,3
+        {
+          method: "drip",
+          title: "Natural Solutions",
+          body: "ALL NATURAL"
+        },
+        {
+          method: "email",
+          title: "Frankincense Pip",
+          body: "This is good stuff"
+        },
+        {
+          method: "text",
+          title: "Daily Routine",
+          body: "scrubadub dub"
+        }
       ]
     },
     {
       name: "Meeting Reminders",
       options: [
-        1,2,3
+        {
+          method: "drip",
+          title: "Natural Solutions",
+          body: "ALL NATURAL"
+        },
+        {
+          method: "email",
+          title: "Frankincense Pip",
+          body: "This is good stuff"
+        },
+        {
+          method: "text",
+          title: "Daily Routine",
+          body: "scrubadub dub"
+        }
       ]
     },
     {
       name: "Lifestyle Overview",
       options: [
-        1,2,3
+        {
+          method: "drip",
+          title: "Natural Solutions",
+          body: "ALL NATURAL"
+        },
+        {
+          method: "email",
+          title: "Frankincense Pip",
+          body: "This is good stuff"
+        },
+        {
+          method: "text",
+          title: "Daily Routine",
+          body: "scrubadub dub"
+        }
       ]
     },
     {
       name: "Recognition",
       options: [
-        1,2,3
+        {
+          method: "drip",
+          title: "Natural Solutions",
+          body: "ALL NATURAL"
+        },
+        {
+          method: "email",
+          title: "Frankincense Pip",
+          body: "This is good stuff"
+        },
+        {
+          method: "text",
+          title: "Daily Routine",
+          body: "scrubadub dub"
+        }
       ]
     },
     {
       name: "Custom",
       options: [
-        1,2,3
+        {
+          method: "drip",
+          title: "Natural Solutions",
+          body: "ALL NATURAL"
+        },
+        {
+          method: "email",
+          title: "Frankincense Pip",
+          body: "This is good stuff"
+        },
+        {
+          method: "text",
+          title: "Daily Routine",
+          body: "scrubadub dub"
+        }
       ]
     }
   ]
