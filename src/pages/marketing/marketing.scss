@@ -3,15 +3,15 @@ page-marketing{
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        margin-top: 85px !important;
+        margin-top: 70px !important;
         margin-bottom: 60px !important;
     }
     .marketOptions{
         height: 26%;
-        width: 45%;
+        width: 50%;
     }
     .box{
-        height: 100%;
+        height: 99%;
         background: white;
         margin: 5px;
         border-radius: 10px;
@@ -21,14 +21,15 @@ page-marketing{
     .marketTitle{
         background: lightgrey;
         height: 100%;
-        width: 25px;
+        width: 35px;
         border-top-left-radius: 10px;
         border-bottom-left-radius: 10px;
     }
     .vertical-text {
 	    transform: rotate(-90deg);
-	    transform-origin: 55px 51px;
+	    transform-origin: 55px 56px;
         width: 114px;
+        font-size: 25px;
     }
     .description{
         text-align: center;

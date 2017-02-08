@@ -43,9 +43,10 @@
         {{contact.pipeline_position.name}}
       </div>
     </div>
+    <div style="background: lightgreen">< swipe <</div>
     <div class="swipeBoxes" [style.display]="displayCheck()">
-      <div class="swipeBox leftSwipe" (click)="swipeEvent($event)"></div>
-      <div class="swipeBox rightSwipe" (click)="advancePipe(contact)"></div>
+      <div class="swipeBox leftSwipe" (click)="swipeEvent($event)">Cancel</div>
+      <div class="swipeBox rightSwipe" (click)="advancePipe(contact)">Next</div>
     </div>
   </div>
   <div class="box">
