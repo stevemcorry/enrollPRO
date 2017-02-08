@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, Modal, NavParams, ModalController, Events } from 'ionic-angular';
+import { NavController, Slides, Modal, NavParams, ModalController, Events } from 'ionic-angular';
 import  { GetService } from '../../services/getService';
 import { ViewChild, style, state, animate, transition, trigger } from '@angular/core';
 import { SpecificProspect } from '../../modals/specific-prospect/specific-prospect';
@@ -22,6 +22,13 @@ import { AddContact } from '../../modals/add-contact/add-contact';
 ]
 })
 export class PipelinePage implements OnInit {
+
+  @ViewChild('pipeSlider') pipeSlider: Slides;
+
+  goToSlide() {
+    this.pipeSlider.slideTo(0, 500);
+  }
+
   constructor(public nav: NavController, public modalCtrl: ModalController, private getService: GetService, public events: Events) {
     this.events.subscribe('contactAdded', () => {
       this.leadsPipe();
@@ -54,6 +61,7 @@ export class PipelinePage implements OnInit {
         if(this.slides.indexOf(x) === -1) {
         if (x.name === 'Lead' || x.name === 'Future Prospect') {
           this.getContactPosition();
+          this.goToSlide();
           return x;
         }
       }
@@ -64,8 +72,9 @@ export class PipelinePage implements OnInit {
     this.slides = [];
     this.slides = this.pipelineSteps.filter((x)=>{
       if(this.slides.indexOf(x) === -1){
-        if(x.name === 'Exposed to Essential Oils' || x.name === 'Future Prospect' || x.name === 'Commited to Meeting' || x.name === 'Attended Meeting' || x.name === 'Enrolled') {
+        if(x.name === 'Exposed to Essential Oils' || x.name === 'Future Prospect' || x.name === 'Committed to Meeting' || x.name === 'Attended Meeting' || x.name === 'Enrolled') {
           this.getContactPosition();
+          this.goToSlide();
           return x
         }
       }
@@ -95,6 +104,7 @@ export class PipelinePage implements OnInit {
   getPipelinePositions = () => {
     this.getService.getStorage().then(key => {
       this.getService.getPipelinePositions(key).subscribe(res => {
+        console.log(res,'positions')
         this.pipelineSteps = res;
         this.leadsPipe();
       });
@@ -115,6 +125,7 @@ export class PipelinePage implements OnInit {
             if(this.pipelineFilter.indexOf(this.obj) === -1){
               this.pipelineFilter.push(this.obj);
               this.prospects.push(this.obj);
+              console.log(this.prospects, 'prospects');
             }
           }
         }

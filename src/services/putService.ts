@@ -19,9 +19,9 @@ export class PutService{
         .map(res => console.log(res));
     }
     advancePipe(key, id, pipe){
-        console.log('Advancing...', id, pipe)
         let authHeader = new Headers();
             authHeader.append('Authorization', 'Bearer '+ key);
+            authHeader.append('Content-Type','application/json')
         return this.http.put('http://enrollpro.coopertechnology.com/api/contacts/' + id, JSON.stringify(pipe), { headers: authHeader}).
         map(res => {
             console.log(res);
