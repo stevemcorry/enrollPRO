@@ -3,12 +3,22 @@
     background-color: #5F4275;
 }
 .toolbar-title{
+    font-family: 'Kaushan Script', cursive;
+    letter-spacing: 1px;
+    font-size: 30px;
     color: white;
+}
+.toolbar-ios ion-title{
+    padding: 0;
 }
 .scroll-content {
    overflow: hidden;
 }
-
+.icons{
+    padding: 0px 10px 0 10px;
+    font-size: 30px;
+    color: white;
+}
 .loginModal {
     position: fixed;
     display: flex;

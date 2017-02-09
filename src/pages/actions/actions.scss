@@ -1,8 +1,4 @@
 page-actions {
-    .icons{
-        font-size: 30px;
-        color: white;
-    }
     .scroll-content{
         overflow-y: scroll;
     }
@@ -17,6 +13,8 @@ page-actions {
         margin: 10px 0 10px 0;
     }
     .taskProspect{
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 700;
         font-size: 20px;
     }
     .taskNotes{
