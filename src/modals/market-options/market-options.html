@@ -1,12 +1,13 @@
 <ion-header>
   <ion-navbar>
     <ion-buttons left>
+      <div (click)="dismiss()">
+        <ion-icon name="arrow-back" class="icons"></ion-icon>
+      </div>
     </ion-buttons>
     <ion-title>{{market.name}}</ion-title>
     <ion-buttons end>
-      <button>
-        <ion-icon name="search"></ion-icon>
-      </button>
+        <ion-icon name="search" class="icons"></ion-icon>
     </ion-buttons>
   </ion-navbar>
 </ion-header>

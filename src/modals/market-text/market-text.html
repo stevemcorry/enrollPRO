@@ -1,19 +1,26 @@
 <ion-header>
   <ion-navbar>
     <ion-buttons left>
-      <button (click)="dismiss()">
-        <ion-icon name="close"></ion-icon>
-      </button>
+      <div (click)="dismiss()">
+        <ion-icon name="arrow-back" class="icons"></ion-icon>
+      </div>
     </ion-buttons>
     <ion-title>{{option.title}}</ion-title>
     <ion-buttons end>
-      <button>
-        <ion-icon name="search"></ion-icon>
-      </button>
+        <div class="next">NEXT</div>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <input type="text" [(ngModel)]="option.body">
+  <div class="contentChoose">
+    <button [ngClass]="{fun: fun}" (click)="contentChoose('fun'); fun=true; direct=false;">Fun</button>
+    <button [ngClass]="{direct: direct}" (click)="contentChoose('direct'); direct=true; fun=false">Direct</button>
+  </div>
+  <textarea [(ngModel)]="content" (keypress)="setContent(content)"></textarea>
+  <div class="sendOptions">
+    <button [ngClass]="{mass: mass}" (click)="mass=!mass; single=false;">Mass</button>
+    <button [ngClass]="{single: single}" (click)="single=!single; mass=false">Single</button>
+  </div>
+  <textarea [(ngModel)]="content" class="rules"></textarea>
 </ion-content>

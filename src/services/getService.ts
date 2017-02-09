@@ -16,8 +16,8 @@ export class GetService implements OnInit{
                 return data.json();
             })
     }
-    getTasks(){
-        return this.http.get('/assets/tasks.json')
+    getMarkets(){
+        return this.http.get('/assets/market.json')
         .map( res => {
             return res.json();
         })

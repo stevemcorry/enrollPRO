@@ -6,7 +6,7 @@ import { MarketEmail } from '../market-email/market-email';
 import { MarketSocial } from '../market-social/market-social';
 import { MarketText } from '../market-text/market-text';
 import { MarketDrip } from '../market-drip/market-drip';
-import { ModalController, Platform, NavParams, ViewController, Events} from 'ionic-angular';
+import { ModalController, Platform, NavParams, NavController, ViewController, Events} from 'ionic-angular';
 
 @Component({
   selector: 'page-market-options',
@@ -15,7 +15,7 @@ import { ModalController, Platform, NavParams, ViewController, Events} from 'ion
 
 })
 export class MarketOptions implements OnInit{
-    constructor(public viewCtrl: ViewController, public platform: Platform, public params: NavParams, public getService: GetService, public postService: PostService, public events: Events, public modalCtrl: ModalController){
+    constructor(public viewCtrl: ViewController, public platform: Platform, public params: NavParams, public getService: GetService, public postService: PostService, public events: Events, public modalCtrl: ModalController, public navCtrl: NavController){
         this.market = params.get('market');
     }
     market = {
@@ -24,16 +24,12 @@ export class MarketOptions implements OnInit{
     }
     openModal(option){
         let method = option.method
-        console.log(method)
         if(method == 'email'){
-            let email = this.modalCtrl.create(MarketEmail, {option: option})
-            email.present();
+            this.navCtrl.push(MarketEmail, {option: option})
         }else if(method == 'text'){
-            let text = this.modalCtrl.create(MarketText, {option: option})
-            text.present();
+            this.navCtrl.push(MarketText, {option: option})
         } else if(method == 'drip'){
-            let drip = this.modalCtrl.create(MarketDrip, {option: option})
-            drip.present();
+            this.navCtrl.push(MarketDrip, {option: option})
         } else {
             alert('Please try again')
         }

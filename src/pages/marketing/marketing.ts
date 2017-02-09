@@ -1,139 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MarketOptions } from '../../modals/market-options/market-options';
+import { GetService } from '../../services/getService';
 import { NavController, ModalController } from 'ionic-angular';
 
 @Component({
   selector: 'page-marketing',
-  templateUrl: 'marketing.html'
+  templateUrl: 'marketing.html',
+  providers: [ GetService ]
 })
-export class MarketingPage {
+export class MarketingPage implements OnInit{
 
-  constructor(public navCtrl: NavController, public modalCtrl: ModalController) {}
-
-  markets= [
-    {
-      name: "Ice Breakers",
-      options: [
-        {
-          method: "drip",
-          title: "Natural Solutions",
-          body: "ALL NATURAL"
-        },
-        {
-          method: "email",
-          title: "Frankincense Pip",
-          body: "This is good stuff"
-        },
-        {
-          method: "text",
-          title: "Daily Routine",
-          body: "scrubadub dub"
-        }
-      ]
-    },
-    {
-      name: "Meeting Invites",
-      options: [
-        {
-          method: "drip",
-          title: "Natural Solutions",
-          body: "ALL NATURAL"
-        },
-        {
-          method: "email",
-          title: "Frankincense Pip",
-          body: "This is good stuff"
-        },
-        {
-          method: "text",
-          title: "Daily Routine",
-          body: "scrubadub dub"
-        }
-      ]
-    },
-    {
-      name: "Meeting Reminders",
-      options: [
-        {
-          method: "drip",
-          title: "Natural Solutions",
-          body: "ALL NATURAL"
-        },
-        {
-          method: "email",
-          title: "Frankincense Pip",
-          body: "This is good stuff"
-        },
-        {
-          method: "text",
-          title: "Daily Routine",
-          body: "scrubadub dub"
-        }
-      ]
-    },
-    {
-      name: "Lifestyle Overview",
-      options: [
-        {
-          method: "drip",
-          title: "Natural Solutions",
-          body: "ALL NATURAL"
-        },
-        {
-          method: "email",
-          title: "Frankincense Pip",
-          body: "This is good stuff"
-        },
-        {
-          method: "text",
-          title: "Daily Routine",
-          body: "scrubadub dub"
-        }
-      ]
-    },
-    {
-      name: "Recognition",
-      options: [
-        {
-          method: "drip",
-          title: "Natural Solutions",
-          body: "ALL NATURAL"
-        },
-        {
-          method: "email",
-          title: "Frankincense Pip",
-          body: "This is good stuff"
-        },
-        {
-          method: "text",
-          title: "Daily Routine",
-          body: "scrubadub dub"
-        }
-      ]
-    },
-    {
-      name: "Custom",
-      options: [
-        {
-          method: "drip",
-          title: "Natural Solutions",
-          body: "ALL NATURAL"
-        },
-        {
-          method: "email",
-          title: "Frankincense Pip",
-          body: "This is good stuff"
-        },
-        {
-          method: "text",
-          title: "Daily Routine",
-          body: "scrubadub dub"
-        }
-      ]
-    }
-  ]
+  constructor(public navCtrl: NavController, public modalCtrl: ModalController, public getService: GetService) {}
+  markets;
+  getMarkets(){
+    this.getService.getMarkets().subscribe(res=>{
+      this.markets = res;
+    })
+  }
 
   openModal(market){
     this.navCtrl.push(MarketOptions, {market: market});
+  }
+  ngOnInit(){
+    this.getMarkets();
   }
 }

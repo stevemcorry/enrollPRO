@@ -1,11 +1,13 @@
 <ion-header>
   <ion-navbar>
     <ion-buttons left>
-        <ion-icon name="menu" class="icons"></ion-icon>
+        <ion-icon name="funnel" class="icons"></ion-icon>
     </ion-buttons>
     <ion-title (click)="pipelineSelect = !pipelineSelect">{{title}} <ion-icon name="arrow-down"></ion-icon></ion-title>
     <ion-buttons end>
-        <ion-icon name="add" (click)="openAddModal()" class="icons"></ion-icon>
+      <div (click)="openAddModal()">
+        <ion-icon name="add" class="icons"></ion-icon>
+      </div>
     </ion-buttons>
   </ion-navbar>
 </ion-header>

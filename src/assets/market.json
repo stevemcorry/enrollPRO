@@ -1,0 +1,176 @@
+[
+    {
+      "name": "Ice Breakers",
+      "options": [
+        {
+          "method": "drip",
+          "title": "Natural Solutions",
+          "content": {
+            "fun": "ALL NATURAL, SO FUN!",
+            "direct": "All Natural VERY SERIOUS"
+          }
+        },
+        {
+          "method": "email",
+          "title": "Frankincense Pip",
+          "content": {
+            "fun": "This is good stuff and FUN!",
+            "direct": "This is good stuff and DIRECT"
+          }
+        },
+        {
+          "method": "text",
+          "title": "Daily Routine",
+          "content": {
+            "fun": "scrubadub dub silly",
+            "direct": "scrubadub dub ya filthy animal"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Meeting Invites",
+      "options": [
+        {
+          "method": "drip",
+          "title": "Natural Solutions",
+          "content": {
+            "fun": "ALL NATURAL, SO FUN!",
+            "direct": "All Natural VERY SERIOUS"
+          }
+        },
+        {
+          "method": "email",
+          "title": "Frankincense Pip",
+          "content": {
+            "fun": "This is good stuff and FUN!",
+            "direct": "This is good stuff and DIRECT"
+          }
+        },
+        {
+          "method": "text",
+          "title": "Daily Routine",
+          "content": {
+            "fun": "scrubadub dub silly",
+            "direct": "scrubadub dub ya filthy animal"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Meeting Reminders",
+      "options": [
+        {
+          "method": "drip",
+          "title": "Natural Solutions",
+          "content": {
+            "fun": "ALL NATURAL, SO FUN!",
+            "direct": "All Natural VERY SERIOUS"
+          }
+        },
+        {
+          "method": "email",
+          "title": "Frankincense Pip",
+          "content": {
+            "fun": "This is good stuff and FUN!",
+            "direct": "This is good stuff and DIRECT"
+          }
+        },
+        {
+          "method": "text",
+          "title": "Daily Routine",
+          "content": {
+            "fun": "scrubadub dub silly",
+            "direct": "scrubadub dub ya filthy animal"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Lifestyle Overview",
+      "options": [
+        {
+          "method": "drip",
+          "title": "Natural Solutions",
+          "content": {
+            "fun": "ALL NATURAL, SO FUN!",
+            "direct": "All Natural VERY SERIOUS"
+          }
+        },
+        {
+          "method": "email",
+          "title": "Frankincense Pip",
+          "content": {
+            "fun": "This is good stuff and FUN!",
+            "direct": "This is good stuff and DIRECT"
+          }
+        },
+        {
+          "method": "text",
+          "title": "Daily Routine",
+          "content": {
+            "fun": "scrubadub dub silly",
+            "direct": "scrubadub dub ya filthy animal"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Recognition",
+      "options": [
+        {
+          "method": "drip",
+          "title": "Natural Solutions",
+          "content": {
+            "fun": "ALL NATURAL, SO FUN!",
+            "direct": "All Natural VERY SERIOUS"
+          }
+        },
+        {
+          "method": "email",
+          "title": "Frankincense Pip",
+          "content": {
+            "fun": "This is good stuff and FUN!",
+            "direct": "This is good stuff and DIRECT"
+          }
+        },
+        {
+          "method": "text",
+          "title": "Daily Routine",
+          "content": {
+            "fun": "scrubadub dub silly",
+            "direct": "scrubadub dub ya filthy animal"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Custom",
+      "options": [
+        {
+          "method": "drip",
+          "title": "Natural Solutions",
+          "content": {
+            "fun": "ALL NATURAL, SO FUN!",
+            "direct": "All Natural VERY SERIOUS"
+          }
+        },
+        {
+          "method": "email",
+          "title": "Frankincense Pip",
+          "content": {
+            "fun": "This is good stuff and FUN!",
+            "direct": "This is good stuff and DIRECT"
+          }
+        },
+        {
+          "method": "text",
+          "title": "Daily Routine",
+          "content": {
+            "fun": "scrubadub dub silly",
+            "direct": "scrubadub dub ya filthy animal"
+          }
+        }
+      ]
+    }
+]

@@ -9,15 +9,20 @@
     color: white;
 }
 .toolbar-ios ion-title{
-    padding: 0;
+        padding: 0 45px 0 45px;
+        cursor: pointer;
 }
 .scroll-content {
    overflow: hidden;
 }
 .icons{
+    cursor: pointer;
     padding: 0px 10px 0 10px;
     font-size: 30px;
     color: white;
+}
+.back-button{
+    display: none !important;
 }
 .loginModal {
     position: fixed;
