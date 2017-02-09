@@ -134,7 +134,6 @@ export class MarketingPage {
   ]
 
   openModal(market){
-    let modal = this.modalCtrl.create(MarketOptions, {market: market});
-    modal.present();
+    this.navCtrl.push(MarketOptions, {market: market});
   }
 }

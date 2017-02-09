@@ -40,7 +40,7 @@ export class EmailLoginModal implements OnInit{
         })
     }
     store(key){
-        this.postService.store(key);
+        this.postService.store(key, this.fullname);
     }
     ngOnInit(){
     }

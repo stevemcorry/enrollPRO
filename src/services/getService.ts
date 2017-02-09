@@ -69,6 +69,11 @@ export class GetService implements OnInit{
             return name;
             }))
     }
+    getStorageName(){
+            return (this.storage.get('name').then((name) => {
+            return name;
+            }))
+    }
     ngOnInit(){
     }
 }
