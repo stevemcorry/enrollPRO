@@ -104,7 +104,6 @@ export class PipelinePage implements OnInit {
   getPipelinePositions = () => {
     this.getService.getStorage().then(key => {
       this.getService.getPipelinePositions(key).subscribe(res => {
-        console.log(res,'positions')
         this.pipelineSteps = res;
         this.leadsPipe();
       });
@@ -125,7 +124,6 @@ export class PipelinePage implements OnInit {
             if(this.pipelineFilter.indexOf(this.obj) === -1){
               this.pipelineFilter.push(this.obj);
               this.prospects.push(this.obj);
-              console.log(this.prospects, 'prospects');
             }
           }
         }

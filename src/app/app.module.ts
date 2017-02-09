@@ -14,6 +14,7 @@ import { LoadingPage } from '../pages/loading/loading';
 
 //Filters
 import { FilterPipe } from './filter';
+import { ActionFilter } from './actionFilter';
 
 //Modals
 import { SpecificProspect } from '../modals/specific-prospect/specific-prospect';
@@ -44,6 +45,7 @@ import { MarketDrip } from '../modals/market-drip/market-drip';
 
     //Filters
     FilterPipe,
+    ActionFilter,
 
     //Modals
     SpecificProspect,

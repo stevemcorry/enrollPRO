@@ -10,7 +10,7 @@ export class PostService{
 
     requestOAuth(user) {
         let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
-        return this.http.post('http://enrollpro.coopertechnology.com/oauth/token', user, headers).map((res: Response) => res.json());
+        return this.http.post('http://enrollpro.coopertechnology.com/oauth/token', user, headers).map((res) => res.json());
     }
     store(user, name){
         this.storage.set('token', user.access_token).then(() => {

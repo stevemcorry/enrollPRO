@@ -1,25 +1,21 @@
 <ion-header>
   <ion-navbar>
     <ion-buttons left>
-      <button>
-        <ion-icon name="menu"></ion-icon>
-      </button>
+        <ion-icon name="menu" class="icons"></ion-icon>
     </ion-buttons>
     <ion-title>Actions</ion-title>
     <ion-buttons end>
-      <button>
-        <ion-icon name="search"></ion-icon>
-      </button>
+        <ion-icon name="search" class="icons"></ion-icon>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <div *ngFor="let action of actions" class="task">
+  <div *ngFor="let action of actions | actionFilter: action" class="task">
     <ion-icon name="phone" class="taskTask"></ion-icon>
     <div class="spacing">
       <div>
-        <div class="taskProspect" [text]="action.action_type ? 'cool': 'bro'">{{action.action_type.name}} {{action.contact.first_name}}</div>
+        <div class="taskProspect">{{action.action_type.name}} {{action.contact.first_name}}</div>
         <div class="taskNotes">{{action.due_date}}</div>
       </div>
       <div class="statusCircle" [style.background-color]="statusCheck(action.complete)" (click)="completeAction(action.id)"></div>

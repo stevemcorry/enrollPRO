@@ -18,10 +18,12 @@ export class ActionsPage implements OnInit{
     action_type: {
       name: ''
     },
+    complete: 0,
     contact: {
       first_name: ''
     },
-    due_date: ''
+    due_date: '',
+    id: 0,
   }
   public newAction = {
     "complete": 1
