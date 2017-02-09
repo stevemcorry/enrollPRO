@@ -5,7 +5,6 @@ import { GoalsPage } from '../goals/goals';
 import { PipelinePage } from '../pipeline/pipeline';
 import { MarketingPage } from '../marketing/marketing';
 import { MorePage } from '../more/more';
-import { SpecificProspect } from '../../modals/specific-prospect/specific-prospect'
 
 @Component({
   templateUrl: 'tabs.html'

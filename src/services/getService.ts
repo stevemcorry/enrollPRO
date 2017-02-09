@@ -1,8 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Injectable }     from '@angular/core';
+import { Injectable, OnInit }     from '@angular/core';
 import {Storage} from '@ionic/storage';
-import { Http, Response, Headers, RequestOptions } from '@angular/http';
-import {Observable} from 'rxjs/Rx';
+import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, Slides, Modal, NavParams, ModalController, Events } from 'ionic-angular';
+import { NavController, Slides, ModalController, Events } from 'ionic-angular';
 import  { GetService } from '../../services/getService';
-import { ViewChild, style, state, animate, transition, trigger } from '@angular/core';
+import { ViewChild, style, animate, transition, trigger } from '@angular/core';
 import { SpecificProspect } from '../../modals/specific-prospect/specific-prospect';
 import { AddContact } from '../../modals/add-contact/add-contact';
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GetService } from '../../services/getService';
 import { PostService } from '../../services/postService';
-import { ModalController, Platform, NavParams, ViewController} from 'ionic-angular';
+import { Platform, NavParams, ViewController} from 'ionic-angular';
 
 @Component({
   selector: 'page-add-action',
