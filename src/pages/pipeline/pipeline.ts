@@ -94,8 +94,7 @@ export class PipelinePage implements OnInit {
     this.title = 'Retention';
   }
   openModal(prospect) {
-    let modal = this.modalCtrl.create(SpecificProspect, {prospect: prospect});
-    modal.present();
+    this.nav.push(SpecificProspect, {prospect: prospect});
   }
   openAddModal() {
     let modal = this.modalCtrl.create(AddContact);

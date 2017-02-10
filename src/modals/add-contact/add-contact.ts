@@ -22,19 +22,21 @@ export class AddContact implements OnInit{
         this.viewCtrl.dismiss();
     }
     addContact(contact){
-        this.getService.getStorage().then(key => {
-            this.postService.addContact(key, this.contact).subscribe(() => {
-                this.getContacts();
-                this.contact = {
-                    first_name: '',
-                    last_name: '',
-                    phone: '',
-                    email: ''
-                };
-                this.events.publish('contactAdded');
-                this.dismiss();
-            });
-        })
+        if(contact.first_name && contact.last_name && contact.phone && contact.email){
+            this.getService.getStorage().then(key => {
+                this.postService.addContact(key, this.contact).subscribe(() => {
+                    this.getContacts();
+                    this.contact = {
+                        first_name: '',
+                        last_name: '',
+                        phone: '',
+                        email: ''
+                    };
+                    this.events.publish('contactAdded');
+                    this.dismiss();
+                });
+            })
+        }
     }
     getContacts = () => {
     this.getService.getStorage().then(key => {
