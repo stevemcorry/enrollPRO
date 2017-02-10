@@ -31,7 +31,7 @@ export class MarketOptions implements OnInit{
         } else if(method == 'drip'){
             this.navCtrl.push(MarketDrip, {option: option})
         } else {
-            alert('Please try again')
+            this.navCtrl.push(MarketSocial, {option: option})
         }
     }
     dismiss() {

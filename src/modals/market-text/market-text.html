@@ -22,5 +22,22 @@
     <button [ngClass]="{mass: mass}" (click)="mass=!mass; single=false;">Mass</button>
     <button [ngClass]="{single: single}" (click)="single=!single; mass=false">Single</button>
   </div>
-  <textarea [(ngModel)]="content" class="rules"></textarea>
+  <ion-list>
+
+  <ion-item>
+    <ion-label>Send Email after 2 Weeks</ion-label>
+    <ion-checkbox [(ngModel)]="email"></ion-checkbox>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Remind me to call</ion-label>
+    <ion-checkbox [(ngModel)]="call"></ion-checkbox>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Follow up after 2 days</ion-label>
+    <ion-checkbox [(ngModel)]="follow"></ion-checkbox>
+  </ion-item>
+
+</ion-list>
 </ion-content>

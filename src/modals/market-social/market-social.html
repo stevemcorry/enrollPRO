@@ -1,19 +1,21 @@
 <ion-header>
   <ion-navbar>
     <ion-buttons left>
-      <button (click)="dismiss()">
-        <ion-icon name="close"></ion-icon>
-      </button>
+      <div (click)="dismiss()">
+        <ion-icon name="close" class="icons"></ion-icon>
+      </div>
     </ion-buttons>
-    <ion-title>market social</ion-title>
+    <ion-title>{{option.title}}</ion-title>
     <ion-buttons end>
-      <button>
-        <ion-icon name="search"></ion-icon>
-      </button>
+      <div>
+        <ion-icon name="git-network" class="icons"></ion-icon>
+      </div>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  market-social
+  <textarea>{{content}}</textarea>
+  <h1>Description</h1>
+  <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus perferendis ex vel, facilis voluptatem dignissimos repellat tempore ratione quasi eveniet at, et doloribus quas ad iure harum autem quos assumenda.  </div>
 </ion-content>
