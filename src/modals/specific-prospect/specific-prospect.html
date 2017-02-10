@@ -34,20 +34,14 @@
       </div>
     </div>
   </div>
-  <div class="swiper" (swipe)="swipeEvent($event)">
     <div class="position">
-      <div>
-        <strong>PIPELINE POSITION:</strong>
-      </div>
-      <div>
-        {{contact.pipeline_position.name}}
-      </div>
+      <strong>PIPELINE POSITION:</strong>
     </div>
-    <div class="swipeBoxes" [style.display]="displayCheck()">
-      <div class="swipeBox leftSwipe" (click)="swipeEvent($event)">Cancel</div>
-      <div class="swipeBox rightSwipe" (click)="advancePipe(contact)">Next</div>
-    </div>
-  </div>
+  <ion-slides pager="true" #pipeSlider class="choosePipe" #choosePipe (ionSlideDidChange)="slideChange()">
+    <ion-slide *ngFor="let slide of slides" class="slides">
+      <div>{{slide.name}}</div>
+    </ion-slide>
+  </ion-slides>
   <div class="box">
     <div class="topBox">
       <div class="smallBox left" [ngClass]="{leftBox: leftBox}" (click)="leftBox=false; rightBox = true; complete = 0;">ACTIONS</div>

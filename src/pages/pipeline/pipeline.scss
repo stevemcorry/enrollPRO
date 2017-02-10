@@ -1,13 +1,17 @@
 page-pipeline {
     .position{
         top: 0%;
-        display: flex;
+        display: block;
         align-items: center;
         width: 90%;
+        height: 30px;
         background: #ACD373;
         padding-left: 3px;
         font-size: 25px;
         color: white;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     .slides{
         height: 100%;

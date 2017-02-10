@@ -85,8 +85,9 @@ export class PipelinePage implements OnInit {
     this.slides = [];
     this.slides = this.pipelineSteps.filter((x)=>{
       if(this.slides.indexOf(x) === -1){
-        if(x.name === 'Enrolled' || x.name === 'Lifestyle/Buisness Overview' || x.name === 'Had First Menor Session' || x.name === 'Launched' || x.name === 'Recognized/Promoted' || x.name === 'Retained 90 Days') {
+        if(x.name === 'Enrolled' || x.name === 'Lifestyle/Business Overview' || x.name === 'Had First Mentor Session' || x.name === 'Launched' || x.name === 'Recognized/Promoted' || x.name === 'Retained 90 Days') {
           this.getContactPosition();
+          this.goToSlide()
           return x
         }
       }
@@ -94,7 +95,10 @@ export class PipelinePage implements OnInit {
     this.title = 'Retention';
   }
   openModal(prospect) {
-    this.nav.push(SpecificProspect, {prospect: prospect});
+    let pipeChange = this.pipelineSteps.filter(val => {
+      return (val.id && val.name)
+    })
+    this.nav.push(SpecificProspect, {prospect: prospect, slides: pipeChange});
   }
   openAddModal() {
     let modal = this.modalCtrl.create(AddContact);
@@ -111,6 +115,7 @@ export class PipelinePage implements OnInit {
   getContactPosition(){
     this.getService.getStorage().then(key => {
       this.getService.getContactPosition(key).subscribe(res => {
+        console.log(res)
       this.pipelineFilter = [];
       this.prospects = [];
         for(var i = 0; i < res.length; i++){
