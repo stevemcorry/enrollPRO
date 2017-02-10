@@ -1,33 +1,32 @@
 <ion-header>
   <ion-navbar>
     <ion-buttons left>
-      <button (click)="dismiss()">
-        <ion-icon name="close"></ion-icon>
-      </button>
+      <div (click)="dismiss()">
+        <ion-icon name="close" class="icons"></ion-icon>
+      </div>
     </ion-buttons>
     <ion-title>ADD ACTION</ion-title>
     <ion-buttons end>
-      <button (click)="dismiss()">
-        <div>EDIT</div>
-      </button>
+      <div (click)="dismiss()">
+        <div>SAVE</div>
+      </div>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content class="addProspect">
-    <input type="text" [(ngModel)]="newAction.notes"placeholder="Notes">
+    <textarea type="text" [(ngModel)]="newAction.notes"placeholder="Notes"></textarea>
     <ion-item>
         <ion-label>DUE DATE:</ion-label>
         <ion-datetime displayFormat="MM/DD/YYYY" pickerFormat="MMM DD YYYY" [(ngModel)]="newAction.due_date"></ion-datetime>
     </ion-item>
-    <div>
-        <div (click)="newAction.action_type = 1">Email</div>
-        <div (click)="newAction.action_type = 2">Text</div>
-        <div (click)="newAction.action_type = 3">Call</div>
+    <div class="iconList">
+        <ion-icon [ngClass]="{emailOn: emailOn}" (click)="newAction.action_type = 1; emailOn=true; textOn=false; callOn=false" name="mail" class="sendOptions"></ion-icon>
+        <ion-icon [ngClass]="{textOn: textOn}" (click)="newAction.action_type = 2; textOn=true; emailOn=false; callOn=false;"  name="chatbubbles" class="sendOptions"></ion-icon>
+        <ion-icon [ngClass]="{callOn: callOn}" (click)="newAction.action_type = 3; callOn=true; emailOn=false; textOn=false;" name="call" class="sendOptions"></ion-icon>
     </div>
-    {{newAction.action_type}}<br>
-    {{newAction.contact}}<br>
-    {{newAction.due_date}}<br>
-    {{newAction.notes}}<br>
-    <button ion-button (click)="addAction()">ADD ACTION</button>
+    <div>
+      <button ion-button (click)="dismiss()">CANCEL</button>
+      <button ion-button (click)="addAction()">ADD ACTION</button>
+    </div>
 </ion-content>

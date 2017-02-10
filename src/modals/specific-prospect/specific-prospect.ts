@@ -17,6 +17,9 @@ export class SpecificProspect implements OnInit{
     constructor(public modalCtrl: ModalController, public viewCtrl: ViewController, public platform: Platform, public params: NavParams, public getService: GetService, public postService: PostService, public putService: PutService, public events: Events){
     this.prospect = params.get('prospect');
     this.slides = params.get('slides');
+    this.events.subscribe('actionAdded', () => {
+        this.getSpecificContact();
+    });
     }
     action;
     actions;
