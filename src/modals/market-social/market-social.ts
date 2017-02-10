@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GetService } from '../../services/getService';
 import { PostService } from '../../services/postService';
-import { PipelinePage } from '../../pages/pipeline/pipeline';
 import { ModalController, Platform, NavParams, ViewController, Events} from 'ionic-angular';
 
 @Component({

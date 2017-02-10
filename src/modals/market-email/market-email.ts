@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GetService } from '../../services/getService';
 import { PostService } from '../../services/postService';
-import { PipelinePage } from '../../pages/pipeline/pipeline';
 import { ModalController, Platform, NavParams, ViewController, Events} from 'ionic-angular';
 
 @Component({
@@ -12,6 +11,28 @@ import { ModalController, Platform, NavParams, ViewController, Events} from 'ion
 })
 export class MarketEmail implements OnInit{
     constructor(public viewCtrl: ViewController, public platform: Platform, public params: NavParams, public getService: GetService, public postService: PostService, public events: Events){
+        this.option = params.get('option');
+        this.content = this.option.content.fun;
+    }
+    option;
+    content;
+    fun = true;
+    direct;
+    email;
+    call;
+    follow;
+    subject = "Subject";
+    setContent(content){
+        this.direct = false;
+        this.fun = false;
+        this.content = content;
+    }
+    contentChoose(x){
+        if(x === 'direct'){
+            this.content = this.option.content.direct;
+        } else {
+            this.content = this.option.content.fun;
+        }
     }
 
     dismiss() {

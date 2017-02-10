@@ -21,7 +21,9 @@ export class MarketText implements OnInit{
     call;
     follow;
     fun = true;
+    direct;
     setContent(content){
+        this.direct = false;
         this.fun = false;
         this.content = content;
     }
