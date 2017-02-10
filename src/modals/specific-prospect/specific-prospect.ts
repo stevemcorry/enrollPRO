@@ -22,8 +22,11 @@ export class SpecificProspect implements OnInit{
 
     };
     actions;
+    complete = 0;
     action;
     width = 0;
+    leftBox = false;
+    rightBox = true;
 
     getSpecificContact(){
         this.getService.getStorage().then(key => {
@@ -40,18 +43,18 @@ export class SpecificProspect implements OnInit{
     swipeEvent(e){
         this.width++
     }
-    widthCheck(){
-        if(this.width%2 === 0){
-            return "100%"
-        }else {
-            return "75%"
-        }
-    }
     displayCheck(){
         if(this.width%2 === 0){
             return "none"
         }else {
             return "flex"
+        }
+    }
+    icon(x){
+        if(x === 'Text Message'){
+            return "chatbubbles"
+        } else if(x === 'Email'){
+            return "mail"
         }
     }
     advancePipe(x){
@@ -66,6 +69,19 @@ export class SpecificProspect implements OnInit{
                 this.events.publish('pipeAdvance');
              });
         })
+    }
+    activeCheck(x){
+        if(x === 0){
+            return ""
+        } else {
+            return "lightgreen"
+        }
+    }
+    historyShow(){
+        this.complete = 1;
+    }
+    actionsShow(){
+        this.complete = 0;
     }
     dismiss() {
         this.viewCtrl.dismiss();

@@ -45,7 +45,8 @@ export class ActionsPage implements OnInit{
     })
   }
   addContact(){
-    this.navCtrl.push(AddContact);
+    let modal = this.modalCtrl.create(AddContact);
+    modal.present();
   }
   statusCheck(stat){
     if(stat){

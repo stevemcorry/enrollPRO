@@ -41,7 +41,6 @@ export class AddContact implements OnInit{
     getContacts = () => {
     this.getService.getStorage().then(key => {
       this.getService.getContacts(key).subscribe(res => {
-        console.log( 'contacts', res);
       });
     })
   }

@@ -34,7 +34,7 @@ export class PipelinePage implements OnInit {
       this.leadsPipe();
     })
     this.events.subscribe('pipeAdvance', () => {
-      this.leadsPipe();
+      this.getContactPosition();
     })
   }
 
