@@ -12,12 +12,14 @@ import { ModalController, Platform, NavParams, ViewController, Events} from 'ion
 })
 export class MarketDrip implements OnInit{
     constructor(public viewCtrl: ViewController, public platform: Platform, public params: NavParams, public getService: GetService, public postService: PostService, public events: Events){
+        this.option = params.get('option');
     }
-
+    option;
     dismiss() {
         this.viewCtrl.dismiss();
     }
     ngOnInit(){
+        console.log(this.option)
     }
     
 }

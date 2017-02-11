@@ -5,10 +5,20 @@
         {
           "method": "drip",
           "title": "Natural Solutions",
-          "content": {
-            "fun": "ALL NATURAL, SO FUN!",
-            "direct": "All Natural VERY SERIOUS"
-          }
+          "content": [
+            {
+              "email": "This is the first email"
+            },
+            {
+              "email": "This is the second email"
+            },
+            {
+              "email": "This is the third email"
+            },
+            {
+              "email": "This is the fourth email"
+            }
+          ]
         },
         {
           "method": "email",
@@ -42,10 +52,20 @@
         {
           "method": "drip",
           "title": "Natural Solutions",
-          "content": {
-            "fun": "ALL NATURAL, SO FUN!",
-            "direct": "All Natural VERY SERIOUS"
-          }
+          "content": [
+            {
+              "email": "This is the first email"
+            },
+            {
+              "email": "This is the second email"
+            },
+            {
+              "email": "This is the third email"
+            },
+            {
+              "email": "This is the fourth email"
+            }
+          ]
         },
         {
           "method": "email",
@@ -79,10 +99,20 @@
         {
           "method": "drip",
           "title": "Natural Solutions",
-          "content": {
-            "fun": "ALL NATURAL, SO FUN!",
-            "direct": "All Natural VERY SERIOUS"
-          }
+          "content": [
+            {
+              "email": "This is the first email"
+            },
+            {
+              "email": "This is the second email"
+            },
+            {
+              "email": "This is the third email"
+            },
+            {
+              "email": "This is the fourth email"
+            }
+          ]
         },
         {
           "method": "email",
@@ -116,10 +146,20 @@
         {
           "method": "drip",
           "title": "Natural Solutions",
-          "content": {
-            "fun": "ALL NATURAL, SO FUN!",
-            "direct": "All Natural VERY SERIOUS"
-          }
+          "content": [
+            {
+              "email": "This is the first email"
+            },
+            {
+              "email": "This is the second email"
+            },
+            {
+              "email": "This is the third email"
+            },
+            {
+              "email": "This is the fourth email"
+            }
+          ]
         },
         {
           "method": "email",
@@ -153,10 +193,20 @@
         {
           "method": "drip",
           "title": "Natural Solutions",
-          "content": {
-            "fun": "ALL NATURAL, SO FUN!",
-            "direct": "All Natural VERY SERIOUS"
-          }
+          "content": [
+            {
+              "email": "This is the first email"
+            },
+            {
+              "email": "This is the second email"
+            },
+            {
+              "email": "This is the third email"
+            },
+            {
+              "email": "This is the fourth email"
+            }
+          ]
         },
         {
           "method": "email",
@@ -190,10 +240,20 @@
         {
           "method": "drip",
           "title": "Natural Solutions",
-          "content": {
-            "fun": "ALL NATURAL, SO FUN!",
-            "direct": "All Natural VERY SERIOUS"
-          }
+          "content": [
+            {
+              "email": "This is the first email"
+            },
+            {
+              "email": "This is the second email"
+            },
+            {
+              "email": "This is the third email"
+            },
+            {
+              "email": "This is the fourth email"
+            }
+          ]
         },
         {
           "method": "email",

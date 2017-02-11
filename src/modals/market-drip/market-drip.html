@@ -1,19 +1,21 @@
 <ion-header>
   <ion-navbar>
     <ion-buttons left>
-      <button (click)="dismiss()">
-        <ion-icon name="close"></ion-icon>
-      </button>
+      <div (click)="dismiss()">
+        <ion-icon name="close" class="icons"></ion-icon>
+      </div>
     </ion-buttons>
     <ion-title>market drip</ion-title>
     <ion-buttons end>
-      <button>
-        <ion-icon name="search"></ion-icon>
-      </button>
+      <div>
+        <ion-icon name="search" class="icons"></ion-icon>
+      </div>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  market-drip
+  <div *ngFor="let content of option.content" class="emailBox">
+    <div>{{content.email}}</div>
+  </div>
 </ion-content>

@@ -25,13 +25,17 @@ export class MarketOptions implements OnInit{
     openModal(option){
         let method = option.method
         if(method == 'email'){
-            this.navCtrl.push(MarketEmail, {option: option})
+            let modal = this.modalCtrl.create(MarketEmail, {option: option});
+            modal.present();
         }else if(method == 'text'){
-            this.navCtrl.push(MarketText, {option: option})
+            let modal = this.modalCtrl.create(MarketText, {option: option});
+            modal.present();
         } else if(method == 'drip'){
-            this.navCtrl.push(MarketDrip, {option: option})
+            let modal = this.modalCtrl.create(MarketDrip, {option: option});
+            modal.present();
         } else {
-            this.navCtrl.push(MarketSocial, {option: option})
+            let modal = this.modalCtrl.create(MarketSocial, {option: option});
+            modal.present();
         }
     }
     dismiss() {
