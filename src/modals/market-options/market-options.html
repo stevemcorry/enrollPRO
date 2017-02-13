@@ -13,13 +13,16 @@
 </ion-header>
 
 <ion-content>
-  <div class="method" *ngFor="let option of market.options">
+  <div *ngFor="let option of market.options">
+    <div class="method">
       <div class="box" (click)="openModal(option)">
           <div class="boxTitle"><div class="vertical-text">{{option.method}}</div></div>
           <div></div>
       </div>
-      <div>
+      <div class="optionTitle">
           {{option.title}}
       </div>
+    </div>
+      <div class="line"></div>
   </div>
 </ion-content>

@@ -29,6 +29,7 @@ import { MarketEmail } from '../modals/market-email/market-email';
 import { MarketSocial } from '../modals/market-social/market-social';
 import { MarketText } from '../modals/market-text/market-text';
 import { MarketDrip } from '../modals/market-drip/market-drip';
+import { ChooseContacts } from '../modals/choose-contacts/choose-contacts';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { MarketDrip } from '../modals/market-drip/market-drip';
     MarketSocial,
     MarketText,
     MarketDrip,
+    ChooseContacts,
 
 
   ],
@@ -92,6 +94,7 @@ import { MarketDrip } from '../modals/market-drip/market-drip';
     MarketSocial,
     MarketText,
     MarketDrip,
+    ChooseContacts,
 
 
   ],
