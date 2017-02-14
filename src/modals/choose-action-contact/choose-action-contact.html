@@ -16,9 +16,8 @@
 
 <ion-content>
     <div *ngFor="let contact of contacts">
-        <ion-item>
-            <ion-label>{{contact.first_name}}</ion-label>
-            <ion-checkbox></ion-checkbox>
+        <ion-item (click)="addAction()">
+            <ion-label>{{contact.first_name}} {{contact.last_name}}</ion-label>
         </ion-item>
     </div>
 </ion-content>

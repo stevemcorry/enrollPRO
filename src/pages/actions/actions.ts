@@ -3,6 +3,7 @@ import { GetService } from '../../services/getService';
 import { NavController, ModalController } from 'ionic-angular';
 import { PutService } from '../../services/putService';
 import { AddContact } from '../../modals/add-contact/add-contact';
+import { ChooseActionContact } from '../..modals/choose-action-contact/choose-action-contact';
 
 @Component({
   selector: 'page-actions',
@@ -46,6 +47,10 @@ export class ActionsPage implements OnInit{
   }
   addContact(){
     let modal = this.modalCtrl.create(AddContact);
+    modal.present();
+  }
+  chooseActionContact(){
+    let modal = this.modalCtrl.create(ChooseActionContact);
     modal.present();
   }
   statusCheck(stat){
