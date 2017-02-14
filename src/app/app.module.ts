@@ -33,6 +33,7 @@ import { MarketSocial } from '../modals/market-social/market-social';
 import { MarketText } from '../modals/market-text/market-text';
 import { MarketDrip } from '../modals/market-drip/market-drip';
 import { ChooseContacts } from '../modals/choose-contacts/choose-contacts';
+import { ChooseActionContact } from '../modals/choose-action-contact/contact'
 
 @NgModule({
   declarations: [
@@ -65,7 +66,7 @@ import { ChooseContacts } from '../modals/choose-contacts/choose-contacts';
     MarketText,
     MarketDrip,
     ChooseContacts,
-
+    ChooseActionContact,
 
   ],
   imports: [
@@ -98,7 +99,7 @@ import { ChooseContacts } from '../modals/choose-contacts/choose-contacts';
     MarketText,
     MarketDrip,
     ChooseContacts,
-
+    ChooseActionContact,
 
   ],
   providers: [

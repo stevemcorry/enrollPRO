@@ -4,12 +4,12 @@ import { GetService } from '../../services/getService';
 import { ModalController, Platform, NavParams, ViewController, Events} from 'ionic-angular';
 
 @Component({
-  selector: 'page-choose-contacts',
-  templateUrl: 'choose-contacts.html',
+  selector: 'page-choose-action-contacts',
+  templateUrl: 'contact.html',
   providers: [ GetService, PostService ]
 
 })
-export class ChooseActionContacts implements OnInit{
+export class ChooseActionContact implements OnInit{
     constructor(public viewCtrl: ViewController, public platform: Platform, public params: NavParams, public getService: GetService, public postService: PostService, public events: Events){
         this.option = params.get('option');
     }
