@@ -58,8 +58,8 @@ export class ActionsPage implements OnInit{
     let modal = this.modalCtrl.create(ChooseActionContact);
     modal.present();
   }
-  openSpecificAction(id){
-    let modal = this.modalCtrl.create(SpecificAction, {id: id});
+  openSpecificAction(action){
+    let modal = this.modalCtrl.create(SpecificAction, {action: action});
     modal.present();
   }
   statusCheck(stat){

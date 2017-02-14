@@ -2,7 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { GetService } from '../../services/getService';
 import { PostService } from '../../services/postService';
 import { PutService } from '../../services/putService';
-import { AddAction} from '../../modals/add-action/add-action'
+import { AddAction} from '../../modals/add-action/add-action';
+import { SpecificAction } from '../../modals/specific-action/specific-action';
 import { ModalController, Platform, NavParams, ViewController, Events, Slides} from 'ionic-angular';
 
 @Component({
@@ -47,6 +48,10 @@ export class SpecificProspect implements OnInit{
                 this.actions = res.actions;
              });
         })
+    }
+    specificAction(action){
+        let modal = this.modalCtrl.create(SpecificAction, {action: action});
+        modal.present();
     }
     addAction(){
         let modal = this.modalCtrl.create(AddAction, {contact: this.contact});

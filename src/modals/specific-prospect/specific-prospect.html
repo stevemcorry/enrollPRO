@@ -48,7 +48,7 @@
       <div class="smallBox right" [ngClass]="{rightBox: rightBox}" (click)="rightBox=false; leftBox = true; complete = 1">HISTORY</div>
     </div>
     <div class="bottomBox">
-      <div *ngFor="let action of actions | actionFilter: complete" class="action">
+      <div *ngFor="let action of actions | actionFilter: complete" class="action" (click)="specificAction(action)">
         <ion-icon name="{{icon(action.action_type.name)}}" class="actionIcon"></ion-icon>
         <div class="spacing">
           <div>

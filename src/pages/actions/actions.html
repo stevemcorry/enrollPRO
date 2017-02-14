@@ -11,7 +11,7 @@
 </ion-header>
 
 <ion-content>
-  <div *ngFor="let action of actions | actionFilter: action.complete" class="task" (click)="openSpecificAction(action.id)">
+  <div *ngFor="let action of actions | actionFilter: action.complete" class="task" (click)="openSpecificAction(action)">
     <ion-icon name="phone" class="taskTask"></ion-icon>
     <div class="spacing">
       <div>
