@@ -28,7 +28,7 @@ export class EmailLoginModal implements OnInit{
     public user = {
     "grant_type": "password",
     "client_id": "2",
-    "client_secret": "FxeeeKA65iEFExJWm0l08O6MJua8MTOoxiWz2sPZ",
+    "client_secret": "HsyQRv0CW1bM4lelhxDuwBM0TSBsXcnLQdD5Olkk",
     "username": "",
     "password": "",
     "scope": ""

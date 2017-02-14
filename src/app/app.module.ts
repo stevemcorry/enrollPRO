@@ -3,6 +3,9 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { Storage } from '@ionic/storage';
 
+//D3
+import { D3Service } from 'd3-ng2-service';
+
 //Pages
 import { GoalsPage } from '../pages/goals/goals';
 import { PipelinePage } from '../pages/pipeline/pipeline';
@@ -34,7 +37,7 @@ import { ChooseContacts } from '../modals/choose-contacts/choose-contacts';
 @NgModule({
   declarations: [
     MyApp,
-
+    
     //Pages
     GoalsPage,
     PipelinePage,
@@ -100,7 +103,8 @@ import { ChooseContacts } from '../modals/choose-contacts/choose-contacts';
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    Storage
+    Storage,
+    D3Service
     ]
 })
 export class AppModule {}

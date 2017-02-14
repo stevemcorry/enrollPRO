@@ -1,3 +1,68 @@
 page-goals {
+    .slide1{
+        .circleOuter{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            width: 200px;
+            border: 15px solid blue;
+            border-radius: 50%;
+            clip: rect(0px,60px,200px,0px);
+        }
+        .circleIn{
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+            background: lightgrey;
+        }
+    }
+    .slide2{
+        .slide-zoom{
+            height: 100%;
+        }
+        .goalsHeader{
+            text-align: left;
+            margin-bottom: 25px;
+            .goalsTitle{
+                font-size: 30px;
+            }
+            .goalsDueDate{
+                font-size: 22px;
+            }
+        }
+        .goalsList{
+            .goal{
+                margin-bottom: 15px;
+                text-align: left;
+                .goalTitle{
+                    font-size: 22px;
+                }
+                .goalBar{
+                    display: flex;
+                    align-items: center;
+                    width: 100%;
+                    .bar{
+                        width: 80%;
+                        height: 20px;
+                        background: #B7B7B7;
+                        border-radius: 15px;
+                    }
+                    .progress{
+                        border-radius: 15px;
+                        width: 20%;
+                        height: 20px;
+                        background: #ACD373;
+                    }
+                    .barProgress{
+                        width: 20%;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+    .slide3{
 
+    }
 }

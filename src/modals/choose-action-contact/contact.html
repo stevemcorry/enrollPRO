@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <div (click)="dismiss()">
+        <ion-icon name="close" class="icons"></ion-icon>
+      </div>
+    </ion-buttons>
+    <ion-title>Choose Contacts</ion-title>
+    <ion-buttons end>
+      <div>
+        <ion-icon name="search" class="icons"></ion-icon>
+      </div>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div *ngFor="let contact of contacts">
+        <ion-item>
+            <ion-label>{{contact.first_name}}</ion-label>
+            <ion-checkbox></ion-checkbox>
+        </ion-item>
+    </div>
+</ion-content>

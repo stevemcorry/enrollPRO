@@ -12,13 +12,29 @@
 
 <ion-content padding>
   <ion-slides>
-  <ion-slide>
+  <ion-slide class="slide1">
+    <canvas #donutCanvas></canvas>
     <h1>Game page</h1>
+    <button (click)="updateChart([50,50])" >Press</button>
   </ion-slide>
-  <ion-slide>
-    <h1>Goals</h1>
+  <ion-slide class="slide2">
+    <div class="goalsHeader">
+      <div class="goalsTitle">FRANK'S GOALS</div>
+      <div class="goalsDueDate">DUE DATE: 2/2/2017</div>
+    </div>
+    <div class="goalsList" *ngFor="let goal of goals">
+      <div class="goal">
+        <div class="goalTitle">Names List</div>
+        <div class="goalBar">
+          <div class="bar">
+            <div class="progress"></div>
+          </div>
+          <div class="barProgress">10/10</div>
+        </div>
+      </div>
+    </div>
   </ion-slide>
-  <ion-slide>
+  <ion-slide class="slide3">
     <h1>Badges with Triangle graph</h1>
   </ion-slide>
 </ion-slides>
