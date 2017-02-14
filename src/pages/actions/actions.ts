@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { GetService } from '../../services/getService';
-import { NavController, ModalController } from 'ionic-angular';
+import { NavController, ModalController, Events } from 'ionic-angular';
 import { PutService } from '../../services/putService';
 import { AddContact } from '../../modals/add-contact/add-contact';
-import { ChooseActionContact } from '../..modals/choose-action-contact/choose-action-contact';
+import { SpecificAction } from '../../modals/specific-action/specific-action';
+import { ChooseActionContact } from '../../modals/choose-action-contact/choose-action-contact';
 
 @Component({
   selector: 'page-actions',
@@ -12,7 +13,11 @@ import { ChooseActionContact } from '../..modals/choose-action-contact/choose-ac
 
 })
 export class ActionsPage implements OnInit{
-  constructor(public navCtrl: NavController, private getService: GetService, public putService: PutService, public modalCtrl: ModalController) {}
+  constructor(public navCtrl: NavController, private getService: GetService, public putService: PutService, public modalCtrl: ModalController, public events: Events) {
+    this.events.subscribe('actionAdded', () =>{
+      this.getActions();
+    })
+  }
 
   public actions;
   public action = {
@@ -51,6 +56,10 @@ export class ActionsPage implements OnInit{
   }
   chooseActionContact(){
     let modal = this.modalCtrl.create(ChooseActionContact);
+    modal.present();
+  }
+  openSpecificAction(id){
+    let modal = this.modalCtrl.create(SpecificAction, {id: id});
     modal.present();
   }
   statusCheck(stat){

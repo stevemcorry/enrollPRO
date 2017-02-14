@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <div (click)="dismiss()">
+        <ion-icon name="close" class="icons"></ion-icon>
+      </div>
+    </ion-buttons>
+    <ion-title>{{id}}</ion-title>
+    <ion-buttons end>
+      <div (click)="dismiss()">
+        <div>SAVE</div>
+      </div>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="addProspect">
+    {{action}}
+</ion-content>
