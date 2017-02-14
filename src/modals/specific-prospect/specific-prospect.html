@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-buttons left>
-      <div (click)="dismiss()">
+      <div (click)="slideChange(); dismiss()">
         <ion-icon name="close" class="icons"></ion-icon>
       </div>
     </ion-buttons>
@@ -37,7 +37,7 @@
     <div class="position">
       <strong>PIPELINE POSITION:</strong>
     </div>
-  <ion-slides pager="true" #pipeSlider class="choosePipe" #choosePipe (ionSlideDidChange)="slideChange()">
+  <ion-slides pager="true" #pipeSlider class="choosePipe" #choosePipe >
     <ion-slide *ngFor="let slide of slides" class="slides">
       <div>{{slide.name}}</div>
     </ion-slide>

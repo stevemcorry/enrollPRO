@@ -115,7 +115,6 @@ export class PipelinePage implements OnInit {
   getContactPosition(){
     this.getService.getStorage().then(key => {
       this.getService.getContactPosition(key).subscribe(res => {
-        console.log(res)
       this.pipelineFilter = [];
       this.prospects = [];
         for(var i = 0; i < res.length; i++){

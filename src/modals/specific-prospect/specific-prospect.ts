@@ -26,7 +26,7 @@ export class SpecificProspect implements OnInit{
     actions;
     contact = {
         phone: "",
-        pipeline_position: {name: ""},
+        pipeline_position: {name: "", id: 0},
         id: 0
 
     };
@@ -45,7 +45,8 @@ export class SpecificProspect implements OnInit{
             this.getService.getSpecificContact(key, this.prospect.id).subscribe(res => {
                 let pipe = res.pipeline_position.id + 1;
                 this.contact = res;
-                this.actions = res.actions;
+                this.actions = res.actions;           
+                this.choosePipe.slideTo(this.contact.pipeline_position.id - 1, 1000);
              });
         })
     }
