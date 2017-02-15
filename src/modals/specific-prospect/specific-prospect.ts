@@ -79,6 +79,7 @@ export class SpecificProspect implements OnInit{
             this.putService.advancePipe(key, id, send).subscribe(res => {
                 this.getSpecificContact();
                 this.events.publish('pipeAdvance');
+                this.events.publish('points');
              });
         })
     }

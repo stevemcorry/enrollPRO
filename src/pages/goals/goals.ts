@@ -1,7 +1,7 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Chart } from 'chart.js';
 import { GetService } from '../../services/getService';
-import { NavController } from 'ionic-angular';
+import { NavController, Events } from 'ionic-angular';
 
 @Component({
   selector: 'page-goals',
@@ -12,12 +12,25 @@ export class GoalsPage implements OnInit{
   @ViewChild('donutCanvas') doughnutCanvas;
 
   doughnutChart: any;
-  constructor(public navCtrl: NavController, public getService: GetService) {}
+  constructor(public navCtrl: NavController, public getService: GetService, public events: Events) {
+    this.events.subscribe('points', () => {
+      this.getContactPosition();
+    })
+  }
 
+  diamond;
+  emerald;
+  saphire;
+  ruby;
+  pearl;
   points = 0;
   goals = [1,2];
+  width;
 
   donutChart(prog){
+    if(this.doughnutChart){
+      this.doughnutChart.destroy();
+    }
     this.doughnutChart = new Chart(this.doughnutCanvas.nativeElement, {
             type: 'pie',
             options: {
@@ -42,8 +55,6 @@ export class GoalsPage implements OnInit{
                   enabled: false
               },
               cutoutPercentage: 78,
-              rotation: -0.5 * Math.PI -.01,
-
             },
             plotOptions: {
                 series: {
@@ -67,21 +78,77 @@ export class GoalsPage implements OnInit{
         });
   }
   getContactPosition(){
+    this.points = 0;
     this.getService.getStorage().then(key => {
       this.getService.getContactPosition(key).subscribe(res => {
       res.filter(x => {
-        this.points += x.contacts.length;
-        console.log(this.points,'points')
+        for(var j = 0; j < x.contacts.length; j++){
+          if(x.contacts.length){
+            this.points += (x.id * 10);
+          }
+        }
       })
+      this.setPoints(this.points);
       });
     })
+  }
+  setPoints(x){
+    let one = x % 200;
+    let two = 200 - one;
+    this.donutChart([one, two]);
+    let step = Math.floor(x / 200);
+    if(step % 5 === 0){
+      this.diamond = false;
+      this.emerald = false;
+      this.saphire = false;
+      this.ruby = false;
+      this.pearl = false;
+    } else if( step % 5 === 4){
+      this.diamond = false;
+      this.emerald = true;
+      this.saphire = true;
+      this.ruby = true;
+      this.pearl = true;
+    } else if( step % 5 === 3){
+      this.diamond = false;
+      this.emerald = false;
+      this.saphire = true;
+      this.ruby = true;
+      this.pearl = true;
+    } else if( step % 5 === 2){
+      this.diamond = false;
+      this.emerald = false;
+      this.saphire = false;
+      this.ruby = true;
+      this.pearl = true;
+    } else if( step % 5 === 1){
+      this.diamond = false;
+      this.emerald = false;
+      this.saphire = false;
+      this.ruby = false;
+      this.pearl = true;
+    } 
+    let star = Math.floor(x / 1000);
+    if(star === 0 ){
+      this.width = '0%';
+    } else if(star === 1) {
+      this.width = '20%';
+    } else if (star === 2){
+      this.width = '40%';
+    } else if (star === 3){
+      this.width = '60%';
+    } else if (star === 4){
+      this.width = '80%';
+    } else {
+      this.width = '100%';
+    }
   }
   updateChart(data){
     this.donutChart(data);
   }
 
   ngOnInit(){
-    this.donutChart([10,90]);
+    this.donutChart([100,0]);
     this.getContactPosition();
   }
 }
