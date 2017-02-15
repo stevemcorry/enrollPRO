@@ -18,6 +18,7 @@ import { LoadingPage } from '../pages/loading/loading';
 //Filters
 import { FilterPipe } from './filter';
 import { ActionFilter } from './actionFilter';
+import { ContactFilterPipe }  from './contactFilter';
 
 //Modals
 import { SpecificProspect } from '../modals/specific-prospect/specific-prospect';
@@ -52,6 +53,7 @@ import { SpecificAction } from '../modals/specific-action/specific-action';
     //Filters
     FilterPipe,
     ActionFilter,
+    ContactFilterPipe,
 
     //Modals
     SpecificProspect,

@@ -15,7 +15,8 @@
 </ion-header>
 
 <ion-content>
-    <div *ngFor="let contact of contacts">
+    <input type="text" [(ngModel)]="search">
+    <div *ngFor="let contact of contacts | contactFilter: search">
         <ion-item (click)="addAction(contact)">
             <ion-label>{{contact.first_name}} {{contact.last_name}}</ion-label>
         </ion-item>

@@ -15,7 +15,8 @@
 </ion-header>
 
 <ion-content>
-    <div *ngFor="let contact of contacts">
+    <input type="text" [(ngModel)]="search">
+    <div *ngFor="let contact of contacts | contactFilter: search">
         <ion-item>
             <ion-label>{{contact.first_name}}</ion-label>
             <ion-checkbox></ion-checkbox>

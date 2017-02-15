@@ -15,6 +15,7 @@ export class ChooseContacts implements OnInit{
     }
     option;
     contacts;
+    search;
     getContacts(){
         this.getService.getStorage().then(key => {
             this.getService.getContacts(key).subscribe((res)=>{
