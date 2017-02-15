@@ -1,20 +1,86 @@
 page-goals {
     .slide1{
-        .circleOuter{
+        display: flex;
+        justify-content: space-around;
+        .slide-zoom{
+            height: 100%;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 200px;
-            width: 200px;
-            border: 15px solid blue;
-            border-radius: 50%;
-            clip: rect(0px,60px,200px,0px);
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 5px;
         }
-        .circleIn{
-            height: 150px;
-            width: 150px;
-            border-radius: 50%;
+        .profile{
+            display: flex;
+            align-items: center;
+        }
+        .profilePic{
             background: lightgrey;
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+        }
+        .profileTitle{
+            align-self: flex-start;
+            margin: 15px;
+        }
+        .stars{
+            height: 75px;
+            width: 100%;
+            background: lightblue;
+        }
+        .bottom{
+            display: flex;
+            justify-content: space-between;
+        }
+        .donutChart{
+            height: 175px !important;
+            width: 175px !important;
+        }
+        .points{
+            width: 175px;
+            font-size: 45px;
+            text-align: center;
+        }
+        .progressBar{
+            width: 95px;
+            border: 5px solid lightgreen;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 20px;
+            .diamond{
+                height: 20%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-bottom: 3px solid lightgrey;
+            }
+            .emerald{
+                height: 20%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-bottom: 3px solid lightgrey;
+            }
+            .saphire{
+                height: 20%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-bottom: 3px solid lightgrey;
+            }
+            .ruby{
+                height: 20%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-bottom: 3px solid lightgrey;
+            }
+            .pearl{
+                height: 20%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
         }
     }
     .slide2{

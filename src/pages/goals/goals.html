@@ -13,9 +13,29 @@
 <ion-content padding>
   <ion-slides>
   <ion-slide class="slide1">
-    <canvas #donutCanvas></canvas>
-    <h1>Game page</h1>
-    <button (click)="updateChart([50,50])" >Press</button>
+    <div class="profile">
+      <div class="profilePic"></div>
+      <div class="profileTitle">
+        <div>Liza Diamond</div>
+        <div>Current Slide</div>
+      </div>
+    </div>
+    <div class="stars">
+
+    </div>
+    <div class="bottom">
+      <div class="canvasCover">
+        <canvas #donutCanvas class="donutChart"></canvas>
+        <div class="points">{{points}}</div>
+      </div>
+      <div class="progressBar">
+        <div class="diamond">Diamond</div>
+        <div class="emerald">Emerald</div>
+        <div class="saphire">Saphire</div>
+        <div class="ruby">Ruby</div>
+        <div class="pearl">Pearl</div>
+      </div>
+    </div>
   </ion-slide>
   <ion-slide class="slide2">
     <div class="goalsHeader">

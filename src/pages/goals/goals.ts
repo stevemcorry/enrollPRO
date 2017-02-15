@@ -1,18 +1,20 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Chart } from 'chart.js';
-
+import { GetService } from '../../services/getService';
 import { NavController } from 'ionic-angular';
 
 @Component({
   selector: 'page-goals',
-  templateUrl: 'goals.html'
+  templateUrl: 'goals.html',
+  providers: [GetService]
 })
 export class GoalsPage implements OnInit{
   @ViewChild('donutCanvas') doughnutCanvas;
 
   doughnutChart: any;
-  constructor(public navCtrl: NavController, ) {}
+  constructor(public navCtrl: NavController, public getService: GetService) {}
 
+  points = 0;
   goals = [1,2];
 
   donutChart(prog){
@@ -39,7 +41,7 @@ export class GoalsPage implements OnInit{
               tooltips: {
                   enabled: false
               },
-              cutoutPercentage: 85,
+              cutoutPercentage: 78,
               rotation: -0.5 * Math.PI -.01,
 
             },
@@ -64,12 +66,22 @@ export class GoalsPage implements OnInit{
             }
         });
   }
-
+  getContactPosition(){
+    this.getService.getStorage().then(key => {
+      this.getService.getContactPosition(key).subscribe(res => {
+      res.filter(x => {
+        this.points += x.contacts.length;
+        console.log(this.points,'points')
+      })
+      });
+    })
+  }
   updateChart(data){
     this.donutChart(data);
   }
 
   ngOnInit(){
     this.donutChart([10,90]);
+    this.getContactPosition();
   }
 }

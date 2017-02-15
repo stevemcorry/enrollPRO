@@ -11,10 +11,10 @@
 </ion-header>
 
 <ion-content>
-  <div *ngFor="let action of actions | actionFilter: action.complete" class="task" (click)="openSpecificAction(action)">
+  <div *ngFor="let action of actions | actionFilter: action.complete" class="task">
     <ion-icon name="phone" class="taskTask"></ion-icon>
     <div class="spacing">
-      <div>
+      <div (click)="openSpecificAction(action)">
         <div class="taskProspect">{{action.action_type.name}} {{action.contact.first_name}}</div>
         <div class="taskNotes">{{action.due_date}}</div>
       </div>
