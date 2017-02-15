@@ -8,17 +8,17 @@
     <ion-title>Choose Contacts</ion-title>
     <ion-buttons end>
       <div>
-        <ion-icon name="search" class="icons"></ion-icon>
+        <ion-icon name="mail" class="icons"></ion-icon>
       </div>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-    <input type="text" [(ngModel)]="search">
+    <input type="text" placeholder="search" [(ngModel)]="search" class="searchBar">
     <div *ngFor="let contact of contacts | contactFilter: search">
         <ion-item>
-            <ion-label>{{contact.first_name}}</ion-label>
+            <ion-label>{{contact.first_name}} {{contact.last_name}}</ion-label>
             <ion-checkbox></ion-checkbox>
         </ion-item>
     </div>
