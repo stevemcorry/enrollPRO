@@ -85,7 +85,7 @@ export class PipelinePage implements OnInit {
     this.slides = [];
     this.slides = this.pipelineSteps.filter((x)=>{
       if(this.slides.indexOf(x) === -1){
-        if(x.name === 'Enrolled' || x.name === 'Lifestyle/Business Overview' || x.name === 'Had First Mentor Session' || x.name === 'Launched' || x.name === 'Recognized/Promoted' || x.name === 'Retained 90 Days') {
+        if(x.name === 'Enrolled' || x.name === 'Lifestyle/Business Overview' || x.name === 'Had first Mentor Session' || x.name === 'Launched' || x.name === 'Recognized/Promoted' || x.name === 'Retained 90 Days') {
           this.getContactPosition();
           this.goToSlide()
           return x

@@ -18,15 +18,15 @@ export class GoalsPage implements OnInit{
     })
   }
 
+  //First Slide
   diamond;
   emerald;
   saphire;
   ruby;
   pearl;
   points = 0;
-  goals = [1,2];
   width;
-
+  rank;
   donutChart(prog){
     if(this.doughnutChart){
       this.doughnutChart.destroy();
@@ -131,24 +131,48 @@ export class GoalsPage implements OnInit{
     let star = Math.floor(x / 1000);
     if(star === 0 ){
       this.width = '0%';
+      this.rank = 'Bronze'
     } else if(star === 1) {
       this.width = '20%';
+      this.rank = 'Silver'
     } else if (star === 2){
       this.width = '40%';
+      this.rank = 'Gold'
     } else if (star === 3){
       this.width = '60%';
+      this.rank = 'Platinum'
     } else if (star === 4){
       this.width = '80%';
+      this.rank = 'Crystaled'
     } else {
       this.width = '100%';
+      this.rank = 'Oil God'
     }
   }
   updateChart(data){
     this.donutChart(data);
   }
+  //Second Slide
+  goals = [];
+  getGoalTotals(){
+    this.goals = [];
+    this.getService.getStorage().then(key => {
+      this.getService.getContactPosition(key).subscribe(res => {
+      res.filter(x => {
+        let obj = {
+          name: x.name,
+          amount: x.contacts.length
+        }
+        this.goals.push(obj);
+      })
+      });
+    })
+  }
+  setWidth(x){
+    return (x*10)+'%';
+  }
 
   ngOnInit(){
-    this.donutChart([100,0]);
     this.getContactPosition();
   }
 }

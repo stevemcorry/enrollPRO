@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GetService } from '../../services/getService';
 import { ModalController, Platform, NavParams, ViewController, NavController} from 'ionic-angular';
-import { TabsPage } from '../../pages/tabs/tabs';
 import { EmailLoginModal } from '../email-login/emailLogin';
 import { FBLoginModal } from '../fb-login/fbLogin';
 import { GoogleLoginModal } from '../google-login/googleLogin';

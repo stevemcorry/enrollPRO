@@ -18,6 +18,13 @@ page-goals {
             height: 100px;
             width: 100px;
             border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .profileIcon{
+            color: white;
+            font-size: 130px;
         }
         .profileTitle{
             align-self: flex-start;
@@ -89,6 +96,7 @@ page-goals {
     .slide2{
         .slide-zoom{
             height: 100%;
+            overflow-y: scroll;
         }
         .goalsHeader{
             text-align: left;
@@ -114,12 +122,11 @@ page-goals {
                     .bar{
                         width: 80%;
                         height: 20px;
-                        background: #B7B7B7;
+                        background: lightgrey;
                         border-radius: 15px;
                     }
                     .progress{
                         border-radius: 15px;
-                        width: 20%;
                         height: 20px;
                         background: #ACD373;
                     }

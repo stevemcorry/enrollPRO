@@ -14,10 +14,10 @@
   <ion-slides>
   <ion-slide class="slide1">
     <div class="profile">
-      <div class="profilePic"></div>
+      <div class="profilePic"><ion-icon name="contact" class="profileIcon"></ion-icon></div>
       <div class="profileTitle">
         <div>Liza Diamond</div>
-        <div>Current Slide</div>
+        <div>Current Rank: {{rank}}</div>
       </div>
     </div>
     <div class="stars" [style.width]="width">
@@ -39,17 +39,17 @@
   </ion-slide>
   <ion-slide class="slide2">
     <div class="goalsHeader">
-      <div class="goalsTitle">FRANK'S GOALS</div>
+      <div class="goalsTitle" (click)="getGoalTotals()">FRANK'S GOALS</div>
       <div class="goalsDueDate">DUE DATE: 2/2/2017</div>
     </div>
     <div class="goalsList" *ngFor="let goal of goals">
       <div class="goal">
-        <div class="goalTitle">Names List</div>
+        <div class="goalTitle">{{goal.name}}</div>
         <div class="goalBar">
           <div class="bar">
-            <div class="progress"></div>
+            <div class="progress" [style.width]="setWidth(goal.amount)"></div>
           </div>
-          <div class="barProgress">10/10</div>
+          <div class="barProgress">{{goal.amount}}/10</div>
         </div>
       </div>
     </div>
