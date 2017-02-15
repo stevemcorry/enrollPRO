@@ -7,9 +7,7 @@
     </ion-buttons>
     <ion-title>market drip</ion-title>
     <ion-buttons end>
-      <div>
-        <ion-icon name="search" class="icons"></ion-icon>
-      </div>
+      <div (click)="openContacts()" class="next">NEXT</div>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
@@ -18,5 +16,4 @@
   <div *ngFor="let content of option.content" class="emailBox">
     <div>{{content.email}}</div>
   </div>
-  <button (click)="openContacts()">Open Contacts</button>
 </ion-content>
