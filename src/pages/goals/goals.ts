@@ -1,7 +1,8 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Chart } from 'chart.js';
 import { GetService } from '../../services/getService';
-import { NavController, Events } from 'ionic-angular';
+import { EditGoals } from '../../modals/edit-goals/edit-goals';
+import { NavController, Events, ModalController, AlertController, Slides } from 'ionic-angular';
 
 @Component({
   selector: 'page-goals',
@@ -10,13 +11,52 @@ import { NavController, Events } from 'ionic-angular';
 })
 export class GoalsPage implements OnInit{
   @ViewChild('donutCanvas') doughnutCanvas;
+  @ViewChild('slider') slider: Slides
 
   doughnutChart: any;
-  constructor(public navCtrl: NavController, public getService: GetService, public events: Events) {
+  constructor(public navCtrl: NavController, public getService: GetService, public events: Events, public modalCtrl: ModalController, public alertCtrl: AlertController) {
     this.events.subscribe('points', () => {
       this.getContactPosition();
     })
   }
+
+  openEdit(){
+    let modal = this.modalCtrl.create(EditGoals);
+    modal.present();
+  }
+  openHelp(){
+    console.log(this.slider.getActiveIndex(),'index')
+    if(this.slider.getActiveIndex() === 0){
+      let alert = this.alertCtrl.create({
+        title: 'Points System',
+        subTitle: 'For every 200 points, you will fill up the circle and gain one step. <br> For every 1000 points you gain a star',
+        buttons: ['OK']
+      });
+      alert.present();
+    } else if (this.slider.getActiveIndex() === 1){
+        let alert = this.alertCtrl.create({
+          title: 'Bar Graphs',
+          subTitle: 'Set new goals by clicking the pencil in the top left',
+          buttons: ['OK']
+        });
+        alert.present();
+    } else if (this.slider.getActiveIndex() === 2){
+        let alert = this.alertCtrl.create({
+          title: 'Badges',
+          subTitle: 'Earn Badges as you add and move more people in the pipeline!',
+          buttons: ['OK']
+        })
+    } else {
+        let alert = this.alertCtrl.create({
+            title: 'Points!',
+            subTitle: 'Earn points as you add and move people in the pipeline!',
+            buttons: ['OK']
+          })
+    }
+  }
+
+
+
 
   //First Slide
   diamond;

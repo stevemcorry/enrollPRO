@@ -1,17 +1,21 @@
 <ion-header>
   <ion-navbar>
     <ion-buttons left>
-        <ion-icon name="menu" class="icons"></ion-icon>
+      <div  (click)="openEdit()">
+          <ion-icon name="create" class="icons"></ion-icon>
+      </div>
     </ion-buttons>
     <ion-title>Success Tracker</ion-title>
     <ion-buttons end>
-        <ion-icon name="help" class="icons"></ion-icon>
+      <div (click)="openHelp()">
+          <ion-icon name="help" class="icons"></ion-icon>
+      </div>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-slides>
+  <ion-slides #slider>
   <ion-slide class="slide1">
     <div class="profile">
       <div class="profilePic"><ion-icon name="contact" class="profileIcon"></ion-icon></div>

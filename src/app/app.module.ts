@@ -36,6 +36,7 @@ import { MarketDrip } from '../modals/market-drip/market-drip';
 import { ChooseContacts } from '../modals/choose-contacts/choose-contacts';
 import { ChooseActionContact } from '../modals/choose-action-contact/choose-action-contact';
 import { SpecificAction } from '../modals/specific-action/specific-action';
+import { EditGoals } from '../modals/edit-goals/edit-goals';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { SpecificAction } from '../modals/specific-action/specific-action';
     ChooseContacts,
     ChooseActionContact,
     SpecificAction,
+    EditGoals,
 
   ],
   imports: [
@@ -105,6 +107,7 @@ import { SpecificAction } from '../modals/specific-action/specific-action';
     ChooseContacts,
     ChooseActionContact,
     SpecificAction,
+    EditGoals,
 
   ],
   providers: [
