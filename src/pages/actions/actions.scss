@@ -1,13 +1,15 @@
 page-actions {
     .dimmer{
-        display: none;
+        z-index: -50;
         position: fixed;
         height: 100%;
         width: 100%;
-        background: rgba(0, 0, 0, .5);
+        transition: background-color 1s;
     }
     .showDim{
-        display: block;
+        z-index: 0;
+        background-color: rgba(0, 0, 0, .5);
+        transition: background-color 1s;
     }
     .scroll-content{
         overflow-y: scroll;
