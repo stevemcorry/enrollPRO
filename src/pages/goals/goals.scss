@@ -39,9 +39,31 @@ page-goals {
             display: flex;
             justify-content: space-between;
         }
+        .donut{
+            position: relative;
+        }
         .donutChart{
             height: 175px !important;
             width: 175px !important;
+        }
+        .donut-inner {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            top: 30px;
+            left: 30px;
+            background: lightgrey;
+            border-radius: 50%;
+            height: 115px;
+            width: 115px;
+            position: absolute;
+        }
+        .donut-inner h5 {
+            margin-bottom: 5px;
+            margin-top: 0;
+        }
+        .donut-inner span {
+            font-size: 12px;
         }
         .points{
             width: 175px;

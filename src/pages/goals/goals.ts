@@ -64,6 +64,7 @@ export class GoalsPage implements OnInit{
   saphire;
   ruby;
   pearl;
+  step;
   points = 0;
   width;
   rank;
@@ -143,30 +144,35 @@ export class GoalsPage implements OnInit{
       this.saphire = false;
       this.ruby = false;
       this.pearl = false;
+      this.step = "Pearl";
     } else if( step % 5 === 4){
       this.diamond = false;
       this.emerald = true;
       this.saphire = true;
       this.ruby = true;
       this.pearl = true;
+      this.step = "Diamond";
     } else if( step % 5 === 3){
       this.diamond = false;
       this.emerald = false;
       this.saphire = true;
       this.ruby = true;
       this.pearl = true;
+      this.step = "Emerald";
     } else if( step % 5 === 2){
       this.diamond = false;
       this.emerald = false;
       this.saphire = false;
       this.ruby = true;
       this.pearl = true;
+      this.step = "Saphire";
     } else if( step % 5 === 1){
       this.diamond = false;
       this.emerald = false;
       this.saphire = false;
       this.ruby = false;
       this.pearl = true;
+      this.step = "Ruby";
     } 
     let star = Math.floor(x / 1000);
     if(star === 0 ){

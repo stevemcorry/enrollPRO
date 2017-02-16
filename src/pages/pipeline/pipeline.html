@@ -3,7 +3,7 @@
     <ion-buttons left>
         <ion-icon name="funnel" class="icons"></ion-icon>
     </ion-buttons>
-    <ion-title (click)="pipelineSelect = !pipelineSelect">{{title}} <ion-icon name="arrow-down"></ion-icon></ion-title>
+    <ion-title (click)="pipelineSelect = !pipelineSelect; dim = !dim">{{title}} <ion-icon name="arrow-down"></ion-icon></ion-title>
     <ion-buttons end>
       <div (click)="openAddModal()">
         <ion-icon name="add" class="icons"></ion-icon>
@@ -13,14 +13,15 @@
 </ion-header>
 
 <ion-content>
+  <div class="dimmer" [ngClass]="{dimmerActive: dim}" (click)="dim = false; pipelineSelect = false"></div>
   <div *ngIf="pipelineSelect" class="choosePipe" [@fadeInOut]>
-     <div (click)="leadsPipe(); pipelineSelect = false">
+     <div (click)="leadsPipe(); pipelineSelect = false; dim=false">
        Leads
      </div>
-     <div (click)="enrollmentsPipe(); pipelineSelect = false">
+     <div (click)="enrollmentsPipe(); pipelineSelect = false; dim=false">
        Enrollments
      </div>
-     <div (click)="retentionPipe(); pipelineSelect = false">
+     <div (click)="retentionPipe(); pipelineSelect = false; dim=false">
        Retention
      </div>
   </div>

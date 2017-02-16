@@ -29,7 +29,13 @@
     </div>
     <div class="bottom">
       <div class="canvasCover">
+        <div class="donut">
         <canvas #donutCanvas class="donutChart"></canvas>
+          <div class="donut-inner">
+              <span>Going on</span>
+              <h5>{{step}}</h5>
+          </div>
+        </div>
         <div class="points" (click)="points = points + 100; setPoints(points)">{{points}}</div>
       </div>
       <div class="progressBar">
