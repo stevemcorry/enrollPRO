@@ -13,7 +13,7 @@
 <ion-content>
   <div class="dimmer" [ngClass]="{showDim: showDim}" (click)="showDim = false; closeFab(fab)"></div>
   <div *ngFor="let action of actions | actionFilter: action.complete" class="task">
-    <ion-icon name="phone" class="taskTask"></ion-icon>
+    <ion-icon name="{{icon(action.action_type.name)}}" class="taskTask"></ion-icon>
     <div class="spacing">
       <div (click)="openSpecificAction(action)">
         <div class="taskProspect">{{action.action_type.name}} {{action.contact.first_name}}</div>
