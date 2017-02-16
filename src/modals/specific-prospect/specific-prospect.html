@@ -7,8 +7,8 @@
     </ion-buttons>
     <ion-title>{{prospect.first_name}}</ion-title>
     <ion-buttons end>
-      <div (click)="dismiss()">
-        <div>EDIT</div>
+      <div (click)="openEdit()">
+        <div class="edit">EDIT</div>
       </div>
     </ion-buttons>
   </ion-navbar>
@@ -37,11 +37,14 @@
     <div class="position">
       <strong>PIPELINE POSITION:</strong>
     </div>
-  <ion-slides pager="true" #pipeSlider class="choosePipe" #choosePipe >
+  <ion-slides #pipeSlider class="choosePipe" #choosePipe >
     <ion-slide *ngFor="let slide of slides" class="slides">
       <div>{{slide.name}}</div>
     </ion-slide>
   </ion-slides>
+    <div class="pagerBar">
+      <div class="pagerBox" *ngFor="let slide of slides" [style.background-color]="getIndex(slide)"></div>
+    </div>
   <div class="box">
     <div class="topBox">
       <div class="smallBox left" [ngClass]="{leftBox: leftBox}" (click)="leftBox=false; rightBox = true; complete = 0;">ACTIONS</div>

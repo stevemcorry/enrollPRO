@@ -16,7 +16,7 @@ export class PutService{
             authHeader.append('Authorization', 'Bearer '+ key);
             authHeader.append('Content-Type','application/json')
         return this.http.put('http://enrollpro.coopertechnology.com/api/actions/' + id, JSON.stringify(action), { headers: authHeader})
-        .map(res => console.log(res));
+        .map(res => console.log(res, 'put complete'));
     }
     advancePipe(key, id, pipe){
         let authHeader = new Headers();
@@ -24,9 +24,17 @@ export class PutService{
             authHeader.append('Content-Type','application/json')
         return this.http.put('http://enrollpro.coopertechnology.com/api/contacts/' + id, JSON.stringify(pipe), { headers: authHeader}).
         map(res => {
-            console.log(res);
-        })
-        ;
+            console.log(res, 'put pipe');
+        });
+    }
+    editContact(key, id, edit){
+        let authHeader = new Headers();
+            authHeader.append('Authorization', 'Bearer '+ key);
+            authHeader.append('Content-Type','application/json')
+        return this.http.put('http://enrollpro.coopertechnology.com/api/contacts/' + id, JSON.stringify(edit), { headers: authHeader}).
+        map(res => {
+            console.log(res, 'put contact');
+        });
     }
 
 }

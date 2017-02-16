@@ -2,6 +2,11 @@ page-specific-Prospect {
     .scroll-content{
         overflow-y: scroll;
     }
+    .edit{
+        font-size: 20px;
+        margin-right: 8px; 
+        color: white;
+    }
     .contactHeader {
         font-family: 'Source Sans Pro', sans-serif;
         color: #5F4275;
@@ -19,15 +24,19 @@ page-specific-Prospect {
         width: 40%;
         margin: 15px 0 15px 0;
     }
-    .swiper-pagination-bullet-active{
-        background: lightgreen;
+    .pagerBar{
+        display: flex;
+        width: 100%;
+        justify-content: center;
     }
-    .swiper-pagination-bullet{
+    .pagerBox{
+        height: 8px;
         width: 15px;
-        background: lightgreen;
+        margin: 1px;
+        background: #f1f1f1;
     }
     .choosePipe{
-        height: 80px;
+        height: 20px;
     }
     .position{
         font-size: 23px;

@@ -3,8 +3,9 @@ import { GetService } from '../../services/getService';
 import { PostService } from '../../services/postService';
 import { PutService } from '../../services/putService';
 import { AddAction} from '../../modals/add-action/add-action';
+import { EditContact } from '../edit-contact/edit-contact';
 import { SpecificAction } from '../../modals/specific-action/specific-action';
-import { ModalController, Platform, NavParams, ViewController, Events, Slides} from 'ionic-angular';
+import { ModalController, Platform, NavParams, ViewController, Events, Slides, NavController} from 'ionic-angular';
 
 @Component({
   selector: 'page-specific-prospect',
@@ -15,7 +16,7 @@ import { ModalController, Platform, NavParams, ViewController, Events, Slides} f
 export class SpecificProspect implements OnInit{
     @ViewChild('choosePipe') choosePipe: Slides;
 
-    constructor(public modalCtrl: ModalController, public viewCtrl: ViewController, public platform: Platform, public params: NavParams, public getService: GetService, public postService: PostService, public putService: PutService, public events: Events){
+    constructor(public modalCtrl: ModalController, public viewCtrl: ViewController, public platform: Platform, public params: NavParams, public getService: GetService, public postService: PostService, public putService: PutService, public events: Events, public navCtrl: NavController){
     this.prospect = params.get('prospect');
     this.slides = params.get('slides');
     this.events.subscribe('actionAdded', () => {
@@ -27,7 +28,9 @@ export class SpecificProspect implements OnInit{
     contact = {
         phone: "",
         pipeline_position: {name: "", id: 0},
-        id: 0
+        id: 0,
+        first_name: '',
+        last_name: ''
 
     };
     complete = 0;
@@ -45,17 +48,29 @@ export class SpecificProspect implements OnInit{
             this.getService.getSpecificContact(key, this.prospect.id).subscribe(res => {
                 let pipe = res.pipeline_position.id + 1;
                 this.contact = res;
-                this.actions = res.actions;           
-                this.choosePipe.slideTo(this.contact.pipeline_position.id - 1, 1000);
+                this.actions = res.actions;
+                if(this.contact.pipeline_position.id > 6){
+                    this.choosePipe.slideTo(this.contact.pipeline_position.id -1, 2000)
+                } else {
+                    this.choosePipe.slideTo(this.contact.pipeline_position.id - 1, 1000);
+                }           
              });
         })
     }
     specificAction(action){
-        let modal = this.modalCtrl.create(SpecificAction, {action: action});
-        modal.present();
+        action.contact = {
+            first_name: this.contact.first_name,
+            last_name: this.contact.last_name
+        }
+        console.log(action, this.contact)
+        this.navCtrl.push(SpecificAction, {action: action});
     }
     addAction(){
         let modal = this.modalCtrl.create(AddAction, {contact: this.contact});
+        modal.present();
+    }
+    openEdit(){
+        let modal = this.modalCtrl.create(EditContact);
         modal.present();
     }
     icon(x){
@@ -88,6 +103,14 @@ export class SpecificProspect implements OnInit{
             return ""
         } else {
             return "lightgreen"
+        }
+    }
+    getIndex(x){
+        if(this.choosePipe.getActiveIndex() == this.slides.indexOf(x)){
+            return "lightgreen";
+        }
+        if(this.choosePipe.getActiveIndex() >= this.slides.indexOf(x)){
+            return '#9cf89c'
         }
     }
     dismiss() {

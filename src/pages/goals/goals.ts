@@ -25,7 +25,6 @@ export class GoalsPage implements OnInit{
     modal.present();
   }
   openHelp(){
-    console.log(this.slider.getActiveIndex(),'index')
     if(this.slider.getActiveIndex() === 0){
       let alert = this.alertCtrl.create({
         title: 'Points System',
