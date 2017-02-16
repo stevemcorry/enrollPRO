@@ -15,22 +15,31 @@ export class SpecificAction implements OnInit{
         this.action = params.get('action')
     }
     action = {
-        something: 2
+        something: 2,
+        id: 2
     };
-    // getAction(){
-    //     this.getService.getStorage().then(key => {
-    //         this.getService.getSpecificActions(key, this.id).subscribe(res=>{
-    //             this.action = res;
-    //             console.log(res);
-    //         })
-    //     })
-    // }
+    note;
+    getAction(id){
+        this.getService.getStorage().then(key => {
+            this.getService.getSpecificActions(key, id).subscribe(res=>{
+                this.note = res.notes;
+                console.log(res,'ress');
+            })
+        })
+    }
+    icon(x){
+        if(x === 'Text Message'){
+            return "chatbubbles"
+        } else if(x === 'Email'){
+            return "mail"
+        }
+    }
     dismiss() {
         this.viewCtrl.dismiss();
     }
     ngOnInit(){
         console.log(this.action)
-        // this.getAction();
+        this.getAction(this.action.id);
     }
     
 }

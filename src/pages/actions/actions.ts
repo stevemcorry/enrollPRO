@@ -45,10 +45,13 @@ export class ActionsPage implements OnInit{
         })
   }
   completeAction(id){
+
     this.getService.getStorage().then(key => {
-      this.putService.completeAction(key, id, this.newAction).subscribe(res => {
-        this.getActions();
-      })
+      setTimeout(()=>{
+        this.putService.completeAction(key, id, this.newAction).subscribe(res => {
+          this.getActions();
+        })
+      }, 500)
     })
   }
   addContact(){
@@ -60,8 +63,7 @@ export class ActionsPage implements OnInit{
     modal.present();
   }
   openSpecificAction(action){
-    let modal = this.modalCtrl.create(SpecificAction, {action: action});
-    modal.present();
+    this.navCtrl.push(SpecificAction, {action: action});
   }
   statusCheck(stat){
     if(stat){
@@ -72,15 +74,12 @@ export class ActionsPage implements OnInit{
   }
   animate(id){
     if(id == true){
-      console.log("true")
       return true
     } else {
-      console.log('false')
       return false
     }
   }
   closeFab(fab: FabContainer): void {
-    console.log(fab)
     if (fab !== undefined) {
       fab.close();
     }

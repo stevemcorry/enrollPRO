@@ -2,18 +2,36 @@
   <ion-navbar>
     <ion-buttons left>
       <div (click)="dismiss()">
-        <ion-icon name="close" class="icons"></ion-icon>
+        <ion-icon name="arrow-back" class="icons"></ion-icon>
       </div>
     </ion-buttons>
-    <ion-title>{{id}}</ion-title>
-    <ion-buttons end>
+    <ion-title>Action</ion-title>
+    <!--<ion-buttons end>
       <div (click)="dismiss()">
         <div>SAVE</div>
       </div>
-    </ion-buttons>
+    </ion-buttons>-->
   </ion-navbar>
 </ion-header>
 
 <ion-content class="addProspect">
-    {{action.complete}}
+    <div class="actionHead">
+      <ion-icon name="{{icon(action.action_type.name)}}" class="actionIcon"></ion-icon>
+      <div>
+        <div class="actionName">{{action.action_type.name}}</div>
+      </div>
+    </div>
+    <div class="actionContact">
+      <div class="contactName">{{action.contact.first_name}} {{action.contact.last_name}}</div>
+      <div class="dueDate">Due Date: {{action.due_date}}</div>
+    </div>
+    <div class="note">
+      <div class="notes">Notes:</div>
+      <div class="noteContent">{{note}}</div>
+    </div>
+    <div class="iconList">
+        <ion-icon [ngClass]="{emailOn: emailOn}" (click)="emailOn=true; textOn=false; callOn=false" name="mail" class="sendOptions"></ion-icon>
+        <ion-icon [ngClass]="{textOn: textOn}" (click)="textOn=true; emailOn=false; callOn=false;"  name="chatbubbles" class="sendOptions"></ion-icon>
+        <ion-icon [ngClass]="{callOn: callOn}" (click)="callOn=true; emailOn=false; textOn=false;" name="call" class="sendOptions"></ion-icon>
+    </div>
 </ion-content>
