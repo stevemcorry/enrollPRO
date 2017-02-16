@@ -23,6 +23,10 @@ page-actions {
     .task{
         display: flex;
         margin: 10px 0 10px 0;
+        transition: transform .5s cubic-bezier(1, 0, 1, .2);
+    }
+    .completeAnimation{
+        transform: translateX(-350px);
     }
     .taskProspect{
         font-family: 'Source Sans Pro', sans-serif;

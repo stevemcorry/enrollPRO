@@ -70,6 +70,15 @@ export class ActionsPage implements OnInit{
       return "white"
     }
   }
+  animate(id){
+    if(id == true){
+      console.log("true")
+      return true
+    } else {
+      console.log('false')
+      return false
+    }
+  }
   closeFab(fab: FabContainer): void {
     console.log(fab)
     if (fab !== undefined) {

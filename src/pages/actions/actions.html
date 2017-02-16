@@ -12,14 +12,14 @@
 
 <ion-content>
   <div class="dimmer" [ngClass]="{showDim: showDim}" (click)="showDim = false; closeFab(fab)"></div>
-  <div *ngFor="let action of actions | actionFilter: action.complete" class="task">
+  <div *ngFor="let action of actions | actionFilter: action.complete" class="task" [ngClass]="{completeAnimation:  animate(action.animate)}">
     <ion-icon name="{{icon(action.action_type.name)}}" class="taskTask"></ion-icon>
     <div class="spacing">
       <div (click)="openSpecificAction(action)">
         <div class="taskProspect">{{action.action_type.name}} {{action.contact.first_name}}</div>
         <div class="taskNotes">{{action.due_date}}</div>
       </div>
-      <div class="statusCircle" [style.background-color]="statusCheck(action.complete)" (click)="completeAction(action.id)"></div>
+      <div class="statusCircle" [style.background-color]="statusCheck(action.animate)" (click)="action.animate = true; completeAction(action.id)"></div>
     </div>
   </div>
   <ion-fab bottom right #fab>
