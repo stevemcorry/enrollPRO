@@ -51,10 +51,10 @@
       <div class="smallBox right" [ngClass]="{rightBox: rightBox}" (click)="rightBox=false; leftBox = true; complete = 1">HISTORY</div>
     </div>
     <div class="bottomBox">
-      <div *ngFor="let action of actions | actionFilter: complete" class="action" (click)="specificAction(action)">
-        <ion-icon name="{{icon(action.action_type.name)}}" class="actionIcon"></ion-icon>
+      <div *ngFor="let action of actions | actionFilter: complete" class="action">
+        <ion-icon name="{{icon(action.action_type.name)}}" class="actionIcon" (click)="specificAction(action)"></ion-icon>
         <div class="spacing">
-          <div>
+          <div (click)="specificAction(action)" class="openNewAction">
             <div class="taskProspect">
               {{action.action_type.name}} {{prospect.first_name}}: 
                 <div class="dueDate">
@@ -63,7 +63,7 @@
               </div>
             <div class="taskNotes">{{action.notes}}</div>
           </div>
-          <div class="statusCircle" [style.background]="activeCheck(action.complete)"></div>
+          <div class="statusCircle" (click)="completeAction(action.id, action.complete)" [style.background]="activeCheck(action.complete)"></div>
         </div>
       </div>
     </div>

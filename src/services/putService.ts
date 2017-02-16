@@ -11,7 +11,6 @@ export class PutService{
     constructor(private http: Http,public storage: Storage) {}
 
     completeAction(key, id, action){
-        console.log(action);
         let authHeader = new Headers();
             authHeader.append('Authorization', 'Bearer '+ key);
             authHeader.append('Content-Type','application/json')

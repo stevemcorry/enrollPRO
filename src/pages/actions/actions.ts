@@ -45,7 +45,6 @@ export class ActionsPage implements OnInit{
         })
   }
   completeAction(id){
-
     this.getService.getStorage().then(key => {
       setTimeout(()=>{
         this.putService.completeAction(key, id, this.newAction).subscribe(res => {

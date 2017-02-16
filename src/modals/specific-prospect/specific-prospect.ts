@@ -105,6 +105,25 @@ export class SpecificProspect implements OnInit{
             return "lightgreen"
         }
     }
+    newAction;
+    completeAction(id, comp){
+        if(comp === 0){
+            this.newAction = {
+                complete: 1
+            };
+        } else if(comp === 1){
+            this.newAction = {
+                complete: 0
+            }
+        }
+        this.getService.getStorage().then(key => {
+            setTimeout(()=>{
+                this.putService.completeAction(key, id, this.newAction).subscribe(res => {
+                    this.getSpecificContact();
+                })
+            }, 500)
+        })
+    }
     getIndex(x){
         if(this.choosePipe.getActiveIndex() == this.slides.indexOf(x)){
             return "lightgreen";
