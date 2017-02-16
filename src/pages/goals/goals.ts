@@ -46,6 +46,7 @@ export class GoalsPage implements OnInit{
           subTitle: 'Earn Badges as you add and move more people in the pipeline!',
           buttons: ['OK']
         })
+        alert.present();
     } else {
         let alert = this.alertCtrl.create({
             title: 'Points!',
