@@ -70,7 +70,7 @@ export class SpecificProspect implements OnInit{
         modal.present();
     }
     openEdit(){
-        let modal = this.modalCtrl.create(EditContact);
+        let modal = this.modalCtrl.create(EditContact, {contact: this.contact});
         modal.present();
     }
     icon(x){

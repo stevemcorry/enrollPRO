@@ -23,7 +23,6 @@ export class SpecificAction implements OnInit{
         this.getService.getStorage().then(key => {
             this.getService.getSpecificActions(key, id).subscribe(res=>{
                 this.note = res.notes;
-                console.log(res,'ress');
             })
         })
     }
@@ -38,7 +37,6 @@ export class SpecificAction implements OnInit{
         this.viewCtrl.dismiss();
     }
     ngOnInit(){
-        console.log(this.action)
         this.getAction(this.action.id);
     }
     

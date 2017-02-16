@@ -31,7 +31,7 @@ export class PutService{
         let authHeader = new Headers();
             authHeader.append('Authorization', 'Bearer '+ key);
             authHeader.append('Content-Type','application/json')
-        return this.http.put('http://enrollpro.coopertechnology.com/api/contacts/' + id, JSON.stringify(edit), { headers: authHeader}).
+        return this.http.put('http://enrollpro.coopertechnology.com/api/contacts/' + id, edit, { headers: authHeader}).
         map(res => {
             console.log(res, 'put contact');
         });

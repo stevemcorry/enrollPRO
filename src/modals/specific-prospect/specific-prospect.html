@@ -5,7 +5,7 @@
         <ion-icon name="close" class="icons"></ion-icon>
       </div>
     </ion-buttons>
-    <ion-title>{{prospect.first_name}}</ion-title>
+    <ion-title>{{contact.first_name}}</ion-title>
     <ion-buttons end>
       <div (click)="openEdit()">
         <div class="edit">EDIT</div>
@@ -39,7 +39,7 @@
     </div>
   <ion-slides #pipeSlider class="choosePipe" #choosePipe >
     <ion-slide *ngFor="let slide of slides" class="slides">
-      <div>{{slide.name}}</div>
+      <div class="slideName">{{slide.name}}</div>
     </ion-slide>
   </ion-slides>
     <div class="pagerBar">
