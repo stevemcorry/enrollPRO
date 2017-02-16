@@ -1,4 +1,14 @@
 page-actions {
+    .dimmer{
+        display: none;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, .5);
+    }
+    .showDim{
+        display: block;
+    }
     .scroll-content{
         overflow-y: scroll;
     }

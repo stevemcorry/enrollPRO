@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GetService } from '../../services/getService';
-import { NavController, ModalController, Events } from 'ionic-angular';
+import { NavController, ModalController, Events, FabContainer } from 'ionic-angular';
 import { PutService } from '../../services/putService';
 import { AddContact } from '../../modals/add-contact/add-contact';
 import { SpecificAction } from '../../modals/specific-action/specific-action';
@@ -35,6 +35,7 @@ export class ActionsPage implements OnInit{
     "complete": 1
   }
   public status = true;
+  showDim = false;
 
   getActions(){
     this.getService.getStorage().then(key => {
@@ -67,6 +68,12 @@ export class ActionsPage implements OnInit{
       return "lightgreen"
     } else {
       return "white"
+    }
+  }
+  closeFab(fab: FabContainer): void {
+    console.log(fab)
+    if (fab !== undefined) {
+      fab.close();
     }
   }
   ngOnInit(){
