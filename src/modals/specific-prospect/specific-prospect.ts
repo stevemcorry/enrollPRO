@@ -126,10 +126,12 @@ export class SpecificProspect implements OnInit{
     }
     getIndex(x){
         if(this.choosePipe.getActiveIndex() == this.slides.indexOf(x)){
-            return "lightgreen";
-        }
-        if(this.choosePipe.getActiveIndex() >= this.slides.indexOf(x)){
-            return '#9cf89c'
+            console.log('true')
+            return true;
+        } else if(this.choosePipe.getActiveIndex() >= this.slides.indexOf(x)){
+            return true;
+        } else {
+            return false;
         }
     }
     dismiss() {

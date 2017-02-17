@@ -43,7 +43,10 @@
     </ion-slide>
   </ion-slides>
     <div class="pagerBar">
-      <div class="pagerBox" *ngFor="let slide of slides" [style.background-color]="getIndex(slide)"></div>
+      <div *ngFor="let slide of slides" class="pagerBox">
+        <div [ngClass]="{activeFlag: getIndex(slide)}" class="pagerFlag"></div>
+        <div class="pagerArrow" [ngClass]="{activeArrow: getIndex(slide)}"></div>
+      </div>
     </div>
   <div class="box">
     <div class="topBox">
