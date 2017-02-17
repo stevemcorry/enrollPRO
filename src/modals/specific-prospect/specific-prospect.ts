@@ -62,7 +62,6 @@ export class SpecificProspect implements OnInit{
             first_name: this.contact.first_name,
             last_name: this.contact.last_name
         }
-        console.log(action, this.contact)
         this.navCtrl.push(SpecificAction, {action: action});
     }
     addAction(){
@@ -126,7 +125,6 @@ export class SpecificProspect implements OnInit{
     }
     getIndex(x){
         if(this.choosePipe.getActiveIndex() == this.slides.indexOf(x)){
-            console.log('true')
             return true;
         } else if(this.choosePipe.getActiveIndex() >= this.slides.indexOf(x)){
             return true;

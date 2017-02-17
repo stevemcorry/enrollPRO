@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { GetService } from '../../services/getService';
 import { PostService } from '../../services/postService';
-import {ViewController, Events} from 'ionic-angular';
+import {ViewController, Events, AlertController} from 'ionic-angular';
 
 @Component({
   selector: 'page-add-contact',
@@ -10,7 +10,7 @@ import {ViewController, Events} from 'ionic-angular';
 
 })
 export class AddContact{
-    constructor(public viewCtrl: ViewController, public getService: GetService, public postService: PostService, public events: Events){}
+    constructor(public viewCtrl: ViewController, public getService: GetService, public postService: PostService, public events: Events, public alert: AlertController){}
     contact = {
         first_name: '',
         last_name: '',
@@ -35,6 +35,12 @@ export class AddContact{
                     this.dismiss();
                 });
             })
+        } else {
+            let alert = this.alert.create({
+                title: 'Please Fill Out all the Info',
+                buttons: ['OK']
+            })
+            alert.present();
         }
     }
     getContacts = () => {
