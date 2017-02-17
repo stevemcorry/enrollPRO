@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Chart } from 'chart.js';
 import { GetService } from '../../services/getService';
 import { EditGoals } from '../../modals/edit-goals/edit-goals';
@@ -52,6 +52,7 @@ export class GoalsPage implements OnInit{
             subTitle: 'Earn points as you add and move people in the pipeline!',
             buttons: ['OK']
           })
+        alert.present();
     }
   }
 

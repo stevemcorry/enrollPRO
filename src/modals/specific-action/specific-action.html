@@ -31,7 +31,7 @@
     </div>
     <div class="iconList">
         <ion-icon [ngClass]="{emailOn: emailOn}" (click)="emailOn=true; textOn=false; callOn=false" name="mail" class="sendOptions"></ion-icon>
-        <ion-icon [ngClass]="{textOn: textOn}" (click)="textOn=true; emailOn=false; callOn=false;"  name="chatbubbles" class="sendOptions"></ion-icon>
+        <ion-icon [ngClass]="{textOn: textOn}" (click)="textOn=true; emailOn=false; callOn=false; sendText()"  name="chatbubbles" class="sendOptions"></ion-icon>
         <ion-icon [ngClass]="{callOn: callOn}" (click)="callOn=true; emailOn=false; textOn=false;" name="call" class="sendOptions"></ion-icon>
     </div>
 </ion-content>

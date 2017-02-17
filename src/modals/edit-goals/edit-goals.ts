@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GetService } from '../../services/getService';
-import { ViewController, Events, ModalController } from 'ionic-angular';
+import { ViewController, Events } from 'ionic-angular';
 
 @Component({
     selector: 'page-edit-goals',
@@ -10,7 +10,7 @@ import { ViewController, Events, ModalController } from 'ionic-angular';
 
 export class EditGoals implements OnInit {
 
-    constructor(public viewCtrl: ViewController, public getService: GetService){}
+    constructor(public viewCtrl: ViewController,public events: Events, public getService: GetService){}
     goals = [];
     getGoalTotals(){
         this.goals = [];
