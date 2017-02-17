@@ -219,11 +219,11 @@ export class GoalsPage implements OnInit{
     return (x*10)+'%';
   }
   //Third Slide
-  inner1 = "225px";
-  inner2 = "181px";
-  inner3 = "136px";
-  inner4 = "92px";
-  inner5 = "45px";
+  // inner1 = "225px";
+  // inner2 = "181px";
+  // inner3 = "136px";
+  // inner4 = "92px";
+  // inner5 = "45px";
 
   ngOnInit(){
     this.getContactPosition();

@@ -1,4 +1,8 @@
 page-goals {
+        .scroll-content{
+            padding-bottom: 0px !important;
+            padding-top: 0px !important;
+        }
     .slide1{
         display: flex;
         justify-content: space-around;
@@ -13,6 +17,7 @@ page-goals {
             height: 20%;
             display: flex;
             align-items: center;
+            padding: 5px;
         }
         .profilePic{
             background: lightgrey;
@@ -172,6 +177,7 @@ page-goals {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            padding: 5px;
         }
         .badges{
             height: 30%;
@@ -230,7 +236,7 @@ page-goals {
         }
         .inner2{
             height: 0;
-            width: inherit;
+            width: 100%;
             transform: translate(-23px,-40px);
             border-top: 40px solid orange;
             border-right: 23px solid rgba(0,0,0,0);
@@ -247,7 +253,7 @@ page-goals {
         .inner3{
             height: 0;
             transform: translate(-23px,-40px);
-            width: inherit;
+            width: 0%;
             border-top: 40px solid yellow;
             border-right: 23px solid rgba(0,0,0,0);
             border-left: 23px solid rgba(0,0,0,0);
