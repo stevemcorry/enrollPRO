@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { GetService} from '../../services/getService';
-import { NavController } from 'ionic-angular';
+import { ModalController } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
+import { LoadingPage } from '../loading/loading';
 
 @Component({
   selector: 'page-more',
@@ -9,13 +11,18 @@ import { NavController } from 'ionic-angular';
 })
 export class MorePage implements OnInit{
 
-  constructor(public navCtrl: NavController, public getService: GetService) {
+  constructor(public navCtrl: ModalController, public getService: GetService, public storage: Storage) {
   }
   name;
   getName(){
     this.getService.getStorageName().then(res => {
       this.name = res;
     })
+  }
+  logout(){
+    this.storage.clear();
+    let modal = this.navCtrl.create(LoadingPage);
+    modal.present();
   }
 
   ngOnInit(){
