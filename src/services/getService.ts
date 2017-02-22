@@ -72,6 +72,30 @@ export class GetService implements OnInit{
             return name;
             }))
     }
+    getJobs(key){
+        let authHeader = new Headers();
+            authHeader.append('Authorization', 'Bearer '+ key);
+            return this.http.get('http://enrollpro.coopertechnology.com/api/jobs', {headers: authHeader})
+            .map(data=>{
+                return data.json();
+            })
+    }
+    getTemplates(key, id){
+        let authHeader = new Headers();
+            authHeader.append('Authorization', 'Bearer '+ key);
+            return this.http.get('http://enrollpro.coopertechnology.com/api/jobs/templates/' + id , {headers: authHeader})
+            .map(data=>{
+                return data.json();
+            })
+    }
+    getSpecificJobs(key, id){
+        let authHeader = new Headers();
+            authHeader.append('Authorization', 'Bearer '+ key);
+            return this.http.get('http://enrollpro.coopertechnology.com/api/jobs/' + id , {headers: authHeader})
+            .map(data=>{
+                return data.json();
+            })
+    }
     ngOnInit(){
     }
 }

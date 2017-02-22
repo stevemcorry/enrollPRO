@@ -13,8 +13,11 @@ export class MarketingPage implements OnInit{
   constructor(public navCtrl: NavController, public modalCtrl: ModalController, public getService: GetService) {}
   markets;
   getMarkets(){
-    this.getService.getMarkets().subscribe(res=>{
-      this.markets = res;
+    this.getService.getStorage().then((key)=>{
+      this.getService.getJobs(key).subscribe(res=>{
+        console.log(res, 'market')
+        this.markets = res;
+      })
     })
   }
 

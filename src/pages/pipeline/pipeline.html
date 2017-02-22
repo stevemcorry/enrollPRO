@@ -16,13 +16,16 @@
   <div class="dimmer" [ngClass]="{dimmerActive: dim}" (click)="dim = false; pipelineSelect = false"></div>
   <div *ngIf="pipelineSelect" class="choosePipe" [@fadeInOut]>
      <div (click)="leadsPipe(); pipelineSelect = false; dim=false">
-       Leads
+       Names List
      </div>
      <div (click)="enrollmentsPipe(); pipelineSelect = false; dim=false">
        Enrollments
      </div>
-     <div (click)="retentionPipe(); pipelineSelect = false; dim=false">
-       Retention
+     <div (click)="customerPipe(); pipelineSelect = false; dim=false">
+       Customers
+     </div>
+     <div (click)="builderPipe(); pipelineSelect = false; dim=false">
+       Builders
      </div>
   </div>
   <ion-slides [options]="{pager:true}" #pipeSlider>

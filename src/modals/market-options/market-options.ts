@@ -20,7 +20,16 @@ export class MarketOptions implements OnInit{
     }
     market = {
         name: '',
-        options: ''
+        templates: [],
+        id: 0
+    }
+    getTemplates(){
+        this.getService.getStorage().then((key)=>{
+            this.getService.getSpecificJobs(key, this.market.id).subscribe((res)=>{
+                this.market = res;
+                console.log(res,'templates')
+            })
+        })
     }
     openModal(option){
         let method = option.method
@@ -42,6 +51,7 @@ export class MarketOptions implements OnInit{
         this.viewCtrl.dismiss();
     }
     ngOnInit(){
+        this.getTemplates();
     }
     
 }

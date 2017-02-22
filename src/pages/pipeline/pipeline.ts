@@ -39,8 +39,10 @@ export class PipelinePage implements OnInit {
   }
 
   public pipelineSteps;
-  public title;
-  public slides;
+  public title = 'Names List';
+  public slides = [
+    {name: "Imported Contacts"}
+  ];
   public something;
   public prospects = [];
   public allProspects;
@@ -59,33 +61,47 @@ export class PipelinePage implements OnInit {
     this.slides = [];
     this.slides = this.pipelineSteps.filter((x)=>{
         if(this.slides.indexOf(x) === -1) {
-        if (x.name === 'Lead' || x.name === 'Future Prospect') {
+        if (x.name === 'Imported Contacts' || x.name === 'Names List') {
           this.getContactPosition();
           this.goToSlide();
           return x;
         }
       }
     })
-    this.title = 'Leads';
+    console.log(this.slides, 'slides')
+    this.title = 'Names List';
   }
   enrollmentsPipe = () => {
     this.slides = [];
     this.slides = this.pipelineSteps.filter((x)=>{
       if(this.slides.indexOf(x) === -1){
-        if(x.name === 'Exposed to Essential Oils' || x.name === 'Future Prospect' || x.name === 'Committed to Meeting' || x.name === 'Attended Meeting' || x.name === 'Enrolled') {
+        if( x.name === 'Top 45' || x.name === 'Experienced E.O.' || x.name === 'Committed to Receiving Presentation' || x.name === 'Experienced Presentation' || x.name === 'Enrolled') {
           this.getContactPosition();
           this.goToSlide();
           return x
         }
       }
     })
-    this.title = 'Enrollments';
+    this.title = 'Enrollment';
   }
-  retentionPipe = () => {
+  customerPipe = () => {
     this.slides = [];
     this.slides = this.pipelineSteps.filter((x)=>{
       if(this.slides.indexOf(x) === -1){
-        if(x.name === 'Enrolled' || x.name === 'Lifestyle/Business Overview' || x.name === 'Had first Mentor Session' || x.name === 'Launched' || x.name === 'Recognized/Promoted' || x.name === 'Retained 90 Days') {
+        if( x.name === 'Enrolled' || x.name === 'Received Lifestyle Overview' || x.name === 'Bi-weekly Communication' || x.name ==='Showed Interest in Building' || x.name === 'Recieved Business Overview') {
+          this.getContactPosition();
+          this.goToSlide()
+          return x
+        }
+      }
+    })
+    this.title = 'Retention';
+  }
+  builderPipe = () => {
+    this.slides = [];
+    this.slides = this.pipelineSteps.filter((x)=>{
+      if(this.slides.indexOf(x) === -1){
+        if( x.name === 'Enrolled' || x.name === 'Received Lifestyle Overview' || x.name === 'Received Business Overview' || x.name === 'Made 100 Names List' || x.name === 'Elite for 3 Months') {
           this.getContactPosition();
           this.goToSlide()
           return x
