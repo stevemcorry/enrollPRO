@@ -83,13 +83,15 @@ export class ActionsPage implements OnInit{
       fab.close();
     }
   }
-  icon(x){
-        if(x === 'Text Message'){
-            return "chatbubbles"
-        } else if(x === 'Email'){
-            return "mail"
-        }
+  classCheck(x){
+    console.log(x)
+    let action = x.action_type.id
+    if( action === 1){
+      return 'email'
+    } else if( action === 2){
+      return 'text'
     }
+  }
   ngOnInit(){
     this.getActions();
   }

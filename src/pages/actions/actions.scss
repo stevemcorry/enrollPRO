@@ -38,13 +38,26 @@ page-actions {
     .taskNotes{
         color: grey;
     }
-    .taskTask{
-        height: 100%;
+    .text{
+        background-image: url('../assets/icon/actions/ACTIONStext.png');
+        background-repeat: no-repeat;
+        background-size: contain;
         width: 50px;
-        font-size: 36px;
-        color: grey;
-        align-self: center;
-        text-align: center;
+        margin: 3% 0 0 2px;
+    }
+    .email{
+        background-image: url('../assets/icon/actions/ACTIONSEmail.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 50px;
+        margin: 3% 0 0 2px;
+    }
+    .call{
+        background-image: url('../assets/icon/actions/ACTIONScall.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 50px;
+        margin: 3% 0 0 2px;
     }
     .statusCircle{
         border-radius: 50%;

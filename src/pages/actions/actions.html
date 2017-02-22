@@ -13,7 +13,7 @@
 
 <ion-content>
   <div *ngFor="let action of actions | actionFilter: action.complete" class="task" [ngClass]="{completeAnimation:  animate(action.animate)}">
-    <ion-icon name="{{icon(action.action_type.name)}}" (click)="openSpecificAction(action)" class="taskTask"></ion-icon>
+    <div (click)="openSpecificAction(action)" class="{{classCheck(action)}}"></div>
     <div class="spacing">
       <div (click)="openSpecificAction(action)" class="actionBody">
         <div class="taskProspect">{{action.action_type.name}} {{action.contact.first_name}}</div>
