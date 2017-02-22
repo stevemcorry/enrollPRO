@@ -16,7 +16,7 @@
   <div *ngFor="let option of market.templates">
     <div class="method">
       <div class="box" (click)="openModal(option)">
-          <div class="boxTitle"><div class="vertical-text">{{market.name}}</div></div>
+          <div class="boxTitle"><div class="vertical-text">{{option.template_type.name}}</div></div>
           <div></div>
       </div>
       <div class="optionTitle">

@@ -62,7 +62,7 @@ export class ChooseContacts implements OnInit{
         if(this.chosen.phones[0]){
             if(this.sendReady){
                 if(this.data.type === 'text'){
-                    SocialSharing.shareViaSMS('Hey!' , this.phone.toString() ).then(()=>{
+                    SocialSharing.shareViaSMS(this.data.content , this.phone.toString() ).then(()=>{
                     }).catch(()=>{
                         alert('no sms sent')
                     })

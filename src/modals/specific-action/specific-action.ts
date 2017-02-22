@@ -42,7 +42,7 @@ export class SpecificAction implements OnInit{
         });
     }
     callNumber(){
-        CallNumber.callNumber(this.phone, true)
+        CallNumber.callNumber(this.phone, false)
             .then(() => console.log('Launched dialer!'))
             .catch(() => console.log('Error launching dialer'));
     }
