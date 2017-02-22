@@ -24,7 +24,19 @@ export class SpecificAction implements OnInit{
     note;
     phone
     sendText(){
-        SMS.send(this.phone, 'Whats up?')
+        var options={
+            replaceLineBreaks: false, // true to replace \n by a new line, false by default
+            android: {
+                intent: 'INTENT'  // Opens Default sms app
+                //intent: '' // Sends sms without opening default sms app
+                }
+        }
+        SMS.send('8012328662', 'Hello world!',options)
+            .then(()=>{
+                alert("success");
+            },()=>{
+            alert("failed");
+        });
     }
     getAction(id){
         this.getService.getStorage().then(key => {

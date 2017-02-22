@@ -80,7 +80,7 @@ export class GetService implements OnInit{
                 return data.json();
             })
     }
-    getTemplates(key, id){
+    getSpecificTemplate(key, id){
         let authHeader = new Headers();
             authHeader.append('Authorization', 'Bearer '+ key);
             return this.http.get('http://enrollpro.coopertechnology.com/api/jobs/templates/' + id , {headers: authHeader})

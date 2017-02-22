@@ -14,16 +14,25 @@ import { NavController, ModalController, Platform, NavParams, ViewController, Ev
 export class MarketText implements OnInit{
     constructor(public navCtrl: NavController, public viewCtrl: ViewController, public platform: Platform, public params: NavParams, public getService: GetService, public postService: PostService, public events: Events, public modalCtrl: ModalController){
         this.option = params.get('option');
-        this.content = this.option.content.fun;
     }
     option;
     content;
+    data;
     email;
     call;
     follow;
     fun = true;
     direct;
     single = true;
+    getTemplate(){
+        this.getService.getStorage().then((key)=>{
+            this.getService.getSpecificTemplate(key, this.option.id).subscribe(res=>{
+                this.data = res;
+                this.content = res.body_fun;
+                console.log('temp',res);
+            })
+        })
+    }
     setContent(content){
         this.direct = false;
         this.fun = false;
@@ -31,19 +40,20 @@ export class MarketText implements OnInit{
     }
     contentChoose(x){
         if(x === 'direct'){
-            this.content = this.option.content.direct;
+            this.content = this.data.body_direct;
         } else {
-            this.content = this.option.content.fun;
+            this.content = this.data.body_fun;
         }
     }
-    nextPage(){
-        let modal = this.modalCtrl.create(ChooseContacts);
+    nextPage(data){
+        let modal = this.modalCtrl.create(ChooseContacts, {data: data});
         modal.present();
     }
     dismiss() {
         this.viewCtrl.dismiss();
     }
     ngOnInit(){
+        this.getTemplate();
     }
     
 }

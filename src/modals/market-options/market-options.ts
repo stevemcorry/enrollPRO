@@ -32,14 +32,14 @@ export class MarketOptions implements OnInit{
         })
     }
     openModal(option){
-        let method = option.method
-        if(method == 'email'){
+        let method = option.template_type.id
+        if(method == 2){
             let modal = this.modalCtrl.create(MarketEmail, {option: option});
             modal.present();
-        }else if(method == 'text'){
+        }else if(method == 1){
             let modal = this.modalCtrl.create(MarketText, {option: option});
             modal.present();
-        } else if(method == 'drip'){
+        } else if(method == 3){
             let modal = this.modalCtrl.create(MarketDrip, {option: option});
             modal.present();
         } else {
