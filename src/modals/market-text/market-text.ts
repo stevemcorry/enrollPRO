@@ -29,7 +29,6 @@ export class MarketText implements OnInit{
             this.getService.getSpecificTemplate(key, this.option.id).subscribe(res=>{
                 this.data = res;
                 this.content = res.body_fun;
-                console.log('temp',res);
             })
         })
     }

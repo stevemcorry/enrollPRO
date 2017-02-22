@@ -27,7 +27,6 @@ export class MarketOptions implements OnInit{
         this.getService.getStorage().then((key)=>{
             this.getService.getSpecificJobs(key, this.market.id).subscribe((res)=>{
                 this.market = res;
-                console.log(res,'templates')
             })
         })
     }

@@ -21,19 +21,19 @@ export class SpecificAction implements OnInit{
             id: 0
         }
     };
+    name;
     note;
+    email;
     phone
     sendText(){
-        SocialSharing.shareViaSMS('whats good', '8012328662').then(()=>{
-            alert('sms sent')
+        SocialSharing.shareViaSMS('Hey ' + this.name + '!' , this.phone).then(()=>{
         }).catch(()=>{
             alert('no sms sent')
         })
     }
     sendEmail(){
         SocialSharing.canShareViaEmail().then(() => {
-            let email = ['stevemcorry@gmail.com']
-            SocialSharing.shareViaEmail('Body', 'Subject', email).then(() => {
+            SocialSharing.shareViaEmail('Body', 'Subject', [this.email]).then(() => {
             }).catch(() => {
                 alert('almost')
             });
@@ -46,8 +46,10 @@ export class SpecificAction implements OnInit{
             this.getService.getSpecificActions(key, id).subscribe(res=>{
                 this.note = res.notes;
             })
-            this.getService.getSpecificContact(key, this.action.contact.id).subscribe((phone)=>{
-                this.phone = phone.phone
+            this.getService.getSpecificContact(key, this.action.contact.id).subscribe(data=>{
+                this.phone = data.phone;
+                this.email = data.email;
+                this.name = data.first_name;
             })
         })
     }

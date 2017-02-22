@@ -15,7 +15,6 @@ export class MarketingPage implements OnInit{
   getMarkets(){
     this.getService.getStorage().then((key)=>{
       this.getService.getJobs(key).subscribe(res=>{
-        console.log(res, 'market')
         this.markets = res;
       })
     })
