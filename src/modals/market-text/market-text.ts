@@ -44,7 +44,11 @@ export class MarketText implements OnInit{
             this.content = this.data.body_fun;
         }
     }
-    nextPage(data){
+    nextPage(content){
+        let data = {
+            content: content,
+            type: 'text'
+        }
         let modal = this.modalCtrl.create(ChooseContacts, {data: data});
         modal.present();
     }
