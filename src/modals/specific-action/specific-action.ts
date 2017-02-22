@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../../services/postService';
 import { GetService } from '../../services/getService';
-import { SMS, SocialSharing } from 'ionic-native';
+import { SocialSharing, CallNumber } from 'ionic-native';
 import { ModalController, NavParams, ViewController, Events} from 'ionic-angular';
 
 @Component({
@@ -40,6 +40,11 @@ export class SpecificAction implements OnInit{
         }).catch(() => {
             alert('nope')
         });
+    }
+    callNumber(){
+        CallNumber.callNumber(this.phone, true)
+            .then(() => console.log('Launched dialer!'))
+            .catch(() => console.log('Error launching dialer'));
     }
     getAction(id){
         this.getService.getStorage().then(key => {
