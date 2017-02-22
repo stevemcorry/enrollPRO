@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../../services/postService';
 import { GetService } from '../../services/getService';
-import { SMS } from 'ionic-native';
+import { SMS, SocialSharing } from 'ionic-native';
 import { ModalController, NavParams, ViewController, Events} from 'ionic-angular';
 
 @Component({
@@ -24,18 +24,21 @@ export class SpecificAction implements OnInit{
     note;
     phone
     sendText(){
-        var options={
-            replaceLineBreaks: false, // true to replace \n by a new line, false by default
-            android: {
-                intent: 'INTENT'  // Opens Default sms app
-                //intent: '' // Sends sms without opening default sms app
-                }
-        }
-        SMS.send('8012328662', 'Hello world!',options)
-            .then(()=>{
-                alert("success");
-            },()=>{
-            alert("failed");
+        SocialSharing.shareViaSMS('whats good', '8012328662').then(()=>{
+            alert('sms sent')
+        }).catch(()=>{
+            alert('no sms sent')
+        })
+    }
+    sendEmail(){
+        SocialSharing.canShareViaEmail().then(() => {
+            let email = ['stevemcorry@gmail.com']
+            SocialSharing.shareViaEmail('Body', 'Subject', email).then(() => {
+            }).catch(() => {
+                alert('almost')
+            });
+        }).catch(() => {
+            alert('nope')
         });
     }
     getAction(id){
