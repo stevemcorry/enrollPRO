@@ -19,7 +19,13 @@ export class GoalsPage implements OnInit{
       this.getContactPosition();
     })
   }
-
+  name;
+  getName(){
+    this.getService.getStorageName().then(res => {
+      this.name = res;
+      console.log(res)
+    })
+  }
   openEdit(){
     let modal = this.modalCtrl.create(EditGoals);
     modal.present();
@@ -62,7 +68,7 @@ export class GoalsPage implements OnInit{
   //First Slide
   diamond;
   emerald;
-  saphire;
+  sapphire;
   ruby;
   pearl;
   step;
@@ -109,12 +115,12 @@ export class GoalsPage implements OnInit{
                 datasets: [{
                     data: prog,
                     backgroundColor: [
-                        'lightgreen',
-                        'purple',
+                        '#ADD474',
+                        '#5F4275',
                     ],
                     borderColor: [
-                      'purple',
-                      'purple'
+                      '#5F4275',
+                      '#5F4275'
                     ]
                 }]
             }
@@ -143,38 +149,38 @@ export class GoalsPage implements OnInit{
     if(step % 5 === 0){
       this.diamond = false;
       this.emerald = false;
-      this.saphire = false;
+      this.sapphire = false;
       this.ruby = false;
       this.pearl = false;
-      this.step = "Pearl";
+      this.step = "pearl";
     } else if( step % 5 === 4){
       this.diamond = false;
       this.emerald = true;
-      this.saphire = true;
+      this.sapphire = true;
       this.ruby = true;
       this.pearl = true;
-      this.step = "Diamond";
+      this.step = "diamond";
     } else if( step % 5 === 3){
       this.diamond = false;
       this.emerald = false;
-      this.saphire = true;
+      this.sapphire = true;
       this.ruby = true;
       this.pearl = true;
-      this.step = "Emerald";
+      this.step = "emerald";
     } else if( step % 5 === 2){
       this.diamond = false;
       this.emerald = false;
-      this.saphire = false;
+      this.sapphire = false;
       this.ruby = true;
       this.pearl = true;
-      this.step = "Saphire";
+      this.step = "sapphire";
     } else if( step % 5 === 1){
       this.diamond = false;
       this.emerald = false;
-      this.saphire = false;
+      this.sapphire = false;
       this.ruby = false;
       this.pearl = true;
-      this.step = "Ruby";
+      this.step = "ruby";
     } 
     let star = Math.floor(x / 1000);
     if(star === 0 ){
@@ -227,6 +233,7 @@ export class GoalsPage implements OnInit{
   // inner5 = "45px";
 
   ngOnInit(){
+    this.getName();
     this.getContactPosition();
     this.getGoalTotals();
   }

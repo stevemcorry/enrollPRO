@@ -30,6 +30,7 @@ page-goals {
         }
         .profile{
             height: 20%;
+            width: 100%;
             display: flex;
             align-items: center;
             padding: 5px;
@@ -48,13 +49,20 @@ page-goals {
             font-size: 130px;
         }
         .profileTitle{
-            align-self: flex-start;
+            font-family: 'brandon-regular';
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
             margin: 15px;
+        }
+        .frank{
+            font-size: 22px;
         }
         .stars{
             display: flex;
             justify-content: space-around;
             width: 100%;
+            height: 18%;
         }
         .star{
             height: 65px;
@@ -66,7 +74,8 @@ page-goals {
         .bottom{
             display: flex;
             justify-content: space-between;
-            height: 50%;
+            height: 55%;
+            padding-bottom: 10px;
         }
         .donut{
             position: relative;
@@ -76,31 +85,44 @@ page-goals {
             width: 175px !important;
         }
         .donut-inner {
+            color: white;
             display: flex;
+            align-items: flex-start;
             justify-content: center;
             flex-direction: column;
+            padding-left: 10px;
             top: 30px;
             left: 30px;
-            background: lightgrey;
+            background: #979797;
             border-radius: 50%;
             height: 115px;
             width: 115px;
             position: absolute;
         }
-        .donut-inner h5 {
-            margin-bottom: 5px;
-            margin-top: 0;
+        .going{
+            font-family: 'brandon-thin';
+            font-size: 15px;
+            margin-left: 5px;
+            margin-bottom: -10px;
         }
-        .donut-inner span {
-            font-size: 12px;
+        .stepIn{
+            font-family: 'hello-beautiful';
+            font-size: 45px;
+            letter-spacing: 2px;
         }
         .points{
             width: 175px;
-            font-size: 45px;
             text-align: center;
+            color: $purp;
+            font-family: 'brandon-bold';
+            font-size: 45px;
         }
         .progressActive{
-            background: lightgreen;
+            background: $greeny;
+            border-bottom: 3px solid white !important;
+        }
+        .progressActivePearl{
+            background: $greeny;
         }
         .progressBar{
             display: flex;
@@ -108,10 +130,13 @@ page-goals {
             justify-content: space-around;
             width: 95px;
             height: 100%;
-            border: 5px solid lightgreen;
-            border-radius: 15px;
+            border: 5px solid $greeny;
+            border-radius: 25px;
+            margin-bottom: 10px;
+            color: $purp;
+            font-family: 'brandon-light';
             text-align: center;
-            font-size: 20px;
+            font-size: 15px;
             .diamond{
                 height: 20%;
                 display: flex;
@@ -145,6 +170,8 @@ page-goals {
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                border-bottom-right-radius: 20px;
+                border-bottom-left-radius: 20px;
             }
         }
     }
@@ -183,7 +210,7 @@ page-goals {
                     .progress{
                         border-radius: 15px;
                         height: 20px;
-                        background: #ACD373;
+                        background: $greeny;
                     }
                     .barProgress{
                         width: 20%;

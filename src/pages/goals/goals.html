@@ -5,7 +5,7 @@
           <div class="addGoal"></div>
       </div>
     </ion-buttons>
-    <ion-title>Success Tracker</ion-title>
+    <ion-title>success tracker</ion-title>
     <ion-buttons end>
       <div (click)="openHelp()">
           <div class="helpIcon"></div>
@@ -20,8 +20,8 @@
     <div class="profile">
       <div class="profilePic"><ion-icon name="contact" class="profileIcon"></ion-icon></div>
       <div class="profileTitle">
-        <div>Liza Diamond</div>
-        <div>Current Rank: {{rank}}</div>
+        <div class="frank">{{name}}</div>
+        <div>Rank: {{rank}}</div>
       </div>
     </div>
     <div class="stars">
@@ -32,18 +32,18 @@
         <div class="donut">
         <canvas #donutCanvas class="donutChart"></canvas>
           <div class="donut-inner">
-              <span>Going on</span>
-              <h5>{{step}}</h5>
+              <span class="going">GOING</span>
+              <div class="stepIn">{{step}}</div>
           </div>
         </div>
         <div class="points" (click)="points = points + 100; setPoints(points)">{{points}}</div>
       </div>
       <div class="progressBar">
-        <div class="diamond" [ngClass]="{progressActive: diamond}">Diamond</div>
-        <div class="emerald" [ngClass]="{progressActive: emerald}">Emerald</div>
-        <div class="saphire" [ngClass]="{progressActive: saphire}">Saphire</div>
-        <div class="ruby" [ngClass]="{progressActive: ruby}">Ruby</div>
-        <div class="pearl" [ngClass]="{progressActive: pearl}">Pearl</div>
+        <div class="diamond" [ngClass]="{progressActive: diamond}">DIAMOND</div>
+        <div class="emerald" [ngClass]="{progressActive: emerald}">EMERALD</div>
+        <div class="saphire" [ngClass]="{progressActive: sapphire}">SAPPHIRE</div>
+        <div class="ruby" [ngClass]="{progressActive: ruby}">RUBY</div>
+        <div class="pearl" [ngClass]="{progressActivePearl: pearl}">PEARL</div>
       </div>
     </div>
   </ion-slide>
