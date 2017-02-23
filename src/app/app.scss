@@ -3,10 +3,19 @@
     background-color: #5F4275;
 }
 .toolbar-title{
-    font-family: 'Kaushan Script', cursive;
+    display: flex;
+    justify-content: center;
+    align-self: flex-start;
+    font-family: 'hello-beautiful';
+    font-weight: 100;
     letter-spacing: 1px;
-    font-size: 30px;
+    font-size: 60px;
     color: white;
+    margin-bottom: 5px;
+}
+.toolbar{
+    padding-top: 30px !important;
+    height: 80px;
 }
 .toolbar-ios ion-title{
         padding: 0 45px 0 45px;
@@ -34,6 +43,76 @@
     height: 100%;
     width: 100%;
 }
+
+//FONTS
+
+//Brandon
+@font-face{
+    font-family: "brandon-black";
+    src: url('../assets/fonts/BrandonText/BrandonText-Black.otf') format('opentype');
+}
+@font-face{
+    font-family: "brandon-black-italic";
+    src: url('../assets/fonts/BrandonText/BrandonText-BlackItalic.otf') format('opentype');
+}
+@font-face{
+    font-family: "brandon-bold";
+    src: url('../assets/fonts/BrandonText/BrandonText-Bold.otf') format('opentype');
+}
+@font-face{
+    font-family: "brandon-bold-italic";
+    src: url('../assets/fonts/BrandonText/BrandonText-BoldItalic.otf') format('opentype');
+}
+@font-face{
+    font-family: "brandon-light";
+    src: url('../assets/fonts/BrandonText/BrandonText-Light.otf') format('opentype');
+}
+@font-face{
+    font-family: "brandon-light-italic";
+    src: url('../assets/fonts/BrandonText/BrandonText-LightItalic.otf') format('opentype');
+}
+@font-face{
+    font-family: "brandon-medium";
+    src: url('../assets/fonts/BrandonText/BrandonText-Medium.otf') format('opentype');
+}
+@font-face{
+    font-family: "brandon-medium-italic";
+    src: url('../assets/fonts/BrandonText/BrandonText-MediumItalic.otf') format('opentype');
+}
+@font-face{
+    font-family: "brandon-regular";
+    src: url('../assets/fonts/BrandonText/BrandonText-Regular.otf') format('opentype');
+}
+@font-face{
+    font-family: "brandon-regular-italic";
+    src: url('../assets/fonts/BrandonText/BrandonText-RegularItalic.otf') format('opentype');
+}
+@font-face{
+    font-family: "brandon-thin";
+    src: url('../assets/fonts/BrandonText/BrandonText-Thin.otf') format('opentype');
+}
+@font-face{
+    font-family: "brandon-thin-italic";
+    src: url('../assets/fonts/BrandonText/BrandonText-ThinItalic.otf') format('opentype');
+}
+//Hello Beautiful
+@font-face{
+    font-family: "hello-beautiful";
+    src: url('../assets/fonts/HelloBeautiful/HelloBeautiful.otf') format('opentype');
+}
+@font-face{
+    font-family: "hello-beautiful-alternates";
+    src: url('../assets/fonts/HelloBeautiful/HelloBeautifulAlternates.ttf') format('truetype');
+}
+@font-face{
+    font-family: "hello-beautiful-marker";
+    src: url('../assets/fonts/HelloBeautiful/HelloBeautiful-Marker.otf') format('opentype');
+}
+@font-face{
+    font-family: "hello-beautiful-swashes";
+    src: url('../assets/fonts/HelloBeautiful/HelloBeautiful-Swashes.otf') format('opentype');
+}
+
 
 // App Global Sass
 // --------------------------------------------------

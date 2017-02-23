@@ -6,6 +6,22 @@ page-marketing{
         margin-top: 70px !important;
         margin-bottom: 60px !important;
     }
+    .text{
+        background-image: url('../assets/img/marketing/MARKETINGtext.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 35px;
+        height: 35px;
+        margin: 5px 5px 10px 5px;
+    }
+    .search{
+        background-image: url('../assets/img/header/HEADERsearch.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 25px;
+        height: 25px;
+        margin: 5px 5px 10px 5px;
+    }
     .marketOptions{
         height: 26%;
         width: 50%;

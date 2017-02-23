@@ -1,4 +1,33 @@
 page-pipeline {
+    .filter{
+        background-image: url('../assets/img/pipeline/PIPESfilter.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 25px;
+        height: 25px;
+        margin: 5px 5px 10px 5px;
+    }
+    .add{
+        background-image: url('../assets/img/pipeline/PIPESadd.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 20px;
+        height: 20px;
+        margin: 5px 5px 10px 5px;
+    }
+    .downArrow{
+        background-image: url('../assets/img/pipeline/PIPESarrow.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 15px;
+        height: 15px;
+        margin: 10% 5px 10px 10px;
+    }
+    .titleFlex{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     .dimmer{
         position: fixed;
         height: 100%;
@@ -26,12 +55,13 @@ page-pipeline {
     }
     .slides{
         height: 100%;
-        overflow: auto;
+        overflow-y: scroll;
     }
     .prospects{
         position: absolute;
         top: 6%;
         width: 100%;
+        font-family: 'brandon-black-italic';
     }
     .choosePipe{
         position: fixed;
@@ -42,7 +72,7 @@ page-pipeline {
         width: 100%;
         height: 50px;
         background: lightgrey;
-
+        font-family: 'brandon-black'
     }
     .arrow{
         display: flex;

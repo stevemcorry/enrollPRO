@@ -35,6 +35,7 @@ export class PipelinePage implements OnInit {
     })
     this.events.subscribe('pipeAdvance', () => {
       this.getContactPosition();
+      this.leadsPipe();
     })
   }
 
@@ -75,7 +76,6 @@ export class PipelinePage implements OnInit {
         }
       }
     })
-    console.log(this.slides, 'slides')
     this.title = 'Names List';
   }
   enrollmentsPipe = () => {
