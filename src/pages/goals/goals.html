@@ -24,8 +24,8 @@
         <div>Current Rank: {{rank}}</div>
       </div>
     </div>
-    <div class="stars" [style.width]="width">
-
+    <div class="stars">
+      <div class="star" *ngFor="let star of stars"></div>
     </div>
     <div class="bottom">
       <div class="canvasCover">

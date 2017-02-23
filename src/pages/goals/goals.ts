@@ -66,6 +66,7 @@ export class GoalsPage implements OnInit{
   ruby;
   pearl;
   step;
+  stars = [];
   points = 0;
   width;
   rank;
@@ -177,22 +178,22 @@ export class GoalsPage implements OnInit{
     } 
     let star = Math.floor(x / 1000);
     if(star === 0 ){
-      this.width = '0%';
+      this.stars = [];
       this.rank = 'Bronze'
     } else if(star === 1) {
-      this.width = '20%';
+      this.stars = [1];
       this.rank = 'Silver'
     } else if (star === 2){
-      this.width = '43%';
+      this.stars = [1,2];
       this.rank = 'Gold'
     } else if (star === 3){
-      this.width = '64%';
+      this.stars = [1,2,3];
       this.rank = 'Platinum'
     } else if (star === 4){
-      this.width = '85%';
+      this.stars = [1,2,3,4];
       this.rank = 'Crystaled'
     } else {
-      this.width = '100%';
+      this.stars = [1,2,3,4,5];
       this.rank = 'Oil God'
     }
   }

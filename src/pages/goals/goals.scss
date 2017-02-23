@@ -12,7 +12,6 @@ page-goals {
             flex-direction: column;
             justify-content: space-between;
             padding: 5px;
-            overflow-y: scroll;
         }
         .profile{
             height: 20%;
@@ -38,10 +37,15 @@ page-goals {
             margin: 15px;
         }
         .stars{
-            height: 62.7px;
+            display: flex;
+            justify-content: space-around;
             width: 100%;
-            background: url('../assets/icon/goals/GOALSstar.png');
-            background-repeat-y: no-repeat;
+        }
+        .star{
+            height: 65px;
+            width: 65px;
+            background: url('../assets/img/goals/GOALSstar.png');
+            background-repeat: no-repeat;
             background-size: contain;
         }
         .bottom{
