@@ -38,7 +38,7 @@ page-actions {
     }
     .task{
         display: flex;
-        margin: 10px 0 10px 0;
+        margin: 10px 0 10px 2px;
         transition: transform .2s cubic-bezier(1, 0, 1, .2);
     }
     .completeAnimation{
@@ -47,25 +47,26 @@ page-actions {
         background: lightgreen;
     }
     .taskProspect{
-        font-family: 'Source Sans Pro', sans-serif;
+        font-family: 'brandon-regular';
         font-weight: 700;
         font-size: 20px;
     }
     .taskNotes{
         color: grey;
+        font-family: 'brandon-light';
     }
     .text{
         background-image: url('../assets/img/actions/ACTIONStext.png');
         background-repeat: no-repeat;
         background-size: contain;
-        width: 50px;
+        width: 40px;
         margin: 3% 0 0 2px;
     }
     .email{
         background-image: url('../assets/img/actions/ACTIONSEmail.png');
         background-repeat: no-repeat;
         background-size: contain;
-        width: 50px;
+        width: 40px;
         margin: 3% 0 0 2px;
     }
     .call{
