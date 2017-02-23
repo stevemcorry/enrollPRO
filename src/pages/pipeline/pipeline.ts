@@ -59,12 +59,19 @@ export class PipelinePage implements OnInit {
   }
   leadsPipe(){
     this.slides = [];
-    this.slides = this.pipelineSteps.filter((x)=>{
+    this.pipelineSteps.filter((x)=>{
         if(this.slides.indexOf(x) === -1) {
         if (x.name === 'Imported Contacts' || x.name === 'Names List') {
           this.getContactPosition();
           this.goToSlide();
-          return x;
+          let z = x.contacts.length;
+          let obj = {
+            contacts: x.contacts,
+            id: x.id,
+            name: x.name,
+            number: z
+          }
+          this.slides.push(obj);
         }
       }
     })
@@ -73,12 +80,19 @@ export class PipelinePage implements OnInit {
   }
   enrollmentsPipe = () => {
     this.slides = [];
-    this.slides = this.pipelineSteps.filter((x)=>{
+    this.pipelineSteps.filter((x)=>{
       if(this.slides.indexOf(x) === -1){
         if( x.name === 'Top 45' || x.name === 'Experienced E.O.' || x.name === 'Committed to Receiving Presentation' || x.name === 'Experienced Presentation' || x.name === 'Enrolled') {
           this.getContactPosition();
           this.goToSlide();
-          return x
+          let z = x.contacts.length;
+          let obj = {
+            contacts: x.contacts,
+            id: x.id,
+            name: x.name,
+            number: z
+          }
+          this.slides.push(obj);
         }
       }
     })
@@ -86,12 +100,19 @@ export class PipelinePage implements OnInit {
   }
   customerPipe = () => {
     this.slides = [];
-    this.slides = this.pipelineSteps.filter((x)=>{
+    this.pipelineSteps.filter((x)=>{
       if(this.slides.indexOf(x) === -1){
         if( x.name === 'Enrolled' || x.name === 'Received Lifestyle Overview' || x.name === 'Bi-weekly Communication' || x.name ==='Showed Interest in Building' || x.name === 'Recieved Business Overview') {
           this.getContactPosition();
           this.goToSlide()
-          return x
+          let z = x.contacts.length;
+          let obj = {
+            contacts: x.contacts,
+            id: x.id,
+            name: x.name,
+            number: z
+          }
+          this.slides.push(obj);
         }
       }
     })
@@ -99,12 +120,19 @@ export class PipelinePage implements OnInit {
   }
   builderPipe = () => {
     this.slides = [];
-    this.slides = this.pipelineSteps.filter((x)=>{
+    this.pipelineSteps.filter((x)=>{
       if(this.slides.indexOf(x) === -1){
         if( x.name === 'Enrolled' || x.name === 'Received Lifestyle Overview' || x.name === 'Received Business Overview' || x.name === 'Made 100 Names List' || x.name === 'Elite for 3 Months') {
           this.getContactPosition();
           this.goToSlide()
-          return x
+          let z = x.contacts.length;
+          let obj = {
+            contacts: x.contacts,
+            id: x.id,
+            name: x.name,
+            number: z
+          }
+          this.slides.push(obj);
         }
       }
     })
@@ -131,8 +159,8 @@ export class PipelinePage implements OnInit {
   getContactPosition(){
     this.getService.getStorage().then(key => {
       this.getService.getContactPosition(key).subscribe(res => {
-      this.pipelineFilter = [];
-      this.prospects = [];
+        this.pipelineFilter = [];
+        this.prospects = [];
         for(var i = 0; i < res.length; i++){
           for(var x = 0 ; x < res[i].contacts.length; x++){
             let id = res[i].id;

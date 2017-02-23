@@ -3,6 +3,21 @@ page-goals {
             padding-bottom: 0px !important;
             padding-top: 0px !important;
         }
+        .addGoal{
+            background-image: url('../assets/img/goals/GOALSadd.png');
+            background-repeat: no-repeat;
+            height: 40px;
+            width: 40px;
+            margin: 5px 0 0 5px;
+        }
+        .helpIcon{
+            background-image: url('../assets/img/goals/GOALShelp.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            height: 25px;
+            width: 25px;
+            margin: 0px 5px 5px 0;
+        }
     .slide1{
         display: flex;
         justify-content: space-around;
@@ -186,6 +201,7 @@ page-goals {
             justify-content: space-between;
             padding: 5px;
             overflow-y: scroll;
+            overflow-x: hidden;
         }
         .badges{
             height: 30%;

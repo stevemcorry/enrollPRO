@@ -84,7 +84,6 @@ export class ActionsPage implements OnInit{
     }
   }
   classCheck(x){
-    console.log(x)
     let action = x.action_type.id
     if( action === 1){
       return 'email'

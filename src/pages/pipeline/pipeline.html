@@ -31,7 +31,7 @@
   <ion-slides [options]="{pager:true}" #pipeSlider>
     <ion-slide *ngFor="let slide of slides" class="slides">
       <div class="arrow">
-        <div class="position">{{slide.name}}</div>
+        <div class="position">{{slide.name}} ({{slide.number}})</div>
         <div class="rightArrow"></div>
       </div>
       <div class="prospects">
