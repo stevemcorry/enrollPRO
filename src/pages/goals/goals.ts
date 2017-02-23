@@ -183,13 +183,13 @@ export class GoalsPage implements OnInit{
       this.width = '20%';
       this.rank = 'Silver'
     } else if (star === 2){
-      this.width = '40%';
+      this.width = '43%';
       this.rank = 'Gold'
     } else if (star === 3){
-      this.width = '60%';
+      this.width = '64%';
       this.rank = 'Platinum'
     } else if (star === 4){
-      this.width = '80%';
+      this.width = '85%';
       this.rank = 'Crystaled'
     } else {
       this.width = '100%';

@@ -4,12 +4,12 @@ page-actions {
         position: fixed;
         height: 100%;
         width: 100%;
-        transition: background-color .21s;
+        transition: background-color .2s;
     }
     .showDim{
         z-index: 50;
         background-color: rgba(0, 0, 0, .5);
-        transition: background-color 1s;
+        transition: background-color .5s;
     }
     .scroll-content{
         overflow-y: scroll;
@@ -23,7 +23,7 @@ page-actions {
     .task{
         display: flex;
         margin: 10px 0 10px 0;
-        transition: transform .5s cubic-bezier(1, 0, 1, .2);
+        transition: transform .2s cubic-bezier(1, 0, 1, .2);
     }
     .completeAnimation{
         transform: translateX(-350px);
@@ -58,6 +58,30 @@ page-actions {
         background-size: contain;
         width: 50px;
         margin: 3% 0 0 2px;
+    }
+    .addButton{
+        background-image: url('../assets/icon/actions/ACTIONSaddaction.png');
+        background-repeat: no-repeat;
+    }
+    .addButtonActive{
+        background-image: url('../assets/icon/actions/ACTIONScancel.png');
+        background-repeat: no-repeat;
+    }
+    .fab-ios{
+        color: transparent;
+        background-color: rgba(0,0,0,0);
+    }
+    .addContactIcon{
+        background-image: url('../assets/icon/actions/ACTIONSaddcontact.png');
+        background-repeat: no-repeat;
+        height: 40px;
+        width: 40px;
+    }
+    .addActionIcon{
+        background-image: url('../assets/icon/actions/ACTIONSedit.png');
+        background-repeat: no-repeat;
+        height: 40px;
+        width: 40px;
     }
     .statusCircle{
         border-radius: 50%;

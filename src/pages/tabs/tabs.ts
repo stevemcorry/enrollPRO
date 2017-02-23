@@ -7,7 +7,8 @@ import { MarketingPage } from '../marketing/marketing';
 import { MorePage } from '../more/more';
 
 @Component({
-  templateUrl: 'tabs.html'
+  templateUrl: 'tabs.html',
+  selector: 'page-tabs'
 })
 export class TabsPage {
   // this tells the tabs component which Pages
