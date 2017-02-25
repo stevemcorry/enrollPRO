@@ -4,6 +4,7 @@ import  { GetService } from '../../services/getService';
 import { ViewChild, style, animate, transition, trigger } from '@angular/core';
 import { SpecificProspect } from '../../modals/specific-prospect/specific-prospect';
 import { AddContact } from '../../modals/add-contact/add-contact';
+import { PipelineChoose } from '../../modals/pipeline-choose/pipeline-choose';
 
 @Component({
   selector: 'page-pipeline',
@@ -36,6 +37,18 @@ export class PipelinePage implements OnInit {
     this.events.subscribe('pipeAdvance', () => {
       this.getContactPosition();
       this.leadsPipe();
+    })
+    this.events.subscribe('leadsPipe', () =>{
+      this.leadsPipe();
+    })
+    this.events.subscribe('enrollmentsPipe', () =>{
+      this.enrollmentsPipe();
+    })
+    this.events.subscribe('customerPipe', () =>{
+      this.customerPipe();
+    })
+    this.events.subscribe('builderPipe', () =>{
+      this.builderPipe();
     })
   }
 
@@ -116,7 +129,7 @@ export class PipelinePage implements OnInit {
         }
       }
     })
-    this.title = 'Retention';
+    this.title = 'Customers';
   }
   builderPipe = () => {
     this.slides = [];
@@ -136,7 +149,7 @@ export class PipelinePage implements OnInit {
         }
       }
     })
-    this.title = 'Retention';
+    this.title = 'Builders';
   }
   openModal(prospect) {
     let pipeChange = this.pipelineSteps.filter(val => {
@@ -146,6 +159,10 @@ export class PipelinePage implements OnInit {
   }
   openAddModal() {
     let modal = this.modalCtrl.create(AddContact);
+    modal.present();
+  }
+  pipelineChoose(){
+    let modal = this.modalCtrl.create(PipelineChoose);
     modal.present();
   }
   getPipelinePositions = () => {

@@ -1,4 +1,7 @@
 page-pipeline {
+    .scroll-content{
+        overflow-y: scroll;
+    }
     .filter{
         background-image: url('../assets/img/pipeline/PIPESfilter.png');
         background-repeat: no-repeat;
@@ -50,7 +53,6 @@ page-pipeline {
         font-size: 25px;
         color: white;
         white-space: nowrap;
-        overflow: hidden;
         text-overflow: ellipsis;
     }
     .slides{

@@ -30,7 +30,10 @@ export class SpecificProspect implements OnInit{
         pipeline_position: {name: "", id: 0},
         id: 0,
         first_name: '',
-        last_name: ''
+        last_name: '',
+        role: {
+            name: ''
+        }
 
     };
     complete = 0;
@@ -46,7 +49,7 @@ export class SpecificProspect implements OnInit{
     getSpecificContact(){
         this.getService.getStorage().then(key => {
             this.getService.getSpecificContact(key, this.prospect.id).subscribe(res => {
-                let pipe = res.pipeline_position.id + 1;
+                console.log(res, 'res')
                 this.contact = res;
                 this.actions = res.actions;
                 if(this.contact.pipeline_position.id > 6){

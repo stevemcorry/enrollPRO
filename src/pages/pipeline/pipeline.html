@@ -3,7 +3,7 @@
     <ion-buttons left>
         <div class="filter"></div>
     </ion-buttons>
-    <ion-title (click)="pipelineSelect = !pipelineSelect; dim = !dim">
+    <ion-title (click)="pipelineChoose()">
       <div class="titleFlex">
         {{title}} <div class="downArrow"></div>
       </div>
@@ -17,21 +17,6 @@
 </ion-header>
 
 <ion-content>
-  <div class="dimmer" [ngClass]="{dimmerActive: dim}" (click)="dim = false; pipelineSelect = false"></div>
-  <div *ngIf="pipelineSelect" class="choosePipe" [@fadeInOut]>
-     <div (click)="leadsPipe(); pipelineSelect = false; dim=false">
-       Names List
-     </div>
-     <div (click)="enrollmentsPipe(); pipelineSelect = false; dim=false">
-       Enrollments
-     </div>
-     <div (click)="customerPipe(); pipelineSelect = false; dim=false">
-       Customers
-     </div>
-     <div (click)="builderPipe(); pipelineSelect = false; dim=false">
-       Builders
-     </div>
-  </div>
   <ion-slides [options]="{pager:true}" #pipeSlider>
     <ion-slide *ngFor="let slide of slides" class="slides">
       <div class="arrow">

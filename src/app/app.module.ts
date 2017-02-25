@@ -38,6 +38,7 @@ import { ChooseActionContact } from '../modals/choose-action-contact/choose-acti
 import { SpecificAction } from '../modals/specific-action/specific-action';
 import { EditGoals } from '../modals/edit-goals/edit-goals';
 import { EditContact } from '../modals/edit-contact/edit-contact';
+import { PipelineChoose } from '../modals/pipeline-choose/pipeline-choose';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { EditContact } from '../modals/edit-contact/edit-contact';
     SpecificAction,
     EditGoals,
     EditContact,
+    PipelineChoose,
 
   ],
   imports: [
@@ -111,6 +113,7 @@ import { EditContact } from '../modals/edit-contact/edit-contact';
     SpecificAction,
     EditGoals,
     EditContact,
+    PipelineChoose,
 
   ],
   providers: [
