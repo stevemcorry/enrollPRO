@@ -79,6 +79,9 @@ page-actions {
     .addButton{
         background-image: url('../assets/img/actions/ACTIONSaddaction.png');
         background-repeat: no-repeat;
+        background-size: contain;
+        height: 60px;
+        width: 60px;
     }
     .addButtonActive{
         background-image: url('../assets/img/actions/ACTIONScancel.png');

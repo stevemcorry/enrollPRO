@@ -17,6 +17,9 @@ export class AddContact{
         phone: '',
         email: ''
     };
+    slides = {
+        
+    }
     dismiss() {
         this.viewCtrl.dismiss();
     }
