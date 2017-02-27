@@ -22,4 +22,25 @@ export class TabsPage {
   constructor() {
 
   }
+
+  actions(){
+    console.log('action')
+    //document.getElementById('tab-t0-0').style.backgroundImage = "url('../../assets/img/footer/FOOTERActions.png')"
+  }
+  goals(){
+    console.log('goal')
+    //document.getElementById('tab-t0-0').style.backgroundImage = "url('../assets/img/footer/FOOTERActions.png')"
+  }
+  pipeline(){
+    console.log('pipe')
+    //document.getElementById('tab-t0-0').style.backgroundImage = "url('../assets/img/footer/FOOTERActions.png')"
+  }
+  marketing(){
+    console.log('marketing')
+    //document.getElementById('tab-t0-0').style.backgroundImage = "url('../assets/img/footer/FOOTERActions.png')"
+  }
+  more(){
+    console.log('more')
+    //document.getElementById('tab-t0-0').style.backgroundImage = "url('../assets/img/footer/FOOTERActions.png')"
+  }
 }

@@ -1,4 +1,7 @@
 // http://ionicframework.com/docs/v2/theming/
+.tabbar{
+    height: 60px;
+}
 .toolbar-background {
     background-color: $purp;
 }
@@ -43,6 +46,93 @@
     height: 100%;
     width: 100%;
 }
+// Icons
+// .ion-ios-MYACTIONS,
+// .ion-md-MYACTIONS,
+// {
+//   content: url(../assets/img/footer/FOOTERActions.png);
+//   width: 24px;
+//   height: 32px;
+//   padding: 6px 4px 2px;
+//   opacity: 0.9;
+// }
+
+// .ion-ios-MYGOALS,
+// .ion-md-MYGOALS,
+// {
+//   content: url(../assets/img/footer/FOOTERGoals.png);
+//   width: 24px;
+//   height: 32px;
+//   padding: 6px 4px 2px;
+//   opacity: 0.9;
+// }
+
+// .ion-ios-MYPIPELINE,
+// .ion-md-MYPIPELINE,
+// {
+//   content: url(../assets/img/footer/FOOTERPipeline.png);
+//   width: 24px;
+//   height: 32px;
+//   padding: 6px 4px 2px;
+//   opacity: 0.9;
+// }
+
+// .ion-ios-MYMARKETING,
+// .ion-md-MYMARKETING,
+// {
+//   content: url(../assets/img/footer/FOOTERmarketing.png);
+//   width: 24px;
+//   height: 32px;
+//   padding: 6px 4px 2px;
+//   opacity: 0.9;
+// }
+// .ion-ios-MYMORE,
+// .ion-md-MYMORE,
+// .ion-ios-MYMORE:after,
+// .ion-md-MYMORE:after,
+// {
+//   content: url(../assets/img/footer/FOOTERmore.png);
+//   width: 24px;
+//   height: 32px;
+//   padding: 6px 4px 2px;
+//   opacity: 0.9;
+// }
+#tab-t0-0{
+        background-repeat: no-repeat;
+        background-size: inherit;
+        background-position-x: center;
+        background-position-y: 2px;
+        background-image: url('../assets/img/footer/FOOTERActions.png');
+    }
+    #tab-t0-1{
+        background-repeat: no-repeat;
+        background-size: inherit;
+        background-position-x: center;
+        background-position-y: 2px;
+        background-image: url('../assets/img/footer/FOOTERGoals.png');
+    }
+    #tab-t0-2{
+        background-repeat: no-repeat;
+        background-size: inherit;
+        background-position-x: center;
+        background-position-y: 2px;
+        background-image: url('../assets/img/footer/FOOTERPipeline.png');
+    }
+    #tab-t0-3{
+        background-repeat: no-repeat;
+        background-size: inherit;
+        background-position-x: center;
+        background-position-y: 2px;
+        background-image: url('../assets/img/footer/FOOTERmarketing.png');
+    }
+    #tab-t0-4{
+        background-repeat: no-repeat;
+        background-size: inherit;
+        background-position-x: center;
+        background-position-y: 40%;
+        background-image: url('../assets/img/footer/FOOTERmore.png');
+    }
+
 
 //FONTS
 
