@@ -55,7 +55,7 @@
     </div>
     <div class="bottomBox">
       <div *ngFor="let action of actions | actionFilter: complete" class="action">
-        <ion-icon name="{{icon(action.action_type.name)}}" class="actionIcon" (click)="specificAction(action)"></ion-icon>
+        <div class="{{classCheck(action)}}"></div>
         <div class="spacing">
           <div (click)="specificAction(action)" class="openNewAction">
             <div class="taskProspect">

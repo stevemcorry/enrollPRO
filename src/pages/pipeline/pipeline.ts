@@ -31,6 +31,10 @@ export class PipelinePage implements OnInit {
   }
 
   constructor(public nav: NavController, public modalCtrl: ModalController, private getService: GetService, public events: Events) {
+    this.events.subscribe('pipeSelect', () =>{
+      this.getPipelinePositions();
+      this.getProspects();
+    })
     this.events.subscribe('contactAdded', () => {
       this.leadsPipe();
     })
@@ -64,11 +68,11 @@ export class PipelinePage implements OnInit {
   public obj;
   dotColor(prosp){
     if(prosp == 0) {
-      return "lightgreen";
+      return "#ACD373";
     } else if(prosp == 1) {
-      return "grey";
+      return "#959595";
     } else {
-      return "red"
+      return "#E55F61"
     }
   }
   leadsPipe(){

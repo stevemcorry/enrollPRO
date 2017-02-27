@@ -14,6 +14,9 @@ import { ChooseActionContact } from '../../modals/choose-action-contact/choose-a
 })
 export class ActionsPage implements OnInit{
   constructor(public navCtrl: NavController, private getService: GetService, public putService: PutService, public modalCtrl: ModalController, public events: Events) {
+    this.events.subscribe('actionSelect', () =>{
+      this.getActions();
+    })
     this.events.subscribe('actionAdded', () =>{
       this.getActions();
     })

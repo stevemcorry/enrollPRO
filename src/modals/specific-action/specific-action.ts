@@ -44,7 +44,7 @@ export class SpecificAction implements OnInit{
     callNumber(){
         CallNumber.callNumber(this.phone, false)
             .then(() => console.log('Launched dialer!'))
-            .catch(() => console.log('Error launching dialer'));
+            .catch(() => alert('Cannot Call Number'));
     }
     getAction(id){
         this.getService.getStorage().then(key => {
@@ -58,13 +58,16 @@ export class SpecificAction implements OnInit{
             })
         })
     }
-    icon(x){
-        if(x === 'Text Message'){
-            return "chatbubbles"
-        } else if(x === 'Email'){
-            return "mail"
-        }
+    classCheck(x){
+    let action = x.action_type.id
+    if( action === 1){
+      return 'email'
+    } else if( action === 2){
+      return 'text'
+    } else if( action === 3){
+      return 'call'
     }
+  }
     dismiss() {
         this.viewCtrl.dismiss();
     }

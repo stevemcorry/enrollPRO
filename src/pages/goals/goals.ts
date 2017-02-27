@@ -15,6 +15,11 @@ export class GoalsPage implements OnInit{
 
   doughnutChart: any;
   constructor(public navCtrl: NavController, public getService: GetService, public events: Events, public modalCtrl: ModalController, public alertCtrl: AlertController) {
+    this.events.subscribe('goalSelect', () => {
+      this.getName();
+      this.getContactPosition();
+      this.getGoalTotals();
+    })
     this.events.subscribe('points', () => {
       this.getContactPosition();
     })
@@ -233,8 +238,5 @@ export class GoalsPage implements OnInit{
   // inner5 = "45px";
 
   ngOnInit(){
-    this.getName();
-    this.getContactPosition();
-    this.getGoalTotals();
   }
 }

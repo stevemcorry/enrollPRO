@@ -49,7 +49,6 @@ export class SpecificProspect implements OnInit{
     getSpecificContact(){
         this.getService.getStorage().then(key => {
             this.getService.getSpecificContact(key, this.prospect.id).subscribe(res => {
-                console.log(res, 'res')
                 this.contact = res;
                 this.actions = res.actions;
                 if(this.contact.pipeline_position.id > 6){
@@ -75,13 +74,6 @@ export class SpecificProspect implements OnInit{
         let modal = this.modalCtrl.create(EditContact, {contact: this.contact});
         modal.present();
     }
-    icon(x){
-        if(x === 'Text Message'){
-            return "chatbubbles"
-        } else if(x === 'Email'){
-            return "mail"
-        }
-    }
     slideChange() {
         let x = this.choosePipe.getActiveIndex();
         this.advancePipe(x);
@@ -94,7 +86,6 @@ export class SpecificProspect implements OnInit{
         let id = this.contact.id;        
         this.getService.getStorage().then(key => {
             this.putService.advancePipe(key, id, send).subscribe(res => {
-                this.getSpecificContact();
                 this.events.publish('pipeAdvance');
                 this.events.publish('points');
              });
@@ -107,6 +98,17 @@ export class SpecificProspect implements OnInit{
             return "lightgreen"
         }
     }
+    
+  classCheck(x){
+    let action = x.action_type.id
+    if( action === 1){
+      return 'email'
+    } else if( action === 2){
+      return 'text'
+    } else if( action === 3){
+      return 'call'
+    }
+  }
     newAction;
     completeAction(id, comp){
         if(comp === 0){

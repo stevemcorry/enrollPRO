@@ -9,7 +9,7 @@ page-specific-Prospect {
     }
     .contactHeader {
         font-family: 'Source Sans Pro', sans-serif;
-        color: #5F4275;
+        color: $purp;
         text-align: center;
         font-size: 20px;
         margin: 15px;
@@ -52,8 +52,8 @@ page-specific-Prospect {
         height: 8px;
         width: 15px;
         background: #f1f1f1;
-        border-top: 5px solid lightgreen;
-        border-bottom: 5px solid lightgreen;
+        border-top: 5px solid $greeny;
+        border-bottom: 5px solid $greeny;
         border-left: 3px solid white;
     }
     .activeArrow{
@@ -61,15 +61,19 @@ page-specific-Prospect {
         width: 5px;
         border-top: 5px solid white;
         border-bottom: 5px solid white;
-        border-left: 5px solid lightgreen;
+        border-left: 5px solid $greeny;
     }
     .choosePipe{
         height: 20px;
+        color: $purp;
+        font: 25px 'brandon-regular';
     }
     .position{
         font-size: 23px;
+        font-family: 'brandon-black';
+        color: $purp;
         width: 100%;
-        margin-bottom: 5px;
+        margin: 0 0 5px 5px;
     }
     .box{
         min-height: 250px;
@@ -87,13 +91,15 @@ page-specific-Prospect {
         border-top-left-radius: 5px; 
         height: 50px;
         width: 100%;
+        color: $purp;
+        font-family: 'brandon-black';
     }
     .bottomBox{
     }
     .smallBox{
         height: 100%;
         width: 50%;
-        background: lightgreen;
+        background: $greeny;
         font-size: 20px;
         display: flex;
         justify-content: center;
@@ -116,6 +122,25 @@ page-specific-Prospect {
     //new
     .action{
         display: flex;
+        margin: 5px 0 5px 0;
+    }
+    .email{
+        background-image: url('../assets/img/actions/ACTIONSEmail.png');
+        background-repeat: no-repeat;
+        width: 40px;
+        margin: 3% 0 0 2%;
+    }
+    .text{
+        background-image: url('../assets/img/actions/ACTIONStext.png');
+        background-repeat: no-repeat;
+        width: 40px;
+        margin: 3% 0 0 2%;
+    }
+    .call{
+        background-image: url('../assets/img/actions/ACTIONScall.png');
+        background-repeat: no-repeat;
+        width: 50px;
+        margin: 3% 0 0 2%;
     }
     .taskProspect{
         font-size: 20px;
@@ -155,7 +180,7 @@ page-specific-Prospect {
         position: absolute;
         bottom: 1%;
         left: 42%;
-        background: lightgreen;
+        background: $greeny;
         border-radius: 50%;
         margin: 5px;
         height: 40px;

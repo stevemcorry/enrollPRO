@@ -16,7 +16,7 @@
 
 <ion-content class="addProspect">
     <div class="actionHead">
-      <ion-icon name="{{icon(action.action_type.name)}}" class="actionIcon"></ion-icon>
+      <div class="{{classCheck(action)}}"></div>
       <div>
         <div class="actionName">{{action.action_type.name}}</div>
       </div>
@@ -30,8 +30,8 @@
       <div class="noteContent">{{note}}</div>
     </div>
     <div class="iconList">
-        <ion-icon [ngClass]="{emailOn: emailOn}" (click)="emailOn=true; textOn=false; callOn=false; sendEmail()" name="mail" class="sendOptions"></ion-icon>
-        <ion-icon [ngClass]="{textOn: textOn}" (click)="textOn=true; emailOn=false; callOn=false; sendText()"  name="chatbubbles" class="sendOptions"></ion-icon>
-        <ion-icon [ngClass]="{callOn: callOn}" (click)="callOn=true; emailOn=false; textOn=false; callNumber()" name="call" class="sendOptions"></ion-icon>
+        <div [ngClass]="{emailOn: emailOn}" (click)="emailOn=true; textOn=false; callOn=false; sendEmail()" class="emailsend"></div>
+        <div [ngClass]="{textOn: textOn}" (click)="textOn=true; emailOn=false; callOn=false; sendText()" class="textsend"></div>
+        <div [ngClass]="{callOn: callOn}" (click)="callOn=true; emailOn=false; textOn=false; callNumber()" class="callsend"></div>
     </div>
 </ion-content>

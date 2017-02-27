@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { Events } from 'ionic-angular';
 import { ActionsPage } from '../actions/actions';
 import { GoalsPage } from '../goals/goals';
 import { PipelinePage } from '../pipeline/pipeline';
@@ -19,28 +19,28 @@ export class TabsPage {
   tab4Root: any = MarketingPage;
   tab5Root: any = MorePage;
 
-  constructor() {
+  constructor(public events: Events) {
 
   }
 
   actions(){
-    console.log('action')
+    this.events.publish('actionSelect');
     //document.getElementById('tab-t0-0').style.backgroundImage = "url('../../assets/img/footer/FOOTERActions.png')"
   }
   goals(){
-    console.log('goal')
+    this.events.publish('goalSelect');
     //document.getElementById('tab-t0-0').style.backgroundImage = "url('../assets/img/footer/FOOTERActions.png')"
   }
   pipeline(){
-    console.log('pipe')
+    this.events.publish('pipeSelect');
     //document.getElementById('tab-t0-0').style.backgroundImage = "url('../assets/img/footer/FOOTERActions.png')"
   }
   marketing(){
-    console.log('marketing')
+    this.events.publish('marketSelect');
     //document.getElementById('tab-t0-0').style.backgroundImage = "url('../assets/img/footer/FOOTERActions.png')"
   }
   more(){
-    console.log('more')
+    this.events.publish('moreSelect');
     //document.getElementById('tab-t0-0').style.backgroundImage = "url('../assets/img/footer/FOOTERActions.png')"
   }
 }

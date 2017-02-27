@@ -19,6 +19,32 @@ page-specific-action{
         font-size: 50px;
         color: black;
     }
+    .email{
+        background-image: url('../assets/img/actions/ACTIONSEmail.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position-y: center;
+        height: 50px;
+        width: 50px;
+    }
+    .text{
+        background-image: url('../assets/img/actions/ACTIONStext.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position-y: center;
+        height: 50px;
+        width: 50px;
+        margin: 3% 0 0 2%;
+    }
+    .call{
+        background-image: url('../assets/img/actions/ACTIONScall.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position-y: center;
+        height: 50px;
+        width: 50px;
+        margin: 3% 0 0 2%;
+    }
     .actionName{
         font-size: 40px;
         color: green;
@@ -67,5 +93,28 @@ page-specific-action{
     }
     .callOn{
         color: lightgreen;
+    }
+    .emailsend{
+        background-image: url('../assets/img/actions/ACTIONSEmail.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position-y: center;
+        height: 40px;
+        width: 40px;
+    }
+    .textsend{
+        background-image: url('../assets/img/actions/ACTIONStext.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position-y: center;
+        height: 40px;
+        width: 40px;
+    }
+    .callsend{
+        background-image: url('../assets/img/actions/ACTIONSCall.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 40px;
+        width: 40px;
     }
 }
