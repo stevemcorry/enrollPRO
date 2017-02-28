@@ -20,7 +20,7 @@
       <input type="text" required placeholder="Last Name" [(ngModel)]="contact.last_name">
       <input type="tel" required placeholder="Phone Number" [(ngModel)]="contact.phone">
       <input type="email" required placeholder="Email" [(ngModel)]="contact.email">
-      <ion-slides #pipeSlider class="choosePipe" #choosePipe (ionSlideDidChange)="slideChange()">
+      <ion-slides #pipeSlider class="choosePipe" #choosePipe>
         <ion-slide *ngFor="let slide of slides" class="slides">
         <div class="slideName">{{slide.name}}</div>
         </ion-slide>

@@ -11,7 +11,7 @@ import { NavController, Events, ModalController, AlertController, Slides } from 
 })
 export class GoalsPage implements OnInit{
   @ViewChild('donutCanvas') doughnutCanvas;
-  @ViewChild('slider') slider: Slides
+  @ViewChild('gameSlides') gameSlides: Slides;
 
   doughnutChart: any;
   constructor(public navCtrl: NavController, public getService: GetService, public events: Events, public modalCtrl: ModalController, public alertCtrl: AlertController) {
@@ -49,28 +49,28 @@ export class GoalsPage implements OnInit{
     modal.present();
   }
   pagerCheck(x){
-    if(this.slider.getActiveIndex() === x.slide){
+    if(this.gameSlides.getActiveIndex() === x.slide){
       return "circleOn";
     } else {
       return 'none'
     }
   }
   openHelp(){
-    if(this.slider.getActiveIndex() === 0){
+    if(this.gameSlides.getActiveIndex() === 0){
       let alert = this.alertCtrl.create({
         title: 'Points System',
         subTitle: 'For every 200 points, you will fill up the circle and gain one step. <br> For every 1000 points you gain a star',
         buttons: ['OK']
       });
       alert.present();
-    } else if (this.slider.getActiveIndex() === 1){
+    } else if (this.gameSlides.getActiveIndex() === 1){
         let alert = this.alertCtrl.create({
           title: 'Bar Graphs',
           subTitle: 'Set new goals by clicking the pencil in the top left',
           buttons: ['OK']
         });
         alert.present();
-    } else if (this.slider.getActiveIndex() === 2){
+    } else if (this.gameSlides.getActiveIndex() === 2){
         let alert = this.alertCtrl.create({
           title: 'Badges',
           subTitle: 'Earn Badges as you add and move more people in the pipeline!',

@@ -19,7 +19,7 @@ export class AddAction implements OnInit{
     newAction = {
         action_type: "",
         contact: "",
-        due_date: "",
+        due_date: new Date().toISOString(),
         notes: ""
     };
     checkActionType(){
