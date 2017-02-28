@@ -5,7 +5,9 @@
           <div class="addGoal"></div>
       </div>
     </ion-buttons>
-    <ion-title>success tracker</ion-title>
+    <ion-title>
+      success tracker
+    </ion-title>
     <ion-buttons end>
       <div (click)="openHelp()">
           <div class="helpIcon"></div>
@@ -15,6 +17,9 @@
 </ion-header>
 
 <ion-content padding>
+  <div class="circles">
+    <div *ngFor="let page of pager" class="circle {{pagerCheck(page)}}"></div>
+  </div>
   <ion-slides #slider>
   <ion-slide class="slide1">
     <div class="profile">

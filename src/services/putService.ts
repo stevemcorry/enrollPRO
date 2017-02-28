@@ -30,7 +30,6 @@ export class PutService{
             authHeader.append('Content-Type','application/json')
         return this.http.put('http://enrollpro.coopertechnology.com/api/contacts/' + id, edit, { headers: authHeader}).
         map(res => {
-            console.log(res, 'put contact');
         });
     }
 

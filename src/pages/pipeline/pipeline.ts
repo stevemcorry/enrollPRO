@@ -42,6 +42,10 @@ export class PipelinePage implements OnInit {
       this.getContactPosition();
       this.leadsPipe();
     })
+    this.events.subscribe('editContact', () => {
+      this.getPipelinePositions();
+      this.getProspects();
+    });
     this.events.subscribe('leadsPipe', () =>{
       this.leadsPipe();
     })
@@ -79,7 +83,7 @@ export class PipelinePage implements OnInit {
     this.slides = [];
     this.pipelineSteps.filter((x)=>{
         if(this.slides.indexOf(x) === -1) {
-        if (x.name === 'Imported Contacts' || x.name === 'Names List') {
+        if (x.name === 'Imported Contacts' || x.name === 'Names List' || x.name === 'Top 45') {
           this.getContactPosition();
           this.goToSlide();
           let z = x.contacts.length;

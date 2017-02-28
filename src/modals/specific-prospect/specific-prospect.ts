@@ -22,9 +22,12 @@ export class SpecificProspect implements OnInit{
     this.events.subscribe('actionAdded', () => {
         this.getSpecificContact();
     });
+    this.events.subscribe('editContact', () => {
+        this.getSpecificContact();
+    });
     }
     action;
-    actions;
+    actions; 
     contact = {
         phone: "",
         pipeline_position: {name: "", id: 0},

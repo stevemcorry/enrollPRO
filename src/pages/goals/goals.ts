@@ -25,15 +25,35 @@ export class GoalsPage implements OnInit{
     })
   }
   name;
+  pager = [
+    {
+      slide: 0,
+      on: false
+    },
+    {
+      slide: 1,
+      on: false
+    },
+    {
+      slide: 2,
+      on: false
+    }
+  ]
   getName(){
     this.getService.getStorageName().then(res => {
       this.name = res;
-      console.log(res)
     })
   }
   openEdit(){
     let modal = this.modalCtrl.create(EditGoals);
     modal.present();
+  }
+  pagerCheck(x){
+    if(this.slider.getActiveIndex() === x.slide){
+      return "circleOn";
+    } else {
+      return 'none'
+    }
   }
   openHelp(){
     if(this.slider.getActiveIndex() === 0){
@@ -222,6 +242,7 @@ export class GoalsPage implements OnInit{
           name: x.name,
           amount: x.contacts.length
         }
+        if(obj.name === 'Top 45' || obj.name === 'Experienced E.O.'  || obj.name === 'Committed to Receiving Presentation'  || obj.name === 'Experienced Presentation'  || obj.name === 'Enrolled' )
         this.goals.push(obj);
       })
       });
