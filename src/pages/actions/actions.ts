@@ -85,6 +85,15 @@ export class ActionsPage implements OnInit{
     if (fab !== undefined) {
       fab.close();
     }
+    let tabBarElement;
+    if (document.querySelector('.tabbar')) {
+      tabBarElement = document.querySelector('.tabbar.show-tabbar');
+    }
+    if (tabBarElement) {
+      this.flop = true;
+      tabBarElement.style['z-index'] = '500';
+      //tabBarElement.style.display = 'flex';
+    }
   }
   classCheck(x){
     let action = x.action_type.id
@@ -93,6 +102,26 @@ export class ActionsPage implements OnInit{
     } else if( action === 2){
       return 'text'
     }
+  }
+  flop = true;
+  coverTab(){
+    let tabBarElement;
+    if (document.querySelector('.tabbar')) {
+      tabBarElement = document.querySelector('.tabbar.show-tabbar');
+    }
+    if (tabBarElement) {
+      if(this.flop){
+        tabBarElement.style['z-index'] = '0';
+        //tabBarElement.style.display = 'none';
+        this.flop = !this.flop;
+      } else {
+        tabBarElement.style['z-index'] = '500';
+        //tabBarElement.style.display = 'flex';
+        this.flop = !this.flop;
+
+      }
+    }
+    
   }
   ngOnInit(){
     this.getActions();

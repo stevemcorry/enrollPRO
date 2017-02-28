@@ -23,7 +23,7 @@
     </div>
   </div>
   <ion-fab bottom center #fab>
-    <div ion-fab (click)="showDim = !showDim;" class="addButton" [ngClass]="{addButtonActive: showDim}" ></div>
+    <div ion-fab (click)="showDim = !showDim; coverTab()" class="addButton" [ngClass]="{addButtonActive: showDim}" ></div>
     <ion-fab-list side="right">
       <div (click)="addContact(); showDim = false; closeFab(fab)" class="addContactIcon"></div>
     </ion-fab-list>
