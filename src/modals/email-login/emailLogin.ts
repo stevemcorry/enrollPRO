@@ -19,7 +19,6 @@ export class EmailLoginModal implements OnInit{
     login() {
         if(this.user.username && this.user.password && this.fullname) {
             this.token();
-            this.navCtrl.setRoot(TabsPage);
         }
         else {
             alert('Please Fill out all the information')
@@ -36,7 +35,13 @@ export class EmailLoginModal implements OnInit{
     token(){
         this.postService.requestOAuth(this.user).subscribe(res=>{
             console.log(res);
+            if(res){   
+            this.navCtrl.setRoot(TabsPage);
             this.store(res)
+            } else {
+                alert('Incorrect login')
+            }
+
         })
     }
     store(key){

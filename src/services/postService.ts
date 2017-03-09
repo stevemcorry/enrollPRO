@@ -25,10 +25,11 @@ export class PostService{
         return this.http.post('http://api.enroll.pro/api/contacts', contact, { headers: authHeader});
     }
     addAction(key, action){
-        console.log('action');
+        action.due_date = action.due_date.slice(0,10);
+        console.log(action, key);
         let authHeader = new Headers();
             authHeader.append('Authorization', 'Bearer '+ key);
-        return this.http.post('http://api.enroll.pro/api/actions', JSON.stringify(action), { headers: authHeader});
+        return this.http.post('http://api.enroll.pro/api/actions', action, { headers: authHeader});
     }
 
 }
