@@ -12,14 +12,14 @@ export class PutService{
         let authHeader = new Headers();
             authHeader.append('Authorization', 'Bearer '+ key);
             authHeader.append('Content-Type','application/json')
-        return this.http.put('http://enrollpro.coopertechnology.com/api/actions/' + id, JSON.stringify(action), { headers: authHeader})
+        return this.http.put('http://api.enroll.pro/api/actions/' + id, JSON.stringify(action), { headers: authHeader})
         .map(res => console.log(res, 'put complete'));
     }
     advancePipe(key, id, pipe){
         let authHeader = new Headers();
             authHeader.append('Authorization', 'Bearer '+ key);
             authHeader.append('Content-Type','application/json')
-        return this.http.put('http://enrollpro.coopertechnology.com/api/contacts/' + id, JSON.stringify(pipe), { headers: authHeader}).
+        return this.http.put('http://api.enroll.pro/api/contacts/' + id, JSON.stringify(pipe), { headers: authHeader}).
         map(res => {
             console.log(res, 'put pipe');
         });
@@ -28,7 +28,7 @@ export class PutService{
         let authHeader = new Headers();
             authHeader.append('Authorization', 'Bearer '+ key);
             authHeader.append('Content-Type','application/json')
-        return this.http.put('http://enrollpro.coopertechnology.com/api/contacts/' + id, edit, { headers: authHeader}).
+        return this.http.put('http://api.enroll.pro/api/contacts/' + id, edit, { headers: authHeader}).
         map(res => {
         });
     }

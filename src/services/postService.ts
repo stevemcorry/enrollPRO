@@ -10,7 +10,7 @@ export class PostService{
 
     requestOAuth(user) {
         let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
-        return this.http.post('http://enrollpro.coopertechnology.com/oauth/token', user, headers).map((res) => res.json());
+        return this.http.post('http://api.enroll.pro/oauth/token', user, headers).map((res) => res.json());
     }
     store(user, name){
         this.storage.set('token', user.access_token).then(() => {
@@ -22,13 +22,13 @@ export class PostService{
     addContact(key, contact){
         let authHeader = new Headers();
             authHeader.append('Authorization', 'Bearer '+ key);
-        return this.http.post('http://enrollpro.coopertechnology.com/api/contacts', contact, { headers: authHeader});
+        return this.http.post('http://api.enroll.pro/api/contacts', contact, { headers: authHeader});
     }
     addAction(key, action){
         console.log('action');
         let authHeader = new Headers();
             authHeader.append('Authorization', 'Bearer '+ key);
-        return this.http.post('http://enrollpro.coopertechnology.com/api/actions', JSON.stringify(action), { headers: authHeader});
+        return this.http.post('http://api.enroll.pro/api/actions', JSON.stringify(action), { headers: authHeader});
     }
 
 }

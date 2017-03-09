@@ -11,7 +11,7 @@ export class GetService implements OnInit{
     getSpecificContact(key, id){
         let authHeader = new Headers();
             authHeader.append('Authorization', 'Bearer '+ key);
-            return this.http.get('http://enrollpro.coopertechnology.com/api/contacts/' + id, {headers: authHeader})
+            return this.http.get('http://api.enroll.pro/api/contacts/' + id, {headers: authHeader})
             .map(data=>{
                 return data.json();
             })
@@ -25,7 +25,7 @@ export class GetService implements OnInit{
     getContactPosition(key){
         let authHeader = new Headers();
             authHeader.append('Authorization', 'Bearer '+ key);
-            return this.http.get('http://enrollpro.coopertechnology.com/api/pipelines', {headers: authHeader})
+            return this.http.get('http://api.enroll.pro/api/pipelines', {headers: authHeader})
             .map(data=>{
                 return data.json();
             })
@@ -33,7 +33,7 @@ export class GetService implements OnInit{
     getPipelinePositions(key){
             let authHeader = new Headers();
             authHeader.append('Authorization', 'Bearer '+ key);
-            return this.http.get('http://enrollpro.coopertechnology.com/api/pipelines', {headers: authHeader})
+            return this.http.get('http://api.enroll.pro/api/pipelines', {headers: authHeader})
             .map(data=>{
                 return data.json();
             })
@@ -41,7 +41,7 @@ export class GetService implements OnInit{
     getContacts(key){
             let authHeader = new Headers();
             authHeader.append('Authorization', 'Bearer '+ key);
-            return this.http.get('http://enrollpro.coopertechnology.com/api/contacts', {headers: authHeader})
+            return this.http.get('http://api.enroll.pro/api/contacts', {headers: authHeader})
             .map(data=>{
                 return data.json();
             })
@@ -49,7 +49,7 @@ export class GetService implements OnInit{
     getSpecificActions(key, id){
         let authHeader = new Headers();
             authHeader.append('Authorization', 'Bearer '+ key);
-            return this.http.get('http://enrollpro.coopertechnology.com/api/actions/' + id, {headers: authHeader})
+            return this.http.get('http://api.enroll.pro/api/actions/' + id, {headers: authHeader})
             .map(data=>{
                 return data.json();
             })
@@ -57,7 +57,7 @@ export class GetService implements OnInit{
     getActions(key){
         let authHeader = new Headers();
             authHeader.append('Authorization', 'Bearer '+ key);
-            return this.http.get('http://enrollpro.coopertechnology.com/api/actions', {headers: authHeader})
+            return this.http.get('http://api.enroll.pro/api/actions', {headers: authHeader})
             .map(data=>{
                 return data.json();
             })
@@ -75,7 +75,7 @@ export class GetService implements OnInit{
     getJobs(key){
         let authHeader = new Headers();
             authHeader.append('Authorization', 'Bearer '+ key);
-            return this.http.get('http://enrollpro.coopertechnology.com/api/jobs', {headers: authHeader})
+            return this.http.get('http://api.enroll.pro/api/jobs', {headers: authHeader})
             .map(data=>{
                 return data.json();
             })
@@ -83,7 +83,7 @@ export class GetService implements OnInit{
     getSpecificTemplate(key, id){
         let authHeader = new Headers();
             authHeader.append('Authorization', 'Bearer '+ key);
-            return this.http.get('http://enrollpro.coopertechnology.com/api/jobs/templates/' + id , {headers: authHeader})
+            return this.http.get('http://api.enroll.pro/api/jobs/templates/' + id , {headers: authHeader})
             .map(data=>{
                 return data.json();
             })
