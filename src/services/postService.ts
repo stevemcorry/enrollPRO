@@ -1,6 +1,7 @@
 import { Injectable }     from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import {Storage} from '@ionic/storage';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
@@ -10,7 +11,8 @@ export class PostService{
 
     requestOAuth(user) {
         let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
-        return this.http.post('http://api.enroll.pro/oauth/token', user, headers).map((res) => res.json());
+        return this.http.post('http://api.enroll.pro/oauth/token', user, headers)
+        .map((res) => res.json());
     }
     store(user, name){
         this.storage.set('token', user.access_token).then(() => {

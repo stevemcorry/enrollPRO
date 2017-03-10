@@ -36,8 +36,8 @@ export class EmailLoginModal implements OnInit{
         this.postService.requestOAuth(this.user).subscribe(res=>{
             console.log(res);
             if(res){   
-            this.navCtrl.setRoot(TabsPage);
             this.store(res)
+            this.navCtrl.setRoot(TabsPage, {start: res});
             } else {
                 alert('Incorrect login')
             }

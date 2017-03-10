@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GetService } from '../../services/getService';
-import { NavController, ModalController, Events, FabContainer } from 'ionic-angular';
+import { NavController, ModalController, Events, FabContainer, NavParams } from 'ionic-angular';
 import { PutService } from '../../services/putService';
 import { AddContact } from '../../modals/add-contact/add-contact';
 import { SpecificAction } from '../../modals/specific-action/specific-action';
@@ -13,7 +13,8 @@ import { ChooseActionContact } from '../../modals/choose-action-contact/choose-a
 
 })
 export class ActionsPage implements OnInit{
-  constructor(public navCtrl: NavController, private getService: GetService, public putService: PutService, public modalCtrl: ModalController, public events: Events) {
+  constructor(public navCtrl: NavController, public params: NavParams, private getService: GetService, public putService: PutService, public modalCtrl: ModalController, public events: Events) {
+    this.start = params.get('key');
     this.events.subscribe('actionSelect', () =>{
       this.getActions();
     })
@@ -21,7 +22,7 @@ export class ActionsPage implements OnInit{
       this.getActions();
     })
   }
-
+  public start;
   public actions;
   public action = {
     action_type: {
@@ -124,6 +125,6 @@ export class ActionsPage implements OnInit{
     
   }
   ngOnInit(){
-    this.getActions();
+      this.getActions();
   }
 }
